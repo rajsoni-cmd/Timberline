@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { LOGO_LIGHT } from "../lib/images";
 
 const NAV_ITEMS = [
   { to: "/", label: "Home" },
@@ -39,13 +40,12 @@ export const Header = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between">
-          <Link to="/" data-testid="site-logo" className="flex flex-col leading-none">
-            <span className="font-serif-display text-white text-2xl md:text-[28px] tracking-wide">
-              TIMBERLINE
-            </span>
-            <span className="text-[10px] text-white/70 tracking-[0.32em] mt-1">
-              CUSTOM HOMES
-            </span>
+          <Link to="/" data-testid="site-logo" className="flex items-center leading-none">
+            <img
+              src={LOGO_LIGHT}
+              alt="Timberline Custom Homes — Since 1989"
+              className={`transition-all duration-500 ${solid ? "h-12 md:h-14" : "h-14 md:h-16"} w-auto object-contain`}
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-10">
@@ -92,7 +92,11 @@ export const Header = () => {
         }`}
       >
         <div className="flex items-center justify-between px-6 py-6">
-          <span className="font-serif-display text-white text-2xl">TIMBERLINE</span>
+          <img
+            src={LOGO_LIGHT}
+            alt="Timberline Custom Homes"
+            className="h-12 w-auto object-contain"
+          />
           <button
             data-testid="mobile-menu-close"
             onClick={() => setMenuOpen(false)}
