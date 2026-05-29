@@ -43,9 +43,20 @@ const Home = () => {
       >
         <div
           className="absolute inset-0 bg-cover bg-center ken-burns"
-          style={{ backgroundImage: `url(${IMAGES.cottageExterior})` }}
+          style={{ backgroundImage: `url(${BANNER_INTERIOR})` }}
         />
-        <div className="absolute inset-0 bg-[#01261d]/45" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#01261d]/65 via-[#01261d]/45 to-[#01261d]/75" />
+
+        {/* 30+ Years badge — top right of hero */}
+        <div
+          data-testid="hero-experience-badge"
+          className="absolute top-28 md:top-32 right-6 md:right-12 z-10 flex items-center gap-3 border border-[#c9a96e]/60 bg-[#01261d]/40 backdrop-blur-sm px-5 py-3"
+        >
+          <span className="font-display text-[#00a34f] text-2xl md:text-3xl leading-none">30+</span>
+          <span className="text-[#f5f0e8] text-[0.65rem] md:text-[0.7rem] tracking-[0.26em] uppercase font-light leading-snug max-w-[8ch]">
+            Years<br />Experience
+          </span>
+        </div>
 
         <div className="relative z-10 text-center px-6 max-w-5xl py-24">
           <Reveal>
@@ -68,11 +79,11 @@ const Home = () => {
               Timberline is consistently advancing our products and services, maintaining our focus on quality regardless of the size of project.
             </p>
             <Link
-              to="/about"
+              to="/contact"
               data-testid="hero-cta-button"
               className="btn-luxury mt-12 text-[#f5f0e8] border border-[#f5f0e8] hover:bg-[#00a34f] hover:border-[#00a34f]"
             >
-              Explore Our Work
+              Contact Us
             </Link>
           </Reveal>
         </div>
@@ -88,8 +99,8 @@ const Home = () => {
           <Reveal variant="left">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
-                src={BANNER_INTERIOR}
-                alt="Timberline great room interior"
+                src={IMAGES.cottageExterior}
+                alt="Timberline custom home exterior"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />

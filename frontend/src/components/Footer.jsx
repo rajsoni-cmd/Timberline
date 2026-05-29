@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { LOGO_LIGHT } from "../lib/images";
 
 const FooterCol = ({ heading, children }) => (
   <div>
@@ -16,14 +17,11 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           <div>
-            <div className="flex flex-col leading-none">
-              <span className="font-display italic text-[#f5f0e8] text-3xl md:text-[34px] tracking-tight">
-                Timberline
-              </span>
-              <span className="text-[10px] text-[#f5f0e8]/75 tracking-[0.36em] uppercase mt-2">
-                Custom Homes
-              </span>
-            </div>
+            <img
+              src={LOGO_LIGHT}
+              alt="Timberline Custom Homes — Since 1989"
+              className="h-16 md:h-20 w-auto object-contain -ml-2"
+            />
             <p className="mt-7 text-sm text-[#f5f0e8]/70 font-light leading-relaxed max-w-xs">
               Award Winning Custom Builder in the Kawarthas.
             </p>

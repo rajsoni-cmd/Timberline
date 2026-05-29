@@ -1,5 +1,6 @@
 // Centralized image URLs for Timberline Custom Homes
-export const BANNER_INTERIOR = "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/bj6rz29b_Banner-01.jpg";
+export const LOGO_LIGHT = "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/thssxyr0_logo-light.png";
+export const BANNER_INTERIOR = "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/96doj20j_Banner-01.jpg";
 
 export const IMAGES = {
   // User-uploaded

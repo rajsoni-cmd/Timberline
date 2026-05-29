@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { LOGO_LIGHT } from "../lib/images";
 
 const NAV_ITEMS = [
   { to: "/", label: "Home" },
@@ -9,19 +10,13 @@ const NAV_ITEMS = [
   { to: "/contact", label: "Contact Us" },
 ];
 
-const Logo = ({ size = "default" }) => {
-  const titleSize = size === "large" ? "text-3xl md:text-4xl" : "text-2xl md:text-[26px]";
-  return (
-    <div className="flex flex-col leading-none select-none">
-      <span className={`font-display italic text-[#f5f0e8] ${titleSize} tracking-tight`}>
-        Timberline
-      </span>
-      <span className="text-[9px] md:text-[10px] text-[#f5f0e8]/75 tracking-[0.36em] uppercase mt-1.5">
-        Custom Homes
-      </span>
-    </div>
-  );
-};
+const Logo = ({ scrolled = false }) => (
+  <img
+    src={LOGO_LIGHT}
+    alt="Timberline Custom Homes — Since 1989"
+    className={`w-auto object-contain transition-all duration-500 ${scrolled ? "h-12 md:h-14" : "h-14 md:h-16"}`}
+  />
+);
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -55,7 +50,7 @@ export const Header = () => {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between">
           <Link to="/" data-testid="site-logo">
-            <Logo />
+            <Logo scrolled={solid} />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-10">
@@ -102,7 +97,7 @@ export const Header = () => {
         }`}
       >
         <div className="flex items-center justify-between px-6 py-6">
-          <Logo />
+          <Logo scrolled />
           <button
             data-testid="mobile-menu-close"
             onClick={() => setMenuOpen(false)}
