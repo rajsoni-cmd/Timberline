@@ -18,18 +18,18 @@ export const FIELD_TEAM = [
 
 export const TESTIMONIALS = [
   {
-    quote: "From the very first walk of the property to the moment we turned the key, Timberline made us feel like family. Our cottage on Stoney Lake is everything we dreamed of — and a few things we didn't know to ask for.",
-    author: "The Hartwell Family",
-    location: "Stoney Lake, ON",
+    quote: "Timberline built our dream cottage on Stoney Lake and exceeded every expectation. Ray and the team communicated every step of the way — we always knew exactly what was happening. The craftsmanship is extraordinary.",
+    author: "The Morrison Family",
+    location: "Stoney Lake",
   },
   {
-    quote: "Three generations of our family will gather under this roof. Ray and his team understood that we weren't just building a home — we were building a place to come back to. Every detail reflects that.",
-    author: "Margaret & David Lin",
-    location: "Buckhorn Lake, ON",
+    quote: "We've now built two properties with Timberline. That says everything. The attention to detail, the quality of the finishes, and the relationships we've built with the team are second to none.",
+    author: "The Henderson Family",
+    location: "Katchewanooka Lake",
   },
   {
-    quote: "The craftsmanship is honestly the best we've seen in twenty years of cottage country. Honest communication, no surprises, and a finish that still stops people in the doorway.",
-    author: "Jonathan Reeve",
-    location: "Pigeon Lake, ON",
+    quote: "From our initial consultation to the final walkthrough, Timberline made building our custom home seamless. We wouldn't hesitate to recommend them to anyone looking to build in the Kawarthas.",
+    author: "The Campbell Family",
+    location: "Lakefield, ON",
   },
 ];

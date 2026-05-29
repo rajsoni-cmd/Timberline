@@ -12,11 +12,10 @@ import {
   Trees,
   Wrench,
   Droplets,
-  Award,
-  Quote,
+  Star,
 } from "lucide-react";
-import Reveal from "../components/Reveal";
-import { IMAGES } from "../lib/images";
+import Reveal, { GoldRule } from "../components/Reveal";
+import { IMAGES, BANNER_INTERIOR } from "../lib/images";
 import { TESTIMONIALS } from "../lib/team";
 
 const SERVICES = [
@@ -40,69 +39,81 @@ const Home = () => {
       {/* HERO */}
       <section
         data-testid="hero-section"
-        className="relative h-screen min-h-[640px] w-full flex items-center justify-center overflow-hidden"
+        className="relative min-h-screen w-full flex items-center justify-center overflow-hidden"
       >
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center ken-burns"
           style={{ backgroundImage: `url(${IMAGES.cottageExterior})` }}
         />
         <div className="absolute inset-0 bg-[#01261d]/45" />
-        <div className="relative z-10 text-center px-6 max-w-4xl">
+
+        <div className="relative z-10 text-center px-6 max-w-5xl py-24">
           <Reveal>
-            <div className="eyebrow text-[#00a34f] mb-7">
+            <div className="flex justify-center mb-6">
+              <GoldRule delay={150} />
+            </div>
+            <div className="eyebrow eyebrow-light mb-8">
               Kawartha's Premier Custom Builder
             </div>
-            <h1 className="font-serif-display text-white text-5xl md:text-7xl lg:text-[88px] leading-[1.02] tracking-tight">
+            <h1
+              className="font-display italic text-[#f5f0e8] leading-[1.02] tracking-tight"
+              style={{ fontSize: "clamp(2.8rem, 8vw, 7rem)" }}
+            >
               Building More<br />Than Homes
             </h1>
-            <p className="mt-8 text-white/85 text-base md:text-lg font-light max-w-xl mx-auto leading-relaxed">
+            <div className="flex justify-center mt-9">
+              <GoldRule delay={400} wide />
+            </div>
+            <p className="mt-9 text-[#f5f0e8]/80 text-base md:text-lg font-light leading-[1.9] max-w-2xl mx-auto">
               Timberline is consistently advancing our products and services, maintaining our focus on quality regardless of the size of project.
             </p>
             <Link
               to="/about"
               data-testid="hero-cta-button"
-              className="inline-block mt-10 border-2 border-white text-white text-[12px] tracking-[0.28em] uppercase px-10 py-4 hover:bg-[#00a34f] hover:border-[#00a34f] transition-colors duration-300"
+              className="btn-luxury mt-12 text-[#f5f0e8] border border-[#f5f0e8] hover:bg-[#00a34f] hover:border-[#00a34f]"
             >
               Explore Our Work
             </Link>
           </Reveal>
         </div>
 
-        {/* scroll hint */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 text-white/60 text-[10px] tracking-[0.32em]">
-          SCROLL
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-[#f5f0e8]/55 text-[0.65rem] tracking-[0.36em] uppercase">
+          Scroll
         </div>
       </section>
 
       {/* FOUNDATION */}
-      <section data-testid="foundation-section" className="py-24 md:py-36 bg-[#F9F7F4]">
+      <section data-testid="foundation-section" className="py-24 md:py-36 bg-[#f5f0e8]">
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
-          <Reveal>
+          <Reveal variant="left">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
-                src={IMAGES.user7}
-                alt="Custom home detail"
+                src={BANNER_INTERIOR}
+                alt="Timberline great room interior"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
             </div>
           </Reveal>
-          <Reveal delay={120}>
+          <Reveal variant="right" delay={120}>
             <div>
-              <div className="eyebrow text-[#00a34f] mb-5">Who We Are</div>
-              <h2 className="font-serif-display text-[#01261d] text-4xl md:text-5xl leading-[1.1] tracking-tight">
+              <GoldRule delay={250} />
+              <div className="eyebrow mt-5">Who We Are</div>
+              <h2
+                className="mt-6 font-display text-[#01261d] leading-[1.1] tracking-tight"
+                style={{ fontSize: "clamp(2rem, 4vw, 3.4rem)" }}
+              >
                 Foundation of<br />Timberline
               </h2>
-              <div className="w-16 h-[2px] bg-[#00a34f] my-8" />
-              <p className="text-[#231f20] text-base md:text-lg leading-relaxed">
+              <div className="mt-7"><GoldRule delay={350} /></div>
+              <p className="mt-9 text-[#231f20]/85 text-base md:text-lg font-light leading-[1.9]">
                 Timberline is an award winning home builder, continuing to build our company through repeat business and referrals. We achieve our client's vision by maintaining constant honest feedback and direction, attention to detail and pride in the quality of every aspect of our projects.
               </p>
-              <div className="mt-10 flex items-center gap-4">
-                <Award className="text-[#00a34f]" size={28} strokeWidth={1.4} />
-                <div>
-                  <div className="font-serif-display text-[#01261d] text-lg">Award Winning Builder</div>
-                  <div className="text-xs tracking-[0.2em] uppercase text-[#231f20]/60 mt-1">Three decades of craftsmanship</div>
-                </div>
+              <div className="mt-10 flex items-center gap-3">
+                <Star className="text-[#00a34f]" size={16} strokeWidth={1.5} fill="#00a34f" />
+                <span className="text-[#00a34f] text-[0.7rem] uppercase tracking-[0.28em] font-medium">
+                  Award Winning Builder
+                </span>
               </div>
             </div>
           </Reveal>
@@ -110,34 +121,38 @@ const Home = () => {
       </section>
 
       {/* SERVICES */}
-      <section data-testid="services-section" className="py-24 md:py-32 bg-[#01261d] relative overflow-hidden">
+      <section data-testid="services-section" className="py-24 md:py-32 bg-[#01261d]">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <Reveal>
             <div className="max-w-3xl">
-              <div className="eyebrow text-[#00a34f] mb-5">What We Build</div>
-              <h2 className="font-serif-display text-white text-4xl md:text-5xl leading-[1.1] tracking-tight">
+              <GoldRule delay={200} />
+              <div className="eyebrow mt-5">What We Build</div>
+              <h2
+                className="mt-6 font-display text-[#f5f0e8] leading-[1.1] tracking-tight"
+                style={{ fontSize: "clamp(2rem, 4vw, 3.4rem)" }}
+              >
                 Our Services
               </h2>
-              <p className="mt-8 text-white/70 text-base md:text-lg leading-relaxed">
+              <div className="mt-7"><GoldRule delay={350} /></div>
+              <p className="mt-9 text-[#f5f0e8]/70 text-base md:text-lg font-light leading-[1.9]">
                 Our services include everything from the design and build of custom homes, cottages, boathouses, bunkies, garages, renovations, additions, decks, docks, excavation, landscaping, demolition, backfilling, septic installation, and more.
               </p>
             </div>
           </Reveal>
 
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10">
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {SERVICES.map((svc, i) => {
               const Icon = svc.icon;
               return (
-                <Reveal key={svc.name} delay={i * 40}>
+                <Reveal key={svc.name} variant="scale" delay={i * 60}>
                   <div
                     data-testid={`service-card-${svc.name.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and")}`}
-                    className="group bg-[#01261d] p-10 lg:p-12 h-full flex flex-col gap-6 transition-all duration-300 hover:bg-[#012e23]"
+                    className="group p-8 md:p-10 border border-white/[0.12] h-full flex flex-col gap-6 transition-all duration-300 hover:border-[#00a34f] hover:-translate-y-1"
                   >
-                    <Icon className="text-[#00a34f]" size={32} strokeWidth={1.2} />
-                    <div className="font-serif-display text-white text-2xl tracking-tight">
+                    <Icon className="text-[#00a34f]" size={28} strokeWidth={1.5} />
+                    <div className="text-[#f5f0e8] text-[0.85rem] uppercase tracking-[0.15em] font-light leading-snug">
                       {svc.name}
                     </div>
-                    <div className="w-0 group-hover:w-12 h-[2px] bg-[#00a34f] transition-all duration-500" />
                   </div>
                 </Reveal>
               );
@@ -147,14 +162,19 @@ const Home = () => {
       </section>
 
       {/* GALLERY */}
-      <section data-testid="gallery-section" className="py-24 md:py-32 bg-[#F9F7F4]">
+      <section data-testid="gallery-section" className="py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <Reveal>
             <div className="text-center max-w-2xl mx-auto">
-              <div className="eyebrow text-[#00a34f] mb-5">Our Work</div>
-              <h2 className="font-serif-display text-[#01261d] text-4xl md:text-5xl leading-[1.1] tracking-tight">
-                Craftsmanship in Every Detail
+              <div className="flex justify-center"><GoldRule delay={200} /></div>
+              <div className="eyebrow mt-5">Our Work</div>
+              <h2
+                className="mt-6 font-display text-[#01261d] leading-[1.1] tracking-tight"
+                style={{ fontSize: "clamp(2rem, 4vw, 3.4rem)" }}
+              >
+                Craftsmanship in<br />Every Detail
               </h2>
+              <div className="flex justify-center mt-7"><GoldRule delay={350} /></div>
             </div>
           </Reveal>
 
@@ -167,19 +187,19 @@ const Home = () => {
               { src: IMAGES.user26, span: "aspect-[4/5]" },
               { src: IMAGES.cottageExterior, span: "aspect-[4/5]" },
             ].map((g, idx) => (
-              <Reveal key={idx} delay={idx * 60} className={g.span}>
+              <Reveal key={idx} variant="scale" delay={idx * 80} className={g.span}>
                 <div
                   data-testid={`gallery-tile-${idx}`}
-                  className="group relative w-full h-full overflow-hidden cursor-pointer"
+                  className="group relative w-full h-full overflow-hidden"
                 >
                   <img
                     src={g.src}
                     alt="Timberline project"
-                    className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-[1400ms] group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-[#01261d]/0 group-hover:bg-[#01261d]/55 transition-colors duration-500 flex items-center justify-center">
-                    <span className="text-[#00a34f] text-[11px] tracking-[0.3em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-2 group-hover:translate-y-0">
+                  <div className="absolute inset-0 bg-[#01261d]/0 group-hover:bg-[#01261d]/60 transition-colors duration-500 flex items-center justify-center">
+                    <span className="text-[#f5f0e8] text-[0.72rem] tracking-[0.3em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                       View Project
                     </span>
                   </div>
@@ -196,39 +216,55 @@ const Home = () => {
         className="relative py-32 md:py-44 bg-[#01261d] overflow-hidden"
       >
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-25"
+          className="absolute inset-0 bg-cover bg-center ken-burns opacity-35"
           style={{ backgroundImage: `url(${IMAGES.experienceBg})` }}
         />
-        <div className="absolute inset-0 bg-[#01261d]/70" />
+        <div className="absolute inset-0 bg-[#01261d]/55" />
+
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
           <Reveal>
-            <div className="font-serif-display text-[#00a34f] text-[140px] md:text-[200px] leading-none tracking-tight">
+            <div className="flex justify-center"><GoldRule delay={150} /></div>
+            <div className="eyebrow mt-5">Trusted For Decades</div>
+            <div
+              className="font-display text-[#00a34f] leading-none mt-8"
+              style={{ fontSize: "clamp(6rem, 15vw, 10rem)" }}
+            >
               30
             </div>
-            <div className="eyebrow text-white/80 mt-2">Years of Experience</div>
-            <div className="w-16 h-[2px] bg-[#00a34f] mx-auto my-10" />
-            <h2 className="font-serif-display text-white text-3xl md:text-5xl leading-[1.1] tracking-tight">
+            <div className="text-[#f5f0e8] text-[0.72rem] tracking-[0.32em] uppercase mt-4">
+              Years of Experience
+            </div>
+            <div className="flex justify-center mt-9"><GoldRule delay={350} wide /></div>
+            <h2
+              className="mt-9 font-display italic text-[#f5f0e8] leading-[1.15] tracking-tight"
+              style={{ fontSize: "clamp(2rem, 4vw, 3.4rem)" }}
+            >
               Let's Build Something Extraordinary
             </h2>
           </Reveal>
         </div>
       </section>
 
-      {/* MISSION / MEMORIES */}
-      <section data-testid="mission-section" className="py-28 md:py-40 bg-[#F9F7F4]">
+      {/* MISSION */}
+      <section data-testid="mission-section" className="py-28 md:py-40 bg-[#f5f0e8]">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <Reveal>
-            <div className="eyebrow text-[#00a34f] mb-6">Our Promise</div>
-            <h2 className="font-serif-display text-[#01261d] text-3xl md:text-5xl leading-[1.15] tracking-tight">
+            <div className="flex justify-center"><GoldRule delay={150} /></div>
+            <div className="eyebrow mt-5">Our Promise</div>
+            <h2
+              className="mt-6 font-display text-[#01261d] leading-[1.15] tracking-tight"
+              style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)" }}
+            >
               We create memories in the Kawarthas, not just buildings.
             </h2>
-            <p className="mt-10 text-[#231f20]/80 text-base md:text-lg leading-relaxed">
+            <div className="flex justify-center mt-7"><GoldRule delay={350} /></div>
+            <p className="mt-9 text-[#231f20]/85 text-base md:text-lg font-light leading-[1.9]">
               Our clients trust Timberline to creatively design and build their high quality custom project where they will pursue their dreams, raise their family, welcome their friends and retire. Building a project that represents our clients by matching their needs and aspirations creates more than just a building, but memories to extend among generations.
             </p>
             <Link
               to="/contact"
               data-testid="mission-cta-button"
-              className="inline-block mt-12 bg-[#00a34f] text-white text-[12px] tracking-[0.28em] uppercase px-12 py-4 hover:bg-[#01261d] transition-colors duration-300"
+              className="btn-luxury mt-12 bg-[#01261d] text-[#f5f0e8] hover:bg-[#00a34f]"
             >
               Contact Us
             </Link>
@@ -241,28 +277,45 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <Reveal>
             <div className="text-center max-w-xl mx-auto">
-              <div className="eyebrow text-[#00a34f] mb-5">Client Words</div>
-              <h2 className="font-serif-display text-white text-4xl md:text-5xl leading-[1.1] tracking-tight">
+              <div className="flex justify-center"><GoldRule delay={150} /></div>
+              <div className="eyebrow mt-5">What Our Clients Say</div>
+              <h2
+                className="mt-6 font-display text-[#f5f0e8] leading-[1.1] tracking-tight"
+                style={{ fontSize: "clamp(2rem, 4vw, 3.4rem)" }}
+              >
                 Built on Trust
               </h2>
+              <div className="flex justify-center mt-7"><GoldRule delay={350} /></div>
             </div>
           </Reveal>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
             {TESTIMONIALS.map((t, i) => (
-              <Reveal key={i} delay={i * 100}>
+              <Reveal key={i} variant="scale" delay={i * 120}>
                 <div
                   data-testid={`testimonial-card-${i}`}
-                  className="border border-white/10 p-10 h-full flex flex-col bg-[#012e23]/40 transition-colors duration-500 hover:border-[#00a34f]/40"
+                  className="relative p-10 md:p-12 h-full flex flex-col border border-white/[0.10] overflow-hidden"
                 >
-                  <Quote className="text-[#00a34f]" size={28} strokeWidth={1.4} />
-                  <p className="mt-6 font-serif-display text-white/90 text-lg md:text-xl italic leading-relaxed flex-1">
-                    "{t.quote}"
+                  <span
+                    className="absolute -top-6 left-4 font-display leading-none pointer-events-none select-none"
+                    style={{
+                      fontSize: "12rem",
+                      color: "rgba(0,163,79,0.10)",
+                    }}
+                    aria-hidden="true"
+                  >
+                    "
+                  </span>
+                  <p
+                    className="relative font-display italic text-[#f5f0e8] leading-[1.55] flex-1"
+                    style={{ fontSize: "clamp(1.1rem, 1.6vw, 1.35rem)" }}
+                  >
+                    {t.quote}
                   </p>
-                  <div className="mt-8 pt-6 border-t border-white/10">
-                    <div className="text-white text-sm font-medium">{t.author}</div>
-                    <div className="text-white/60 text-xs tracking-[0.2em] uppercase mt-1">
-                      {t.location}
+                  <div className="relative mt-8">
+                    <div className="h-px bg-[#00a34f] w-12 mb-5" />
+                    <div className="text-[#f5f0e8]/70 text-[0.7rem] tracking-[0.22em] uppercase font-light">
+                      — {t.author}, {t.location}
                     </div>
                   </div>
                 </div>

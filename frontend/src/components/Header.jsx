@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { LOGO_LIGHT } from "../lib/images";
 
 const NAV_ITEMS = [
   { to: "/", label: "Home" },
@@ -10,13 +9,27 @@ const NAV_ITEMS = [
   { to: "/contact", label: "Contact Us" },
 ];
 
+const Logo = ({ size = "default" }) => {
+  const titleSize = size === "large" ? "text-3xl md:text-4xl" : "text-2xl md:text-[26px]";
+  return (
+    <div className="flex flex-col leading-none select-none">
+      <span className={`font-display italic text-[#f5f0e8] ${titleSize} tracking-tight`}>
+        Timberline
+      </span>
+      <span className="text-[9px] md:text-[10px] text-[#f5f0e8]/75 tracking-[0.36em] uppercase mt-1.5">
+        Custom Homes
+      </span>
+    </div>
+  );
+};
+
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 80);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -27,7 +40,6 @@ export const Header = () => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  // Home hero is full-bleed dark; force solid background on other pages too for legibility
   const onHome = location.pathname === "/";
   const solid = scrolled || !onHome;
 
@@ -36,16 +48,14 @@ export const Header = () => {
       <header
         data-testid="site-header"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          solid ? "bg-[#01261d] py-4 shadow-[0_1px_0_rgba(255,255,255,0.04)]" : "bg-transparent py-7"
+          solid
+            ? "bg-[#01261d] py-5 shadow-[0_1px_0_rgba(255,255,255,0.06)]"
+            : "bg-transparent py-8"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between">
-          <Link to="/" data-testid="site-logo" className="flex items-center leading-none">
-            <img
-              src={LOGO_LIGHT}
-              alt="Timberline Custom Homes — Since 1989"
-              className={`transition-all duration-500 ${solid ? "h-12 md:h-14" : "h-14 md:h-16"} w-auto object-contain`}
-            />
+          <Link to="/" data-testid="site-logo">
+            <Logo />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-10">
@@ -56,8 +66,8 @@ export const Header = () => {
                 end={item.to === "/"}
                 data-testid={`nav-link-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
                 className={({ isActive }) =>
-                  `nav-link text-white text-[13px] tracking-[0.2em] uppercase transition-colors ${
-                    isActive ? "active text-[#00a34f]" : "hover:text-[#00a34f]"
+                  `nav-link-style nav-underline text-[#f5f0e8] hover:text-[#f5f0e8] transition-colors ${
+                    isActive ? "active" : ""
                   }`
                 }
               >
@@ -67,7 +77,7 @@ export const Header = () => {
             <Link
               to="/contact"
               data-testid="header-cta-button"
-              className="ml-2 bg-[#00a34f] text-white text-[12px] tracking-[0.24em] uppercase px-6 py-3 hover:bg-white hover:text-[#01261d] transition-colors duration-300"
+              className="btn-luxury text-[#f5f0e8] border border-[#f5f0e8] hover:bg-[#00a34f] hover:border-[#00a34f] ml-2"
             >
               Get In Touch
             </Link>
@@ -76,10 +86,10 @@ export const Header = () => {
           <button
             data-testid="mobile-menu-toggle"
             onClick={() => setMenuOpen(true)}
-            className="lg:hidden text-white p-2"
+            className="lg:hidden text-[#f5f0e8] p-2 min-h-[48px] min-w-[48px] flex items-center justify-center"
             aria-label="Open menu"
           >
-            <Menu size={26} />
+            <Menu size={24} strokeWidth={1.5} />
           </button>
         </div>
       </header>
@@ -87,26 +97,22 @@ export const Header = () => {
       {/* Mobile overlay */}
       <div
         data-testid="mobile-menu-overlay"
-        className={`fixed inset-0 z-[60] bg-[#01261d] flex flex-col transition-all duration-500 lg:hidden ${
+        className={`fixed inset-0 z-[60] bg-[#01261d] flex flex-col transition-opacity duration-500 lg:hidden ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
         <div className="flex items-center justify-between px-6 py-6">
-          <img
-            src={LOGO_LIGHT}
-            alt="Timberline Custom Homes"
-            className="h-12 w-auto object-contain"
-          />
+          <Logo />
           <button
             data-testid="mobile-menu-close"
             onClick={() => setMenuOpen(false)}
-            className="text-white p-2"
+            className="text-[#f5f0e8] p-2 min-h-[48px] min-w-[48px] flex items-center justify-center"
             aria-label="Close menu"
           >
-            <X size={26} />
+            <X size={26} strokeWidth={1.5} />
           </button>
         </div>
-        <nav className="flex-1 flex flex-col items-start gap-8 px-8 mt-12">
+        <nav className="flex-1 flex flex-col items-center justify-center gap-10 px-8 -mt-12">
           {NAV_ITEMS.map((item) => (
             <NavLink
               key={item.to}
@@ -114,7 +120,9 @@ export const Header = () => {
               end={item.to === "/"}
               data-testid={`mobile-nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
               className={({ isActive }) =>
-                `font-serif-display text-4xl ${isActive ? "text-[#00a34f]" : "text-white"}`
+                `font-display italic text-4xl md:text-5xl ${
+                  isActive ? "text-[#00a34f]" : "text-[#f5f0e8]"
+                }`
               }
             >
               {item.label}
@@ -123,7 +131,7 @@ export const Header = () => {
           <Link
             to="/contact"
             data-testid="mobile-cta-button"
-            className="mt-4 bg-[#00a34f] text-white text-[12px] tracking-[0.24em] uppercase px-8 py-4"
+            className="btn-luxury text-[#f5f0e8] border border-[#f5f0e8] hover:bg-[#00a34f] mt-6"
           >
             Get In Touch
           </Link>

@@ -1,37 +1,48 @@
-import { Shield, Sparkles, Hammer, Users, User } from "lucide-react";
-import Reveal from "../components/Reveal";
+import { User } from "lucide-react";
+import Reveal, { GoldRule } from "../components/Reveal";
 import PageHero from "../components/PageHero";
-import { IMAGES } from "../lib/images";
+import { IMAGES, BANNER_INTERIOR } from "../lib/images";
 import { OFFICE_TEAM, FIELD_TEAM } from "../lib/team";
 
-const VALUES = [
-  { icon: Sparkles, name: "Quality", body: "Every joint, every finish, every choice — quality is not negotiable." },
-  { icon: Shield, name: "Integrity", body: "Honest communication and transparent process from first meeting to handover." },
-  { icon: Hammer, name: "Craftsmanship", body: "A skilled team with decades of experience under one roof." },
-  { icon: Users, name: "Client Focus", body: "Your dream, your timeline, your home — every project begins with you." },
-];
-
 const STATS = [
-  { number: "30+", label: "Years in Business" },
   { number: "200+", label: "Projects Completed" },
+  { number: "30+", label: "Years in Business" },
   { number: "30", label: "Skilled Team Members" },
-  { number: "20+", label: "Years — Longest Serving" },
+  { number: "20+", label: "Year Longest Serving" },
 ];
 
 const TeamCard = ({ person, idx, testPrefix }) => (
-  <Reveal delay={idx * 50}>
+  <Reveal variant="scale" delay={idx * 70}>
     <div
       data-testid={`${testPrefix}-${person.name.toLowerCase().replace(/\s+/g, "-")}`}
-      className="flex flex-col items-start group"
+      className="flex flex-col items-center text-center px-2"
     >
-      <div className="w-full aspect-[4/5] bg-[#01261d]/5 border border-[#01261d]/10 flex items-center justify-center mb-5 group-hover:border-[#00a34f]/40 transition-colors duration-500">
-        <User size={64} strokeWidth={1} className="text-[#01261d]/30" />
+      <div className="w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#f5f0e8] flex items-center justify-center border border-[#c9a96e]/30 mb-6">
+        <User size={42} strokeWidth={1} className="text-[#01261d]/40" />
       </div>
-      <h4 className="font-serif-display text-[#01261d] text-xl leading-tight">{person.name}</h4>
-      <p className="text-[#231f20]/70 text-sm mt-2 leading-relaxed">{person.title}</p>
-      <div className="mt-3 text-[11px] tracking-[0.22em] uppercase text-[#00a34f]">
-        Team Member Since {person.since}
+      <h4
+        className="font-display text-[#01261d] leading-tight tracking-tight"
+        style={{ fontSize: "clamp(1.15rem, 1.6vw, 1.4rem)" }}
+      >
+        {person.name}
+      </h4>
+      <p className="text-[#231f20]/70 text-sm font-light mt-3 leading-relaxed max-w-[22ch]">
+        {person.title}
+      </p>
+      <div className="mt-4 text-[0.65rem] tracking-[0.24em] uppercase text-[#00a34f] font-medium">
+        Since {person.since}
       </div>
+    </div>
+  </Reveal>
+);
+
+const TeamSubHeading = ({ children, testId }) => (
+  <Reveal>
+    <div data-testid={testId} className="flex items-baseline gap-4 mb-12">
+      <h3 className="text-[#01261d] text-[0.78rem] uppercase tracking-[0.28em] font-medium">
+        {children}
+      </h3>
+      <span className="flex-1 h-px bg-[#c9a96e]/60" />
     </div>
   </Reveal>
 );
@@ -42,57 +53,65 @@ const About = () => {
       <PageHero
         eyebrow="The Story"
         title="About Timberline"
-        subtitle="A family-built company. A team that stays. Homes that last generations."
-        image={IMAGES.user18}
+        subtitle="35 years of craftsmanship, community, and trust."
+        image={BANNER_INTERIOR}
         testId="about-hero"
       />
 
       {/* HISTORY */}
-      <section className="py-24 md:py-32 bg-[#F9F7F4]">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20">
-          <div className="md:col-span-5">
-            <Reveal>
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img src={IMAGES.user11} alt="Timberline shop" className="w-full h-full object-cover" loading="lazy" />
-              </div>
-            </Reveal>
-          </div>
-          <div className="md:col-span-7">
-            <Reveal delay={100}>
-              <div className="eyebrow text-[#00a34f] mb-5">Our History</div>
-              <h2 className="font-serif-display text-[#01261d] text-4xl md:text-5xl leading-[1.1] tracking-tight">
-                Three Decades<br />in the Making
+      <section className="py-24 md:py-32 bg-[#f5f0e8]">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20 items-start">
+          <Reveal variant="left" className="md:col-span-5">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <img
+                src={IMAGES.shopBuild}
+                alt="Timberline shop"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </Reveal>
+          <Reveal variant="right" delay={120} className="md:col-span-7">
+            <div>
+              <GoldRule delay={200} />
+              <div className="eyebrow mt-5">Our Story</div>
+              <h2
+                className="mt-6 font-display text-[#01261d] leading-[1.1] tracking-tight"
+                style={{ fontSize: "clamp(2rem, 4vw, 3.4rem)" }}
+              >
+                Our History
               </h2>
-              <div className="w-16 h-[2px] bg-[#00a34f] my-8" />
-              <div className="space-y-6 text-[#231f20]/85 text-base md:text-lg leading-relaxed">
+              <div className="mt-7"><GoldRule delay={350} /></div>
+              <div className="mt-9 space-y-7 text-[#231f20]/85 text-base md:text-lg font-light leading-[1.9]">
                 <p>
-                  Originating from Northey Contracting Inc. established by Ray Northey in 1989 has lead to the well recognized Timberline Custom Homes. Beginning as a two man crew, Timberline has grown to employ 30 skilled workers between the office and field year round. We have long-term employees that have been with us for over 20 years, preserving our quality throughout the years.
+                  Originating from Northey Contracting Inc. established by Ray Northey in 1989, our journey has led to the well recognized Timberline Custom Homes. Beginning as a two man crew, Timberline has grown to employ 30 skilled workers between the office and field year round. We have long-term employees that have been with us for over 20 years, preserving our quality throughout the years.
                 </p>
                 <p>
-                  In 2004, Timberline expanded by building a 3200 sq ft shop to further offer services for millwork, wood work, preparing and pre-staining beams, flooring, exteriors, etc. for our projects. In 2014, Timberline built another 3200 sq ft shop to facilitate the housing and repair of our heavy equipment division. This allows us to keep more of our work in house and employ our operators year round performing maintenance.
+                  In 2004, Timberline expanded by building a 3,200 sq ft shop to further offer services for millwork, woodwork, preparing and pre-staining beams, flooring, exteriors, and more. In 2014, we built another 3,200 sq ft shop to house and maintain our heavy equipment division — keeping more work in-house and employing our operators year round.
                 </p>
                 <p>
-                  In business for 30 years now, Timberline initially started and continues to expand our company with the assistance of referral business from previous clients and positive word of mouth, building for families and now generations. Successfully building over 200 projects in the Kawarthas and surrounding area, Timberline's family atmosphere helps build a trust and long lasting relationships with our clients.
+                  In business for over 30 years, Timberline continues to grow through referrals and word of mouth, building for families and now generations. With over 200 projects completed across the Kawarthas and surrounding areas, our family atmosphere builds trust and long-lasting client relationships.
                 </p>
               </div>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* STATS */}
       <section data-testid="stats-section" className="py-20 md:py-24 bg-[#01261d]">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6">
           {STATS.map((s, i) => (
-            <Reveal key={s.label} delay={i * 80}>
-              <div
-                data-testid={`stat-${i}`}
-                className="bg-[#01261d] p-8 md:p-12 text-center"
-              >
-                <div className="font-serif-display text-[#00a34f] text-5xl md:text-6xl leading-none">
+            <Reveal key={s.label} variant="scale" delay={i * 100}>
+              <div data-testid={`stat-${i}`} className="text-center px-2">
+                <div
+                  className="font-display text-[#00a34f] leading-none"
+                  style={{ fontSize: "clamp(3rem, 6vw, 5rem)" }}
+                >
                   {s.number}
                 </div>
-                <div className="mt-4 text-white/80 text-[11px] tracking-[0.24em] uppercase leading-relaxed">
+                <div className="flex justify-center mt-5"><GoldRule delay={300} /></div>
+                <div className="mt-5 text-[#f5f0e8] text-[0.7rem] tracking-[0.24em] uppercase font-light leading-relaxed">
                   {s.label}
                 </div>
               </div>
@@ -101,71 +120,41 @@ const About = () => {
         </div>
       </section>
 
-      {/* VALUES */}
-      <section className="py-24 md:py-32 bg-[#F9F7F4]">
+      {/* TEAM */}
+      <section data-testid="team-section" className="py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <Reveal>
             <div className="text-center max-w-xl mx-auto">
-              <div className="eyebrow text-[#00a34f] mb-5">Core Values</div>
-              <h2 className="font-serif-display text-[#01261d] text-4xl md:text-5xl leading-tight tracking-tight">
-                What We Stand For
+              <div className="flex justify-center"><GoldRule delay={150} /></div>
+              <div className="eyebrow mt-5">The People Behind the Projects</div>
+              <h2
+                className="mt-6 font-display text-[#01261d] leading-tight tracking-tight"
+                style={{ fontSize: "clamp(2rem, 4vw, 3.4rem)" }}
+              >
+                Our Team
               </h2>
+              <div className="flex justify-center mt-7"><GoldRule delay={350} /></div>
             </div>
           </Reveal>
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-            {VALUES.map((v, i) => {
-              const Icon = v.icon;
-              return (
-                <Reveal key={v.name} delay={i * 80}>
-                  <div data-testid={`value-card-${v.name.toLowerCase()}`}>
-                    <Icon className="text-[#00a34f]" size={32} strokeWidth={1.3} />
-                    <h3 className="mt-6 font-serif-display text-[#01261d] text-2xl">{v.name}</h3>
-                    <div className="w-10 h-[2px] bg-[#00a34f] my-4" />
-                    <p className="text-[#231f20]/75 text-sm leading-relaxed">{v.body}</p>
-                  </div>
-                </Reveal>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
-      {/* OFFICE TEAM */}
-      <section data-testid="office-team-section" className="py-24 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <Reveal>
-            <div className="max-w-xl">
-              <div className="eyebrow text-[#00a34f] mb-5">The People</div>
-              <h2 className="font-serif-display text-[#01261d] text-4xl md:text-5xl leading-tight tracking-tight">
-                Office Team
-              </h2>
-              <div className="w-16 h-[2px] bg-[#00a34f] mt-8" />
+          {/* Office Team */}
+          <div className="mt-20">
+            <TeamSubHeading testId="office-team-heading">Office Team</TeamSubHeading>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-14 gap-x-8">
+              {OFFICE_TEAM.map((p, i) => (
+                <TeamCard key={p.name} person={p} idx={i} testPrefix="office-member" />
+              ))}
             </div>
-          </Reveal>
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14">
-            {OFFICE_TEAM.map((p, i) => (
-              <TeamCard key={p.name} person={p} idx={i} testPrefix="office-member" />
-            ))}
           </div>
-        </div>
-      </section>
 
-      {/* FIELD TEAM */}
-      <section data-testid="field-team-section" className="py-24 md:py-32 bg-[#F9F7F4]">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <Reveal>
-            <div className="max-w-xl">
-              <div className="eyebrow text-[#00a34f] mb-5">In the Field</div>
-              <h2 className="font-serif-display text-[#01261d] text-4xl md:text-5xl leading-tight tracking-tight">
-                Field Teams
-              </h2>
-              <div className="w-16 h-[2px] bg-[#00a34f] mt-8" />
+          {/* Field Teams */}
+          <div className="mt-24">
+            <TeamSubHeading testId="field-team-heading">Field Teams</TeamSubHeading>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-14 gap-x-8">
+              {FIELD_TEAM.map((p, i) => (
+                <TeamCard key={p.name} person={p} idx={i} testPrefix="field-member" />
+              ))}
             </div>
-          </Reveal>
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14">
-            {FIELD_TEAM.map((p, i) => (
-              <TeamCard key={p.name} person={p} idx={i} testPrefix="field-member" />
-            ))}
           </div>
         </div>
       </section>

@@ -1,20 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --color-navy: #01261d;
-  --color-charcoal: #231f20;
-  --color-forest: #00a34f;
-  --color-cream: #F9F7F4;
-  --color-gold: #C5A059;
+  --tl-navy: #01261d;
+  --tl-charcoal: #231f20;
+  --tl-green: #00a34f;
+  --tl-cream: #f5f0e8;
+  --tl-gold: #c9a96e;
 }
 
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 html {
@@ -23,35 +24,92 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Montserrat', system-ui, sans-serif;
-  background: #F9F7F4;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-weight: 300;
+  line-height: 1.9;
+  background: #ffffff;
   color: #231f20;
-  font-weight: 400;
+  animation: page-fade-in 0.4s ease-out both;
+  overflow-x: hidden;
+}
+
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 ::selection {
   background: #00a34f;
-  color: #fff;
+  color: #f5f0e8;
 }
 
-.font-serif-display {
-  font-family: 'Playfair Display', serif;
+*:focus-visible {
+  outline: 2px solid #00a34f;
+  outline-offset: 3px;
+}
+
+/* Typography utilities */
+.font-display {
+  font-family: 'Cormorant Garamond', 'Garamond', serif;
 }
 
 .eyebrow {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Jost', sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.28em;
-  font-size: 0.75rem;
-  font-weight: 600;
+  letter-spacing: 0.25em;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #00a34f;
+}
+
+.eyebrow-light {
+  color: #f5f0e8;
+}
+
+.nav-link-style {
+  font-family: 'Jost', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  font-weight: 400;
+}
+
+.btn-luxury {
+  font-family: 'Jost', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.78rem;
+  font-weight: 400;
+  border-radius: 0;
+  padding: 1.1rem 2.6rem;
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+/* Decorative gold rule with animated width on reveal */
+.gold-rule {
+  display: inline-block;
+  height: 1px;
+  background: #c9a96e;
+  width: 0;
+  transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: width;
+}
+.gold-rule.is-visible {
+  width: 60px;
+}
+.gold-rule-wide.is-visible {
+  width: 90px;
 }
 
 /* Reveal animations */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 .reveal.is-visible {
@@ -59,9 +117,61 @@ body {
   transform: translateY(0);
 }
 
-/* Floating label input */
+.reveal-soft {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+.reveal-soft.is-visible {
+  opacity: 1;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Ken Burns hero animation */
+.ken-burns {
+  animation: ken-burns 14s ease-in-out infinite alternate;
+  transform-origin: center center;
+  will-change: transform;
+}
+@keyframes ken-burns {
+  from { transform: scale(1.0); }
+  to   { transform: scale(1.08); }
+}
+
+/* Floating-label fields */
 .tl-field {
   position: relative;
+  padding-top: 22px;
 }
 .tl-field input,
 .tl-field select,
@@ -69,36 +179,39 @@ body {
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 1px solid #d6d1c7;
-  padding: 22px 0 10px;
-  font-size: 15px;
+  border-bottom: 1px solid #231f20;
+  padding: 8px 0 10px;
+  font-size: 0.95rem;
   color: #231f20;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
   outline: none;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.35s ease;
   border-radius: 0;
 }
 .tl-field textarea {
   resize: vertical;
   min-height: 110px;
+  line-height: 1.7;
 }
 .tl-field select {
   appearance: none;
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23231f20' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23231f20' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 4px center;
+  background-position: right 2px center;
   cursor: pointer;
 }
 .tl-field label {
   position: absolute;
   left: 0;
-  top: 22px;
-  font-size: 13px;
+  top: 30px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #6b665e;
+  color: rgba(35, 31, 32, 0.55);
   pointer-events: none;
-  transition: all 0.25s ease;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .tl-field input:focus ~ label,
 .tl-field select:focus ~ label,
@@ -106,8 +219,8 @@ body {
 .tl-field input:not(:placeholder-shown) ~ label,
 .tl-field textarea:not(:placeholder-shown) ~ label,
 .tl-field.has-value label {
-  top: 2px;
-  font-size: 10px;
+  top: 0;
+  font-size: 0.65rem;
   color: #00a34f;
   letter-spacing: 0.22em;
 }
@@ -117,33 +230,31 @@ body {
   border-bottom-color: #00a34f;
 }
 
-/* Hover underline animation for nav */
-.nav-link {
+/* Nav hover underline */
+.nav-underline {
   position: relative;
-  padding-bottom: 4px;
 }
-.nav-link::after {
+.nav-underline::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -6px;
   height: 1px;
   width: 0;
   background: #00a34f;
   transition: width 0.35s ease;
 }
-.nav-link:hover::after,
-.nav-link.active::after {
+.nav-underline:hover::after,
+.nav-underline.active::after {
   width: 100%;
 }
 
-/* Cursor for buttons */
 button, a {
   cursor: pointer;
 }
 
 @layer base {
   body {
-    background-color: #F9F7F4;
+    background-color: #ffffff;
   }
 }
