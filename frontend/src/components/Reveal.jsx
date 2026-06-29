@@ -23,14 +23,17 @@ const useInView = (delay = 0) => {
   return { ref, visible };
 };
 
+const VARIANT_CLASSES = {
+  left:  "reveal-left",
+  right: "reveal-right",
+  scale: "reveal-scale",
+  soft:  "reveal-soft",
+  up:    "reveal",
+};
+
 export const Reveal = ({ children, delay = 0, variant = "up", as: Tag = "div", className = "", ...rest }) => {
   const { ref, visible } = useInView(delay);
-  const variantClass =
-    variant === "left" ? "reveal-left" :
-    variant === "right" ? "reveal-right" :
-    variant === "scale" ? "reveal-scale" :
-    variant === "soft" ? "reveal-soft" :
-    "reveal";
+  const variantClass = VARIANT_CLASSES[variant] || VARIANT_CLASSES.up;
   return (
     <Tag
       ref={ref}

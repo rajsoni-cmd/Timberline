@@ -43,7 +43,7 @@ class TestHealth:
         assert r.status_code == 200
         data = r.json()
         assert data.get("status") == "ok"
-        assert data.get("resend_configured") is True
+        assert data.get("resend_configured") == True  # noqa: E712
 
 
 # --- Contact endpoint ---

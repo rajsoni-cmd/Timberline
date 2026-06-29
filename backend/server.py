@@ -46,31 +46,42 @@ class ContactInquiry(BaseModel):
     notes: Optional[str] = ""
 
 
+def _email_row(label: str, value: str) -> str:
+    safe_value = value or "—"
+    return (
+        f'<tr>'
+        f'<td style="padding:14px 20px;border-bottom:1px solid #eee;width:38%;'
+        f'color:#01261d;font-family:Arial,sans-serif;font-size:13px;letter-spacing:1px;'
+        f'text-transform:uppercase;font-weight:600;">{label}</td>'
+        f'<td style="padding:14px 20px;border-bottom:1px solid #eee;'
+        f'color:#231f20;font-family:Arial,sans-serif;font-size:15px;">{safe_value}</td>'
+        f'</tr>'
+    )
+
+
+def _resolve_other(value: str, other_value: str) -> str:
+    if value == "Other" and other_value:
+        return f"Other — {other_value}"
+    return value or ""
+
+
 def build_email_html(data: ContactInquiry) -> str:
     submitted_at = datetime.now(timezone.utc).strftime('%B %d, %Y at %I:%M %p UTC')
-
-    def row(label: str, value: str) -> str:
-        if not value:
-            value = "—"
-        return (
-            f'<tr>'
-            f'<td style="padding:14px 20px;border-bottom:1px solid #eee;width:38%;'
-            f'color:#01261d;font-family:Arial,sans-serif;font-size:13px;letter-spacing:1px;'
-            f'text-transform:uppercase;font-weight:600;">{label}</td>'
-            f'<td style="padding:14px 20px;border-bottom:1px solid #eee;'
-            f'color:#231f20;font-family:Arial,sans-serif;font-size:15px;">{value}</td>'
-            f'</tr>'
-        )
-
-    hear_value = data.hear_about
-    if data.hear_about == "Other" and data.hear_about_other:
-        hear_value = f"Other — {data.hear_about_other}"
-
-    project_value = data.project_type
-    if data.project_type == "Other" and data.project_type_other:
-        project_value = f"Other — {data.project_type_other}"
-
+    hear_value = _resolve_other(data.hear_about or "", data.hear_about_other or "")
+    project_value = _resolve_other(data.project_type, data.project_type_other or "")
     notes_html = (data.notes or "—").replace("\n", "<br/>")
+
+    rows_html = "".join([
+        _email_row("First Name", data.first_name),
+        _email_row("Last Name", data.last_name),
+        _email_row("Email", data.email),
+        _email_row("Phone", data.phone or ""),
+        _email_row("Budget", data.budget),
+        _email_row("Contractors Contacted", data.contractors_contacted or ""),
+        _email_row("Heard About Us", hear_value),
+        _email_row("Project Location", data.project_location or ""),
+        _email_row("Project Type", project_value),
+    ])
 
     return f"""
 <!DOCTYPE html>
@@ -88,15 +99,7 @@ def build_email_html(data: ContactInquiry) -> str:
         </td></tr>
         <tr><td style="padding:8px 0;">
           <table width="100%" cellpadding="0" cellspacing="0">
-            {row("First Name", data.first_name)}
-            {row("Last Name", data.last_name)}
-            {row("Email", data.email)}
-            {row("Phone", data.phone or "")}
-            {row("Budget", data.budget)}
-            {row("Contractors Contacted", data.contractors_contacted or "")}
-            {row("Heard About Us", hear_value or "")}
-            {row("Project Location", data.project_location or "")}
-            {row("Project Type", project_value)}
+            {rows_html}
             <tr><td colspan="2" style="padding:18px 20px;
               color:#01261d;font-family:Arial,sans-serif;font-size:13px;letter-spacing:1px;
               text-transform:uppercase;font-weight:600;border-bottom:1px solid #eee;">

@@ -374,7 +374,7 @@ const Home = () => {
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
             {TESTIMONIALS.map((t, i) => (
-              <Reveal key={i} delay={i * 120}>
+              <Reveal key={t.author} delay={i * 120}>
                 <div data-testid={`testimonial-card-${i}`} className="text-center md:text-left">
                   <div className="font-display text-[#b89d77] text-5xl leading-none mb-2" aria-hidden="true">"</div>
                   <p className="font-display italic text-[#2c2926] text-lg leading-[1.6]">
