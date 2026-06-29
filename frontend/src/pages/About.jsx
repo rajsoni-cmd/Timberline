@@ -7,7 +7,7 @@ import { OFFICE_TEAM, FIELD_TEAM } from "../lib/team";
 const STATS = [
   { number: "200+", label: "Projects Completed" },
   { number: "30+", label: "Years in Business" },
-  { number: "30", label: "Skilled Team Members" },
+  { number: "30",  label: "Skilled Team Members" },
   { number: "20+", label: "Year Longest Serving" },
 ];
 
@@ -17,19 +17,19 @@ const TeamCard = ({ person, idx, testPrefix }) => (
       data-testid={`${testPrefix}-${person.name.toLowerCase().replace(/\s+/g, "-")}`}
       className="flex flex-col items-center text-center px-2"
     >
-      <div className="w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#f5f0e8] flex items-center justify-center border border-[#c9a96e]/30 mb-6">
-        <User size={42} strokeWidth={1} className="text-[#01261d]/40" />
+      <div className="w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#efe8d9] flex items-center justify-center border border-[#b89d77]/40 mb-6">
+        <User size={42} strokeWidth={1} className="text-[#2c2926]/40" />
       </div>
       <h4
-        className="font-display text-[#01261d] leading-tight tracking-tight"
+        className="font-display text-[#2c2926] leading-tight tracking-tight"
         style={{ fontSize: "clamp(1.15rem, 1.6vw, 1.4rem)" }}
       >
         {person.name}
       </h4>
-      <p className="text-[#231f20]/70 text-sm font-light mt-3 leading-relaxed max-w-[22ch]">
+      <p className="text-[#3a3531]/75 text-sm font-light mt-3 leading-relaxed max-w-[22ch]">
         {person.title}
       </p>
-      <div className="mt-4 text-[0.65rem] tracking-[0.24em] uppercase text-[#00a34f] font-medium">
+      <div className="mt-4 text-[0.65rem] tracking-[0.26em] uppercase text-[#b89d77] font-medium">
         Since {person.since}
       </div>
     </div>
@@ -39,10 +39,10 @@ const TeamCard = ({ person, idx, testPrefix }) => (
 const TeamSubHeading = ({ children, testId }) => (
   <Reveal>
     <div data-testid={testId} className="flex items-baseline gap-4 mb-12">
-      <h3 className="text-[#01261d] text-[0.78rem] uppercase tracking-[0.28em] font-medium">
+      <h3 className="text-[#2c2926] text-[0.78rem] uppercase tracking-[0.3em] font-medium">
         {children}
       </h3>
-      <span className="flex-1 h-px bg-[#c9a96e]/60" />
+      <span className="flex-1 h-px bg-[#b89d77]/50" />
     </div>
   </Reveal>
 );
@@ -53,22 +53,17 @@ const About = () => {
       <PageHero
         eyebrow="The Story"
         title="About Timberline"
-        subtitle="35 years of craftsmanship, community, and trust."
+        subtitle="Three decades of craftsmanship, community, and trust."
         image={BANNER_INTERIOR}
         testId="about-hero"
       />
 
       {/* HISTORY */}
-      <section className="py-24 md:py-32 bg-[#f5f0e8]">
+      <section className="py-24 md:py-32 bg-[#f4eee4]">
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20 items-start">
           <Reveal variant="left" className="md:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden">
-              <img
-                src={IMAGES.shopBuild}
-                alt="Timberline shop"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
+              <img src={IMAGES.shopBuild} alt="Timberline shop" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </Reveal>
           <Reveal variant="right" delay={120} className="md:col-span-7">
@@ -76,13 +71,13 @@ const About = () => {
               <GoldRule delay={200} />
               <div className="eyebrow mt-5">Our Story</div>
               <h2
-                className="mt-6 font-display text-[#01261d] leading-[1.1] tracking-tight"
+                className="mt-6 font-display text-[#2c2926] leading-[1.1] tracking-tight"
                 style={{ fontSize: "clamp(2rem, 4vw, 3.4rem)" }}
               >
                 Our History
               </h2>
               <div className="mt-7"><GoldRule delay={350} /></div>
-              <div className="mt-9 space-y-7 text-[#231f20]/85 text-base md:text-lg font-light leading-[1.9]">
+              <div className="mt-9 space-y-7 text-[#3a3531]/85 text-base md:text-lg font-light leading-[1.9]">
                 <p>
                   Originating from Northey Contracting Inc. established by Ray Northey in 1989, our journey has led to the well recognized Timberline Custom Homes. Beginning as a two man crew, Timberline has grown to employ 30 skilled workers between the office and field year round. We have long-term employees that have been with us for over 20 years, preserving our quality throughout the years.
                 </p>
@@ -98,20 +93,20 @@ const About = () => {
         </div>
       </section>
 
-      {/* STATS */}
-      <section data-testid="stats-section" className="py-20 md:py-24 bg-[#01261d]">
+      {/* STATS — light cream variant */}
+      <section data-testid="stats-section" className="py-20 md:py-24 bg-[#efe8d9]">
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6">
           {STATS.map((s, i) => (
             <Reveal key={s.label} variant="scale" delay={i * 100}>
               <div data-testid={`stat-${i}`} className="text-center px-2">
                 <div
-                  className="font-display text-[#00a34f] leading-none"
+                  className="font-display text-[#b89d77] leading-none"
                   style={{ fontSize: "clamp(3rem, 6vw, 5rem)" }}
                 >
                   {s.number}
                 </div>
                 <div className="flex justify-center mt-5"><GoldRule delay={300} /></div>
-                <div className="mt-5 text-[#f5f0e8] text-[0.7rem] tracking-[0.24em] uppercase font-light leading-relaxed">
+                <div className="mt-5 text-[#2c2926] text-[0.7rem] tracking-[0.26em] uppercase font-light leading-relaxed">
                   {s.label}
                 </div>
               </div>
@@ -121,23 +116,22 @@ const About = () => {
       </section>
 
       {/* TEAM */}
-      <section data-testid="team-section" className="py-24 md:py-32 bg-white">
+      <section data-testid="team-section" className="py-24 md:py-32 bg-[#f4eee4]">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <Reveal>
             <div className="text-center max-w-xl mx-auto">
               <div className="flex justify-center"><GoldRule delay={150} /></div>
               <div className="eyebrow mt-5">The People Behind the Projects</div>
               <h2
-                className="mt-6 font-display text-[#01261d] leading-tight tracking-tight"
+                className="mt-6 font-display text-[#2c2926] leading-tight tracking-tight"
                 style={{ fontSize: "clamp(2rem, 4vw, 3.4rem)" }}
               >
                 Our Team
               </h2>
-              <div className="flex justify-center mt-7"><GoldRule delay={350} /></div>
+              <div className="flex justify-center mt-8"><GoldRule delay={300} /></div>
             </div>
           </Reveal>
 
-          {/* Office Team */}
           <div className="mt-20">
             <TeamSubHeading testId="office-team-heading">Office Team</TeamSubHeading>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-14 gap-x-8">
@@ -147,7 +141,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Field Teams */}
           <div className="mt-24">
             <TeamSubHeading testId="field-team-heading">Field Teams</TeamSubHeading>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-14 gap-x-8">

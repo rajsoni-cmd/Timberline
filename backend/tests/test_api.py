@@ -16,7 +16,7 @@ def api_client():
 VALID_PAYLOAD = {
     "first_name": "Test",
     "last_name": "User",
-    "email": "test@example.com",
+    "email": "rajsoni48879@gmail.com",
     "phone": "555-1234",
     "budget": "$1M-$2M",
     "contractors_contacted": "2",
@@ -43,17 +43,18 @@ class TestHealth:
         assert r.status_code == 200
         data = r.json()
         assert data.get("status") == "ok"
-        assert data.get("resend_configured") is False
+        assert data.get("resend_configured") is True
 
 
 # --- Contact endpoint ---
 class TestContact:
-    def test_contact_no_resend_key_returns_503(self, api_client):
+    def test_contact_valid_payload_returns_200(self, api_client):
         r = api_client.post(f"{BASE_URL}/api/contact", json=VALID_PAYLOAD)
-        assert r.status_code == 503
+        assert r.status_code == 200, f"Expected 200, got {r.status_code}: {r.text}"
         data = r.json()
-        detail = data.get("detail", "")
-        assert "RESEND_API_KEY" in detail
+        assert data.get("status") == "success"
+        assert data.get("email_id"), f"Expected non-empty email_id, got: {data}"
+        assert isinstance(data.get("email_id"), str)
 
     def test_contact_missing_first_name(self, api_client):
         payload = {k: v for k, v in VALID_PAYLOAD.items() if k != "first_name"}

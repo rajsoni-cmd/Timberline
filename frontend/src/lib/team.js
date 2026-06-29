@@ -33,3 +33,9 @@ export const TESTIMONIALS = [
     location: "Lakefield, ON",
   },
 ];
+
+export const FEATURED_TESTIMONIAL = {
+  quote: "Timberline have a professional approach through the entire project — from the first client meeting, to the project budget, to establishing a timeframe, and most importantly their commitment to organization and client communication. They've proven they deliver your dream on time and on budget.",
+  author: "D.G.",
+  location: "Balsam Lake",
+};

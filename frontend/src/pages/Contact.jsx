@@ -34,7 +34,7 @@ const TextField = ({ id, label, type = "text", required = false, value, onChange
       data-testid={testId}
     />
     <label htmlFor={id}>
-      {label}{required && <span className="text-[#00a34f]"> *</span>}
+      {label}{required && <span className="text-[#b89d77]"> *</span>}
     </label>
   </div>
 );
@@ -43,12 +43,10 @@ const SelectField = ({ id, label, required = false, options, value, onChange, te
   <div className={`tl-field ${value ? "has-value" : ""}`}>
     <select id={id} value={value} onChange={onChange} required={required} data-testid={testId}>
       <option value="" disabled hidden></option>
-      {options.map((o) => (
-        <option key={o} value={o}>{o}</option>
-      ))}
+      {options.map((o) => (<option key={o} value={o}>{o}</option>))}
     </select>
     <label htmlFor={id}>
-      {label}{required && <span className="text-[#00a34f]"> *</span>}
+      {label}{required && <span className="text-[#b89d77]"> *</span>}
     </label>
   </div>
 );
@@ -82,58 +80,49 @@ const Contact = () => {
         testId="contact-hero"
       />
 
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-24 md:py-32 bg-[#f4eee4]">
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-          {/* LEFT */}
           <Reveal variant="left" className="lg:col-span-5">
             <div>
               <GoldRule delay={150} />
               <div className="eyebrow mt-5">Start Your Project</div>
               <h2
-                className="mt-6 font-display text-[#01261d] leading-[1.1] tracking-tight"
+                className="mt-6 font-display text-[#2c2926] leading-[1.1] tracking-tight"
                 style={{ fontSize: "clamp(1.9rem, 3.6vw, 3rem)" }}
               >
                 Let's Build<br />Something Together
               </h2>
               <div className="mt-7"><GoldRule delay={300} /></div>
-              <p className="mt-8 text-[#231f20]/85 text-base md:text-lg font-light leading-[1.9]">
-                Thank you for your interest in Timberline Custom Homes. Please fill out the form below and a member of our team will be in touch shortly.
+              <p className="mt-8 text-[#3a3531]/85 text-base md:text-lg font-light leading-[1.9]">
+                Thank you for your interest in Timberline Custom Homes. Please fill out the form and a member of our team will be in touch shortly.
               </p>
 
               <div className="mt-12 space-y-8">
-                <a
-                  href="tel:7056544312"
-                  data-testid="contact-phone"
-                  className="flex items-start gap-5 group"
-                >
-                  <Phone className="text-[#00a34f] mt-1 shrink-0" size={22} strokeWidth={1.4} />
+                <a href="tel:7056544312" data-testid="contact-phone" className="flex items-start gap-5 group">
+                  <Phone className="text-[#b89d77] mt-1 shrink-0" size={22} strokeWidth={1.4} />
                   <div>
-                    <div className="text-[0.65rem] tracking-[0.26em] uppercase text-[#231f20]/55">Phone</div>
-                    <div className="font-display text-[#01261d] text-2xl mt-1 group-hover:text-[#00a34f] transition-colors">
+                    <div className="text-[0.65rem] tracking-[0.26em] uppercase text-[#3a3531]/55">Phone</div>
+                    <div className="font-display text-[#2c2926] text-2xl mt-1 group-hover:text-[#b89d77] transition-colors">
                       (705) 654-4312
                     </div>
                   </div>
                 </a>
 
                 <div className="flex items-start gap-5">
-                  <MapPin className="text-[#00a34f] mt-1 shrink-0" size={22} strokeWidth={1.4} />
+                  <MapPin className="text-[#b89d77] mt-1 shrink-0" size={22} strokeWidth={1.4} />
                   <div>
-                    <div className="text-[0.65rem] tracking-[0.26em] uppercase text-[#231f20]/55">Studio</div>
-                    <div className="text-[#01261d] text-base mt-1 font-light leading-relaxed">
+                    <div className="text-[0.65rem] tracking-[0.26em] uppercase text-[#3a3531]/55">Studio</div>
+                    <div className="text-[#2c2926] text-base mt-1 font-light leading-relaxed">
                       5584 ON-28 Unit 5,<br />Woodview, ON K0L 3E0
                     </div>
                   </div>
                 </div>
 
-                <a
-                  href="mailto:info@timberlinecustomhomes.ca"
-                  data-testid="contact-email"
-                  className="flex items-start gap-5 group"
-                >
-                  <Mail className="text-[#00a34f] mt-1 shrink-0" size={22} strokeWidth={1.4} />
+                <a href="mailto:info@timberlinecustomhomes.ca" data-testid="contact-email" className="flex items-start gap-5 group">
+                  <Mail className="text-[#b89d77] mt-1 shrink-0" size={22} strokeWidth={1.4} />
                   <div>
-                    <div className="text-[0.65rem] tracking-[0.26em] uppercase text-[#231f20]/55">Email</div>
-                    <div className="text-[#01261d] text-base mt-1 font-light group-hover:text-[#00a34f] transition-colors break-all">
+                    <div className="text-[0.65rem] tracking-[0.26em] uppercase text-[#3a3531]/55">Email</div>
+                    <div className="text-[#2c2926] text-base mt-1 font-light group-hover:text-[#b89d77] transition-colors break-all">
                       info@timberlinecustomhomes.ca
                     </div>
                   </div>
@@ -142,37 +131,32 @@ const Contact = () => {
             </div>
           </Reveal>
 
-          {/* RIGHT FORM */}
           <Reveal variant="right" className="lg:col-span-7" delay={140}>
             {status.success ? (
               <div
                 data-testid="contact-success"
-                className="border border-[#c9a96e]/40 bg-[#f5f0e8] p-12 md:p-20 text-center"
+                className="border border-[#b89d77]/40 bg-[#efe8d9] p-12 md:p-20 text-center"
               >
                 <div className="flex justify-center"><GoldRule delay={100} wide /></div>
                 <h3
-                  className="mt-8 font-display italic text-[#01261d] leading-tight tracking-tight"
+                  className="mt-8 font-display italic text-[#2c2926] leading-tight tracking-tight"
                   style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)" }}
                 >
                   Thank you.
                 </h3>
-                <p className="mt-6 text-[#231f20]/80 text-base md:text-lg font-light leading-[1.9] max-w-md mx-auto">
+                <p className="mt-6 text-[#3a3531]/85 text-base md:text-lg font-light leading-[1.9] max-w-md mx-auto">
                   A member of our team will be in touch shortly.
                 </p>
                 <button
                   onClick={() => setStatus({ submitting: false, success: false, error: "" })}
                   data-testid="send-another-button"
-                  className="btn-luxury mt-10 border border-[#01261d] text-[#01261d] hover:bg-[#01261d] hover:text-[#f5f0e8]"
+                  className="btn-pill mt-10"
                 >
                   Send Another Inquiry
                 </button>
               </div>
             ) : (
-              <form
-                onSubmit={onSubmit}
-                data-testid="contact-form"
-                className="space-y-2"
-              >
+              <form onSubmit={onSubmit} data-testid="contact-form" className="space-y-2">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
                   <TextField id="first_name" label="First Name" required value={form.first_name} onChange={update("first_name")} testId="input-first-name" />
                   <TextField id="last_name" label="Last Name" required value={form.last_name} onChange={update("last_name")} testId="input-last-name" />
@@ -189,14 +173,7 @@ const Contact = () => {
                     <div className="hidden md:block" />
                   )}
 
-                  <TextField
-                    id="location"
-                    label="Project Location — Town or Lake"
-                    value={form.project_location}
-                    onChange={update("project_location")}
-                    testId="input-location"
-                    placeholder="e.g. Stoney Lake, Peterborough"
-                  />
+                  <TextField id="location" label="Project Location — Town or Lake" value={form.project_location} onChange={update("project_location")} testId="input-location" placeholder="e.g. Stoney Lake, Peterborough" />
                   <SelectField id="project_type" label="Type of Project" required options={PROJECT_TYPES} value={form.project_type} onChange={update("project_type")} testId="select-project-type" />
 
                   {form.project_type === "Other" && (
@@ -204,14 +181,7 @@ const Contact = () => {
                   )}
 
                   <div className="md:col-span-2 tl-field">
-                    <textarea
-                      id="notes"
-                      placeholder=" "
-                      rows={4}
-                      value={form.notes}
-                      onChange={update("notes")}
-                      data-testid="input-notes"
-                    />
+                    <textarea id="notes" placeholder=" " rows={4} value={form.notes} onChange={update("notes")} data-testid="input-notes" />
                     <label htmlFor="notes">Additional Notes</label>
                   </div>
                 </div>
@@ -229,7 +199,7 @@ const Contact = () => {
                   type="submit"
                   disabled={status.submitting}
                   data-testid="contact-submit-button"
-                  className="btn-luxury w-full mt-10 bg-[#01261d] text-[#f5f0e8] hover:bg-[#00a34f] disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="btn-pill btn-pill-dark w-full mt-10 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {status.submitting ? "Sending…" : "Send Inquiry"}
                 </button>
