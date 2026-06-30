@@ -29,7 +29,7 @@ body {
   font-family: 'Jost', system-ui, sans-serif;
   font-weight: 300;
   line-height: 1.85;
-  background: var(--tl-cream);
+  background: #ffffff;
   color: var(--tl-text);
   animation: page-fade-in 0.45s ease-out both;
   overflow-x: hidden;
@@ -241,5 +241,5 @@ button, a { cursor: pointer; }
 }
 
 @layer base {
-  body { background-color: var(--tl-cream); }
+  body { background-color: #ffffff; }
 }

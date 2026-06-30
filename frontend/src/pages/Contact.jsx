@@ -80,49 +80,49 @@ const Contact = () => {
         testId="contact-hero"
       />
 
-      <section className="py-24 md:py-32 bg-[#f4eee4]">
+      <section className="py-28 md:py-40 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
           <Reveal variant="left" className="lg:col-span-5">
             <div>
               <GoldRule delay={150} />
-              <div className="eyebrow mt-5">Start Your Project</div>
+              <div className="eyebrow mt-6">Start Your Project</div>
               <h2
-                className="mt-6 font-display text-[#2c2926] leading-[1.1] tracking-tight"
-                style={{ fontSize: "clamp(1.9rem, 3.6vw, 3rem)" }}
+                className="mt-7 font-display text-[#01261d] leading-[1.05] tracking-tight"
+                style={{ fontSize: "clamp(2rem, 4.4vw, 3.5rem)" }}
               >
                 Let's Build<br />Something Together
               </h2>
-              <div className="mt-7"><GoldRule delay={300} /></div>
-              <p className="mt-8 text-[#3a3531]/85 text-base md:text-lg font-light leading-[1.9]">
+              <div className="mt-9"><GoldRule delay={300} /></div>
+              <p className="mt-9 text-[#3a3531] text-base md:text-lg font-light leading-[2]">
                 Thank you for your interest in Timberline Custom Homes. Please fill out the form and a member of our team will be in touch shortly.
               </p>
 
-              <div className="mt-12 space-y-8">
+              <div className="mt-14 space-y-9">
                 <a href="tel:7056544312" data-testid="contact-phone" className="flex items-start gap-5 group">
-                  <Phone className="text-[#b89d77] mt-1 shrink-0" size={22} strokeWidth={1.4} />
+                  <Phone className="text-[#c9a96e] mt-1 shrink-0" size={22} strokeWidth={1.4} />
                   <div>
-                    <div className="text-[0.65rem] tracking-[0.26em] uppercase text-[#3a3531]/55">Phone</div>
-                    <div className="font-display text-[#2c2926] text-2xl mt-1 group-hover:text-[#b89d77] transition-colors">
+                    <div className="text-[0.65rem] tracking-[0.28em] uppercase text-[#3a3531]/55">Phone</div>
+                    <div className="font-display text-[#01261d] text-2xl md:text-3xl mt-1 group-hover:text-[#c9a96e] transition-colors">
                       (705) 654-4312
                     </div>
                   </div>
                 </a>
 
                 <div className="flex items-start gap-5">
-                  <MapPin className="text-[#b89d77] mt-1 shrink-0" size={22} strokeWidth={1.4} />
+                  <MapPin className="text-[#c9a96e] mt-1 shrink-0" size={22} strokeWidth={1.4} />
                   <div>
-                    <div className="text-[0.65rem] tracking-[0.26em] uppercase text-[#3a3531]/55">Studio</div>
-                    <div className="text-[#2c2926] text-base mt-1 font-light leading-relaxed">
+                    <div className="text-[0.65rem] tracking-[0.28em] uppercase text-[#3a3531]/55">Studio</div>
+                    <div className="text-[#01261d] text-base md:text-lg mt-1 font-light leading-relaxed">
                       5584 ON-28 Unit 5,<br />Woodview, ON K0L 3E0
                     </div>
                   </div>
                 </div>
 
                 <a href="mailto:info@timberlinecustomhomes.ca" data-testid="contact-email" className="flex items-start gap-5 group">
-                  <Mail className="text-[#b89d77] mt-1 shrink-0" size={22} strokeWidth={1.4} />
+                  <Mail className="text-[#c9a96e] mt-1 shrink-0" size={22} strokeWidth={1.4} />
                   <div>
-                    <div className="text-[0.65rem] tracking-[0.26em] uppercase text-[#3a3531]/55">Email</div>
-                    <div className="text-[#2c2926] text-base mt-1 font-light group-hover:text-[#b89d77] transition-colors break-all">
+                    <div className="text-[0.65rem] tracking-[0.28em] uppercase text-[#3a3531]/55">Email</div>
+                    <div className="text-[#01261d] text-base md:text-lg mt-1 font-light group-hover:text-[#c9a96e] transition-colors break-all">
                       info@timberlinecustomhomes.ca
                     </div>
                   </div>
@@ -135,22 +135,22 @@ const Contact = () => {
             {status.success ? (
               <div
                 data-testid="contact-success"
-                className="border border-[#b89d77]/40 bg-[#efe8d9] p-12 md:p-20 text-center"
+                className="border border-[#c9a96e]/40 bg-[#fafaf7] p-12 md:p-20 text-center"
               >
                 <div className="flex justify-center"><GoldRule delay={100} wide /></div>
                 <h3
-                  className="mt-8 font-display italic text-[#2c2926] leading-tight tracking-tight"
-                  style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)" }}
+                  className="mt-8 font-display italic text-[#01261d] leading-tight tracking-tight"
+                  style={{ fontSize: "clamp(1.8rem, 3.4vw, 2.8rem)" }}
                 >
                   Thank you.
                 </h3>
-                <p className="mt-6 text-[#3a3531]/85 text-base md:text-lg font-light leading-[1.9] max-w-md mx-auto">
+                <p className="mt-6 text-[#3a3531] text-base md:text-lg font-light leading-[2] max-w-md mx-auto">
                   A member of our team will be in touch shortly.
                 </p>
                 <button
                   onClick={() => setStatus({ submitting: false, success: false, error: "" })}
                   data-testid="send-another-button"
-                  className="btn-pill mt-10"
+                  className="btn-pill mt-12"
                 >
                   Send Another Inquiry
                 </button>
@@ -199,7 +199,7 @@ const Contact = () => {
                   type="submit"
                   disabled={status.submitting}
                   data-testid="contact-submit-button"
-                  className="btn-pill btn-pill-dark w-full mt-10 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="btn-pill btn-pill-dark w-full mt-12 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {status.submitting ? "Sending…" : "Send Inquiry"}
                 </button>

@@ -17,19 +17,19 @@ const TeamCard = ({ person, idx, testPrefix }) => (
       data-testid={`${testPrefix}-${person.name.toLowerCase().replace(/\s+/g, "-")}`}
       className="flex flex-col items-center text-center px-2"
     >
-      <div className="w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#efe8d9] flex items-center justify-center border border-[#b89d77]/40 mb-6">
-        <User size={42} strokeWidth={1} className="text-[#2c2926]/40" />
+      <div className="w-32 h-32 md:w-36 md:h-36 rounded-full bg-[#fafaf7] flex items-center justify-center border border-[#c9a96e]/40 mb-7">
+        <User size={48} strokeWidth={1} className="text-[#01261d]/40" />
       </div>
       <h4
-        className="font-display text-[#2c2926] leading-tight tracking-tight"
-        style={{ fontSize: "clamp(1.15rem, 1.6vw, 1.4rem)" }}
+        className="font-display text-[#01261d] leading-tight tracking-tight"
+        style={{ fontSize: "clamp(1.25rem, 1.8vw, 1.5rem)" }}
       >
         {person.name}
       </h4>
-      <p className="text-[#3a3531]/75 text-sm font-light mt-3 leading-relaxed max-w-[22ch]">
+      <p className="text-[#3a3531]/85 text-sm font-light mt-3 leading-relaxed max-w-[22ch]">
         {person.title}
       </p>
-      <div className="mt-4 text-[0.65rem] tracking-[0.26em] uppercase text-[#b89d77] font-medium">
+      <div className="mt-4 text-[0.65rem] tracking-[0.28em] uppercase text-[#c9a96e] font-medium">
         Since {person.since}
       </div>
     </div>
@@ -38,11 +38,11 @@ const TeamCard = ({ person, idx, testPrefix }) => (
 
 const TeamSubHeading = ({ children, testId }) => (
   <Reveal>
-    <div data-testid={testId} className="flex items-baseline gap-4 mb-12">
-      <h3 className="text-[#2c2926] text-[0.78rem] uppercase tracking-[0.3em] font-medium">
+    <div data-testid={testId} className="flex items-baseline gap-4 mb-14">
+      <h3 className="text-[#01261d] text-[0.78rem] uppercase tracking-[0.32em] font-medium">
         {children}
       </h3>
-      <span className="flex-1 h-px bg-[#b89d77]/50" />
+      <span className="flex-1 h-px bg-[#c9a96e]/50" />
     </div>
   </Reveal>
 );
@@ -59,25 +59,25 @@ const About = () => {
       />
 
       {/* HISTORY */}
-      <section className="py-24 md:py-32 bg-[#f4eee4]">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20 items-start">
+      <section className="py-28 md:py-40 bg-white">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-24 items-start">
           <Reveal variant="left" className="md:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden">
+            <div className="relative aspect-[3/4] overflow-hidden">
               <img src={IMAGES.shopBuild} alt="Timberline shop" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </Reveal>
           <Reveal variant="right" delay={120} className="md:col-span-7">
             <div>
               <GoldRule delay={200} />
-              <div className="eyebrow mt-5">Our Story</div>
+              <div className="eyebrow mt-6">Our Story</div>
               <h2
-                className="mt-6 font-display text-[#2c2926] leading-[1.1] tracking-tight"
-                style={{ fontSize: "clamp(2rem, 4vw, 3.4rem)" }}
+                className="mt-7 font-display text-[#01261d] leading-[1.05] tracking-tight"
+                style={{ fontSize: "clamp(2.4rem, 5vw, 4.5rem)" }}
               >
                 Our History
               </h2>
-              <div className="mt-7"><GoldRule delay={350} /></div>
-              <div className="mt-9 space-y-7 text-[#3a3531]/85 text-base md:text-lg font-light leading-[1.9]">
+              <div className="mt-9"><GoldRule delay={350} /></div>
+              <div className="mt-10 space-y-7 text-[#3a3531] text-base md:text-lg font-light leading-[2]">
                 <p>
                   Originating from Northey Contracting Inc. established by Ray Northey in 1989, our journey has led to the well recognized Timberline Custom Homes. Beginning as a two man crew, Timberline has grown to employ 30 skilled workers between the office and field year round. We have long-term employees that have been with us for over 20 years, preserving our quality throughout the years.
                 </p>
@@ -93,20 +93,20 @@ const About = () => {
         </div>
       </section>
 
-      {/* STATS — light cream variant */}
-      <section data-testid="stats-section" className="py-20 md:py-24 bg-[#efe8d9]">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6">
+      {/* STATS — dark brand-green band */}
+      <section data-testid="stats-section" className="py-24 md:py-28 bg-[#01261d]">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-y-14 gap-x-6">
           {STATS.map((s, i) => (
             <Reveal key={s.label} variant="scale" delay={i * 100}>
               <div data-testid={`stat-${i}`} className="text-center px-2">
                 <div
-                  className="font-display text-[#b89d77] leading-none"
-                  style={{ fontSize: "clamp(3rem, 6vw, 5rem)" }}
+                  className="font-display text-[#c9a96e] leading-none"
+                  style={{ fontSize: "clamp(3.5rem, 7vw, 6rem)" }}
                 >
                   {s.number}
                 </div>
-                <div className="flex justify-center mt-5"><GoldRule delay={300} /></div>
-                <div className="mt-5 text-[#2c2926] text-[0.7rem] tracking-[0.26em] uppercase font-light leading-relaxed">
+                <div className="flex justify-center mt-6"><GoldRule delay={300} /></div>
+                <div className="mt-6 text-white text-[0.72rem] tracking-[0.28em] uppercase font-light leading-relaxed">
                   {s.label}
                 </div>
               </div>
@@ -116,19 +116,19 @@ const About = () => {
       </section>
 
       {/* TEAM */}
-      <section data-testid="team-section" className="py-24 md:py-32 bg-[#f4eee4]">
+      <section data-testid="team-section" className="py-28 md:py-40 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <Reveal>
-            <div className="text-center max-w-xl mx-auto">
+            <div className="text-center max-w-2xl mx-auto">
               <div className="flex justify-center"><GoldRule delay={150} /></div>
-              <div className="eyebrow mt-5">The People Behind the Projects</div>
+              <div className="eyebrow mt-6">The People Behind the Projects</div>
               <h2
-                className="mt-6 font-display text-[#2c2926] leading-tight tracking-tight"
-                style={{ fontSize: "clamp(2rem, 4vw, 3.4rem)" }}
+                className="mt-7 font-display text-[#01261d] leading-tight tracking-tight"
+                style={{ fontSize: "clamp(2.4rem, 5vw, 4.5rem)" }}
               >
                 Our Team
               </h2>
-              <div className="flex justify-center mt-8"><GoldRule delay={300} /></div>
+              <div className="flex justify-center mt-10"><GoldRule delay={300} /></div>
             </div>
           </Reveal>
 

@@ -47,7 +47,7 @@ const Process = () => {
         testId="process-hero"
       />
 
-      <section className="py-24 md:py-32 bg-[#f4eee4]">
+      <section className="py-28 md:py-40 bg-white">
         <div className="max-w-6xl mx-auto px-6 md:px-12">
           {STEPS.map((s, idx) => {
             const reverse = idx % 2 === 1;
@@ -55,7 +55,7 @@ const Process = () => {
               <div
                 key={s.n}
                 data-testid={`process-step-${s.n}`}
-                className={`grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 py-14 md:py-20 border-b border-[#b89d77]/20 last:border-b-0 items-center ${
+                className={`grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 py-16 md:py-24 border-b border-[#c9a96e]/20 last:border-b-0 items-center ${
                   reverse ? "md:[&>*:first-child]:order-2" : ""
                 }`}
               >
@@ -63,7 +63,7 @@ const Process = () => {
                   <div className="flex flex-col items-start">
                     <GoldRule delay={150} />
                     <div
-                      className="font-script text-[#b89d77] leading-none mt-6"
+                      className="font-script text-[#c9a96e] leading-none mt-7"
                       style={{ fontSize: "clamp(5rem, 11vw, 10rem)" }}
                     >
                       {s.n}.
@@ -72,13 +72,13 @@ const Process = () => {
                 </Reveal>
                 <Reveal variant={reverse ? "left" : "right"} delay={120} className="md:col-span-7">
                   <h3
-                    className="font-display text-[#2c2926] leading-tight tracking-tight"
-                    style={{ fontSize: "clamp(1.8rem, 3.4vw, 2.8rem)" }}
+                    className="font-display text-[#01261d] leading-tight tracking-tight"
+                    style={{ fontSize: "clamp(1.9rem, 3.6vw, 3rem)" }}
                   >
                     {s.title}
                   </h3>
-                  <div className="mt-5"><GoldRule delay={250} /></div>
-                  <p className="mt-7 text-[#3a3531]/85 text-base md:text-lg font-light leading-[1.9] max-w-2xl">
+                  <div className="mt-6"><GoldRule delay={250} /></div>
+                  <p className="mt-8 text-[#3a3531] text-base md:text-lg font-light leading-[2] max-w-2xl">
                     {s.body}
                   </p>
                 </Reveal>
@@ -88,19 +88,19 @@ const Process = () => {
         </div>
       </section>
 
-      <section className="py-24 md:py-32 bg-[#efe8d9]">
+      <section className="py-28 md:py-40 bg-[#fafaf7]">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <Reveal>
             <div className="flex justify-center"><GoldRule delay={150} /></div>
-            <div className="eyebrow mt-5">Ready When You Are</div>
+            <div className="eyebrow mt-6">Ready When You Are</div>
             <h2
-              className="mt-6 font-display text-[#2c2926] leading-tight tracking-tight"
-              style={{ fontSize: "clamp(2rem, 4vw, 3.4rem)" }}
+              className="mt-7 font-display text-[#01261d] leading-tight tracking-tight"
+              style={{ fontSize: "clamp(2.2rem, 4.6vw, 4rem)" }}
             >
               Start the Conversation
             </h2>
-            <div className="flex justify-center mt-8"><GoldRule delay={300} /></div>
-            <Link to="/contact" data-testid="process-cta-button" className="btn-pill mt-10">
+            <div className="flex justify-center mt-9"><GoldRule delay={300} /></div>
+            <Link to="/contact" data-testid="process-cta-button" className="btn-pill mt-12">
               Schedule a Call
             </Link>
           </Reveal>

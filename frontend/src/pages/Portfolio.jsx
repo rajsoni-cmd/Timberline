@@ -15,11 +15,11 @@ const Portfolio = () => {
         testId="portfolio-hero"
       />
 
-      <section className="py-24 md:py-32 bg-[#f4eee4]">
+      <section className="py-28 md:py-40 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8 md:gap-x-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-20 gap-x-10 md:gap-x-14">
             {PORTFOLIO_PROJECTS.map((p, i) => (
-              <Reveal key={p.slug} variant="scale" delay={(i % 3) * 100}>
+              <Reveal key={p.slug} variant="scale" delay={(i % 2) * 100}>
                 <Link
                   to="/contact"
                   data-testid={`portfolio-card-${p.slug}`}
@@ -33,12 +33,12 @@ const Portfolio = () => {
                       loading="lazy"
                     />
                   </div>
-                  <div className="mt-6">
+                  <div className="mt-7">
                     <div className="eyebrow">{p.category}</div>
-                    <h3 className="mt-3 font-display text-[#2c2926] text-2xl leading-tight group-hover:text-[#b89d77] transition-colors">
+                    <h3 className="mt-4 font-display text-[#01261d] text-3xl md:text-4xl leading-tight group-hover:text-[#c9a96e] transition-colors">
                       {p.title}
                     </h3>
-                    <div className="mt-4 flex items-center gap-2 text-[0.72rem] tracking-[0.24em] uppercase text-[#b89d77]">
+                    <div className="mt-5 flex items-center gap-2 text-[0.72rem] tracking-[0.28em] uppercase text-[#c9a96e]">
                       <span>View Project</span>
                       <ArrowRight
                         size={14}
@@ -54,22 +54,22 @@ const Portfolio = () => {
         </div>
       </section>
 
-      <section className="py-24 md:py-32 bg-[#efe8d9]">
+      <section className="py-28 md:py-40 bg-[#fafaf7]">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <Reveal>
             <div className="flex justify-center"><GoldRule delay={150} /></div>
-            <div className="eyebrow mt-5">Ready When You Are</div>
+            <div className="eyebrow mt-6">Ready When You Are</div>
             <h2
-              className="mt-6 font-display text-[#2c2926] leading-tight tracking-tight"
-              style={{ fontSize: "clamp(2rem, 4vw, 3.4rem)" }}
+              className="mt-7 font-display text-[#01261d] leading-tight tracking-tight"
+              style={{ fontSize: "clamp(2.2rem, 4.6vw, 4rem)" }}
             >
               Imagine Your Project<br />Among These
             </h2>
-            <div className="flex justify-center mt-8"><GoldRule delay={300} /></div>
-            <p className="mt-8 text-[#3a3531]/85 text-base md:text-lg font-light leading-[1.9]">
+            <div className="flex justify-center mt-9"><GoldRule delay={300} /></div>
+            <p className="mt-9 text-[#3a3531] text-base md:text-lg font-light leading-[2]">
               Every Timberline home begins with a conversation. Tell us about your land, your vision, and your timeline — we'll do the rest.
             </p>
-            <Link to="/contact" data-testid="portfolio-cta" className="btn-pill mt-10">
+            <Link to="/contact" data-testid="portfolio-cta" className="btn-pill mt-12">
               Schedule a Call
             </Link>
           </Reveal>
