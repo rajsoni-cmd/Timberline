@@ -26,7 +26,7 @@ const Logo = ({ scrolled = false, onDark = true }) => (
     src={LOGO_LIGHT}
     alt="Timberline Custom Homes — Since 1989"
     className={`w-auto object-contain transition-all duration-500 ${
-      scrolled ? "h-12 md:h-14" : "h-14 md:h-16"
+      scrolled ? "h-16 md:h-20" : "h-20 md:h-24"
     }`}
   />
 );
