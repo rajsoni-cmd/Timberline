@@ -18,14 +18,14 @@ export const FIELD_TEAM = [
 
 export const TESTIMONIALS = [
   {
-    quote: "Timberline built our dream cottage on Stoney Lake and exceeded every expectation. Ray and the team communicated every step of the way — we always knew exactly what was happening. The craftsmanship is extraordinary.",
-    author: "The Morrison Family",
+    quote: "Ray's team was great in terms of the quality of their work and their responsiveness to changes. Fortunately our son-in-law Pierre is keenly interested in all aspects of construction, materials and products, and monitored every detail of the work through to the finishing touches.",
+    author: "Bob & Laura",
     location: "Stoney Lake",
   },
   {
-    quote: "We've now built two properties with Timberline. That says everything. The attention to detail, the quality of the finishes, and the relationships we've built with the team are second to none.",
-    author: "The Henderson Family",
-    location: "Katchewanooka Lake",
+    quote: "We are thrilled with our new cottage and will be pleased to be a reference for you and your team. A unique, custom-designed cottage, taking into account the considerations of the users and constraints of land lot, was created by Timberline Custom Homes.",
+    author: "John, Cecile, John & MC",
+    location: "Anstruther Lake",
   },
   {
     quote: "From our initial consultation to the final walkthrough, Timberline made building our custom home seamless. We wouldn't hesitate to recommend them to anyone looking to build in the Kawarthas.",

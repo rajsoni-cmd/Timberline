@@ -62,25 +62,22 @@ const Home = () => {
 
         <div className="relative z-10 text-center px-6 max-w-6xl pb-28 md:pb-40">
           <Reveal>
-            <div className="font-script text-[#c9a96e] text-2xl md:text-3xl leading-none mb-5">
-              Timberline Custom Homes
+            <div className="eyebrow eyebrow-light mb-8">
+              Custom Design and Build
             </div>
             <h1
               className="font-display text-white leading-[0.98] tracking-tight"
               style={{ fontSize: "clamp(3.2rem, 9vw, 8rem)" }}
             >
-              Custom Home Builders<br />in the Kawarthas
+              Building with <em className="text-[#c9a96e] not-italic font-medium">Nature.</em>
             </h1>
             <div className="flex justify-center mt-10">
               <GoldRule delay={400} wide />
             </div>
-            <p
-              className="mt-10 font-display italic text-white/90 leading-tight"
-              style={{ fontSize: "clamp(1.4rem, 2.4vw, 2.2rem)" }}
-            >
-              Building More Than Homes
+            <p className="mt-8 text-white/85 text-[0.72rem] md:text-[0.78rem] tracking-[0.32em] uppercase font-light">
+              Peterborough + Kawarthas
             </p>
-            <p className="mt-7 text-white/80 text-sm md:text-base font-light leading-[1.9] max-w-xl mx-auto tracking-wide">
+            <p className="mt-9 text-white/80 text-sm md:text-base font-light leading-[1.9] max-w-xl mx-auto tracking-wide">
               Timberline is consistently advancing our products and services, maintaining our focus on quality regardless of the size of project.
             </p>
             <Link
@@ -91,6 +88,20 @@ const Home = () => {
               Begin a Conversation
             </Link>
           </Reveal>
+        </div>
+
+        {/* Award callout — bottom-left of hero */}
+        <div
+          data-testid="hero-award-callout"
+          className="hidden md:block absolute bottom-8 left-6 md:left-10 z-10 max-w-xs bg-[#01261d]/70 backdrop-blur-sm border border-[#c9a96e]/40 p-6"
+        >
+          <div className="eyebrow text-[#c9a96e] mb-3">CHBA National Finalist</div>
+          <h4 className="font-display text-white text-xl leading-tight">
+            Top 5 Finalist — National Housing Awards of Excellence
+          </h4>
+          <p className="mt-3 text-white/70 text-xs font-light leading-relaxed">
+            Recognized among the top 5 of 700+ entries across all categories for our Rustic Stoney Lake Home project.
+          </p>
         </div>
 
         {/* Experience badge */}

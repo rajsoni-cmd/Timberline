@@ -78,7 +78,24 @@ export const Footer = () => {
           </FooterCol>
         </div>
 
-        <div className="border-t border-[#f4eee4]/10 mt-16 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-[0.72rem] text-[#f4eee4]/45 font-light">
+        <div className="border-t border-[#f4eee4]/10 mt-16 pt-10">
+          <div className="text-center mb-8">
+            <div className="eyebrow eyebrow-light text-[#d4c4a8]">Proud Members Of</div>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5 text-[#f4eee4]/60 text-[0.68rem] tracking-[0.28em] uppercase font-light">
+            <span>Tarion New Home Warranty</span>
+            <span className="hidden sm:inline text-[#c9a96e]/40">·</span>
+            <span>East Kawartha Chamber of Commerce</span>
+            <span className="hidden sm:inline text-[#c9a96e]/40">·</span>
+            <span>Peterborough &amp; Kawarthas HBA</span>
+            <span className="hidden sm:inline text-[#c9a96e]/40">·</span>
+            <span>WSIB / CSPAAT</span>
+            <span className="hidden sm:inline text-[#c9a96e]/40">·</span>
+            <span>Government of Ontario</span>
+          </div>
+        </div>
+
+        <div className="border-t border-[#f4eee4]/10 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-[0.72rem] text-[#f4eee4]/45 font-light">
           <span>Designed by Miller Marketing</span>
           <span>© 2026 Timberline Custom Homes. All Rights Reserved.</span>
         </div>
