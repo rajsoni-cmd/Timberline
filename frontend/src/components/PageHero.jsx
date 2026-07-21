@@ -11,7 +11,7 @@ export const PageHero = ({ eyebrow, title, subtitle, image, testId = "page-hero"
         style={{ backgroundImage: `url(${image})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#01261d]/40 via-transparent to-[#01261d]/75" />
-      <div className="relative z-10 text-center px-6 max-w-4xl pt-16">
+      <div className="relative z-10 text-center px-6 max-w-4xl pt-28 md:pt-32">
         <Reveal>
           <div className="flex justify-center mb-7">
             <GoldRule delay={150} />

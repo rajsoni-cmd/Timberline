@@ -12,6 +12,7 @@ export const IMAGES = {
   user18: "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/wpdh3u3s_18.jpg",
   user26: "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/qsj47hzn_26.jpg",
   customDesignRender: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/olakgvbb_1%20-%20Custom%20Design.webp",
+  planningPermittingRender: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/r3jial7x_2-%20Planning%20and%20Permitting.webp",
 
   // Unsplash — luxury cottage country
   heroExterior:    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80",
