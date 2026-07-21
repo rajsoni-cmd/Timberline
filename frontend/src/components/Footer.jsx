@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { LOGO_LIGHT } from "../lib/images";
+import { LOGO_LIGHT, MEMBERSHIP_LOGOS } from "../lib/images";
 
 const FooterCol = ({ heading, children }) => (
   <div>
@@ -81,9 +81,31 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-[#f4eee4]/10 mt-16 pt-10">
-          <div className="text-center mb-8">
+          <div className="text-center mb-10">
             <div className="eyebrow eyebrow-light text-[#d4c4a8]">Proud Members Of</div>
           </div>
+
+          {/* Logo strip */}
+          <div
+            data-testid="membership-logos"
+            className="flex flex-wrap items-center justify-center gap-5 md:gap-8 lg:gap-10 mb-10"
+          >
+            {MEMBERSHIP_LOGOS.map((m) => (
+              <div
+                key={m.name}
+                data-testid={`membership-logo-${m.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                className="bg-white/95 rounded-sm px-5 py-3 flex items-center justify-center h-20 md:h-24 min-w-[110px] transition-transform duration-300 hover:scale-[1.03]"
+              >
+                <img
+                  src={m.image}
+                  alt={m.name}
+                  className="max-h-full max-w-[140px] md:max-w-[160px] w-auto object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5 text-[#f4eee4]/60 text-[0.68rem] tracking-[0.28em] uppercase font-light">
             <span>Tarion New Home Warranty</span>
             <span className="hidden sm:inline text-[#c9a96e]/40">·</span>
