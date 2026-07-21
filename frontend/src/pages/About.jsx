@@ -239,11 +239,11 @@ const About = () => {
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14 items-start">
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={t.author} delay={i * 120}>
-                <div data-testid={`about-testimonial-${i}`} className="flex flex-col h-full">
-                  <div className="font-display text-[#c9a96e] text-6xl leading-none mb-2" aria-hidden="true">"</div>
+                <div data-testid={`about-testimonial-${i}`} className="flex flex-col">
+                  <div className="font-display text-[#c9a96e] text-6xl leading-none mb-2" aria-hidden="true">&ldquo;</div>
                   <p className="font-display italic text-[#01261d] text-lg md:text-xl leading-[1.6] flex-1">
                     {t.quote}
                   </p>

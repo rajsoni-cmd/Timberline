@@ -12,7 +12,7 @@ import Reveal, { GoldRule } from "./Reveal";
 import { IMAGES } from "../lib/images";
 
 const OFFERINGS = [
-  { icon: Compass,        name: "Custom Design",           image: IMAGES.greatRoomBar },
+  { icon: Compass,        name: "Custom Design",           image: IMAGES.customDesignRender },
   { icon: ClipboardCheck, name: "Planning & Permitting",   image: IMAGES.processHero },
   { icon: HomeIcon,       name: "Custom Builds",           image: IMAGES.cottageExterior },
   { icon: Hammer,         name: "Renovation & Addition",   image: IMAGES.user18 },
