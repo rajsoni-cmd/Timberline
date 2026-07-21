@@ -84,7 +84,7 @@ const About = () => {
       />
 
       {/* HISTORY */}
-      <section id="history" className="py-28 md:py-36 bg-white">
+      <section id="history" className="py-28 md:py-36 bg-white scroll-mt-28">
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20 items-start">
           <Reveal variant="left" className="md:col-span-5">
             <div className="relative aspect-[3/4] overflow-hidden">
@@ -141,7 +141,7 @@ const About = () => {
       </section>
 
       {/* OUR TEAM */}
-      <section id="team" data-testid="team-section" className="py-28 md:py-36 bg-white">
+      <section id="team" data-testid="team-section" className="py-28 md:py-36 bg-white scroll-mt-28">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-16">
@@ -178,7 +178,7 @@ const About = () => {
       </section>
 
       {/* AWARDS */}
-      <section id="awards" data-testid="awards-section" className="py-28 md:py-36 bg-[#f5f0e6]">
+      <section id="awards" data-testid="awards-section" className="py-28 md:py-36 bg-[#f5f0e6] scroll-mt-28">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-16">
@@ -223,7 +223,7 @@ const About = () => {
       </section>
 
       {/* TESTIMONIALS */}
-      <section id="testimonials" data-testid="about-testimonials-section" className="py-28 md:py-36 bg-white">
+      <section id="testimonials" data-testid="about-testimonials-section" className="py-28 md:py-36 bg-white scroll-mt-28">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-16">

@@ -49,6 +49,7 @@ Build a multi-page luxury custom home builder website for "Timberline Custom Hom
 - **2026-02 (iteration 4)**: Hybrid restructure — green announcement strip, hero carousel, Since-1989 badge, water-ripple, scrolling marquee, `WhatWeOffer` page, removed AskRay widget, Playfair + Inter typography
 - **2026-02 (iteration 5)**: New client logo (LOGO_FINAL-02) with white backing plate; removed redundant Since-1989 text
 - **2026-02 (iteration 6)**: 7-image hero slider (user-supplied assets, 4 s cadence), Home.jsx refactored into `HeroSlider` / `ServiceCards` / `ScrollingGallery` components, What We Offer cards title-only, memories tagline promoted as brand statement above services
+- **2026-02 (iteration 7)**: Dedicated card image for Custom Design, Planning & Permitting service card image, dropdown mega-nav (About → History/Team/Awards/Testimonials; What We Offer → 6 disciplines), hash-anchor smart scrolling with fixed-header offset, mobile accordion nav, `pt-28/32` fix for PageHero to prevent announcement-strip overlap
 
 ## Backlog
 

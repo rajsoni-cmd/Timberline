@@ -108,11 +108,13 @@ const WhatWeOffer = () => {
         const reverse = idx % 2 === 1;
         const bg = idx % 2 === 0 ? "bg-[#f5f0e6]" : "bg-white";
         const Icon = svc.icon;
+        const anchorId = svc.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
         return (
           <section
             key={svc.name}
+            id={anchorId}
             data-testid={`wwo-block-${svc.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-            className={`${bg} py-24 md:py-32`}
+            className={`${bg} py-24 md:py-32 scroll-mt-28`}
           >
             <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <Reveal
