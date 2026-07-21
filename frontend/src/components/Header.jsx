@@ -1,32 +1,23 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { LOGO_LIGHT } from "../lib/images";
 
-const LEFT_NAV = [
-  { to: "/portfolio", label: "Portfolio" },
-  { to: "/our-process", label: "Our Process" },
-  { to: "/about", label: "About" },
-];
-
-const RIGHT_NAV = [
-  { to: "/contact", label: "Contact" },
-];
-
-const MOBILE_NAV = [
+const NAV_ITEMS = [
   { to: "/", label: "Home" },
-  { to: "/portfolio", label: "Portfolio" },
-  { to: "/our-process", label: "Our Process" },
   { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
+  { to: "/our-process", label: "Our Process" },
+  { to: "/what-we-offer", label: "What We Offer" },
+  { to: "/portfolio", label: "Portfolio" },
+  { to: "/contact", label: "Contact Us" },
 ];
 
-const Logo = ({ scrolled = false, onDark = true }) => (
+const Logo = ({ scrolled = false }) => (
   <img
     src={LOGO_LIGHT}
     alt="Timberline Custom Homes — Since 1989"
     className={`w-auto object-contain transition-all duration-500 ${
-      scrolled ? "h-16 md:h-20" : "h-20 md:h-24"
+      scrolled ? "h-14 md:h-16" : "h-16 md:h-20"
     }`}
   />
 );
@@ -37,7 +28,7 @@ export const Header = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -48,128 +39,125 @@ export const Header = () => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  const onHome = location.pathname === "/";
-  // Use transparent over hero on Home only at top; otherwise warm-dark solid (so logo black bg blends in)
-  const transparent = onHome && !scrolled;
-
-  const linkClass = ({ isActive }) =>
-    `nav-link-style nav-underline transition-colors text-[#f4eee4] hover:text-[#f4eee4] ${
-      isActive ? "active" : ""
-    }`;
-
   return (
     <>
+      {/* Announcement strip */}
+      <div
+        data-testid="announcement-strip"
+        className="fixed top-0 left-0 right-0 z-[55] bg-[#1a9647] text-white/95 text-[0.68rem] md:text-[0.72rem] tracking-[0.24em] uppercase font-light px-4 py-2 flex items-center justify-center gap-4 md:gap-8"
+      >
+        <span className="hidden sm:inline">CHBA National Awards Finalist · Top 5</span>
+        <span className="hidden sm:inline text-white/50">·</span>
+        <a
+          href="tel:7056544312"
+          className="inline-flex items-center gap-2 hover:text-[#c9a96e] transition-colors"
+          data-testid="announcement-phone"
+        >
+          <Phone size={12} strokeWidth={2} className="opacity-90" />
+          (705) 654-4312
+        </a>
+        <span className="hidden md:inline text-white/50">·</span>
+        <a
+          href="mailto:info@timberlinecustomhomes.ca"
+          className="hidden md:inline hover:text-[#c9a96e] transition-colors"
+        >
+          info@timberlinecustomhomes.ca
+        </a>
+      </div>
+
+      {/* Main header */}
       <header
         data-testid="site-header"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          transparent
-            ? "bg-transparent py-5"
-            : "bg-[#1a9647] py-4 shadow-[0_1px_0_rgba(0,0,0,0.06)]"
+        className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? "top-9 bg-white/95 backdrop-blur-md py-3 shadow-[0_1px_0_rgba(0,0,0,0.06)]"
+            : "top-9 bg-transparent py-5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          {/* Desktop: 3-column grid (left nav | logo | right nav) */}
-          <div className="hidden lg:grid grid-cols-3 items-center gap-6">
-            <nav className="flex items-center gap-9 justify-start">
-              {LEFT_NAV.map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  data-testid={`nav-link-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-                  className={linkClass}
-                >
-                  {item.label}
-                </NavLink>
-              ))}
-            </nav>
-
-            <div className="flex justify-center">
-              <Link to="/" data-testid="site-logo">
-                <Logo scrolled={scrolled} onDark />
-              </Link>
-            </div>
-
-            <nav className="flex items-center gap-7 justify-end">
-              {RIGHT_NAV.map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  data-testid={`nav-link-${item.label.toLowerCase()}`}
-                  className={linkClass}
-                >
-                  {item.label}
-                </NavLink>
-              ))}
-              <Link
-                to="/contact"
-                data-testid="header-cta-button"
-                className="btn-pill border-[#d4c4a8] text-[#f4eee4] hover:bg-[#b89d77] hover:text-[#f4eee4] hover:border-[#b89d77]"
-              >
-                Get A Quote
-              </Link>
-            </nav>
-          </div>
-
-          {/* Mobile: logo center, hamburger right */}
-          <div className="lg:hidden flex items-center justify-between">
-            <span className="w-10" />
-            <Link to="/" data-testid="site-logo-mobile">
-              <Logo scrolled={scrolled} onDark />
-            </Link>
-            <button
-              data-testid="mobile-menu-toggle"
-              onClick={() => setMenuOpen(true)}
-              className="p-2 min-h-[48px] min-w-[48px] flex items-center justify-center text-[#f4eee4]"
-              aria-label="Open menu"
+        <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between gap-6">
+          <Link to="/" data-testid="site-logo" className="flex items-center gap-4 shrink-0">
+            <Logo scrolled={scrolled} />
+            {/* Since 1989 badge */}
+            <div
+              data-testid="since-1989-badge"
+              className={`hidden md:flex flex-col items-center justify-center rounded-full border transition-colors duration-500 ${
+                scrolled
+                  ? "border-[#c9a96e] text-[#1a9647]"
+                  : "border-[#c9a96e]/70 text-white"
+              } w-14 h-14`}
             >
-              <Menu size={24} strokeWidth={1.5} />
-            </button>
-          </div>
+              <span className="font-script text-[#c9a96e] text-sm leading-none">Since</span>
+              <span className="font-display text-[0.72rem] leading-none mt-0.5">1989</span>
+            </div>
+          </Link>
+
+          <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
+            {NAV_ITEMS.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                end={item.to === "/"}
+                data-testid={`nav-link-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                className={({ isActive }) =>
+                  `nav-underline uppercase tracking-[0.22em] text-[0.72rem] font-medium transition-colors ${
+                    scrolled
+                      ? `text-[#2b2622] hover:text-[#1a9647] ${isActive ? "active text-[#1a9647]" : ""}`
+                      : `text-white hover:text-[#c9a96e] ${isActive ? "active text-[#c9a96e]" : ""}`
+                  }`
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
+
+          <button
+            data-testid="mobile-menu-toggle"
+            onClick={() => setMenuOpen(true)}
+            className={`lg:hidden p-2 min-h-[48px] min-w-[48px] flex items-center justify-center transition-colors ${
+              scrolled ? "text-[#2b2622]" : "text-white"
+            }`}
+            aria-label="Open menu"
+          >
+            <Menu size={24} strokeWidth={1.5} />
+          </button>
         </div>
       </header>
 
       {/* Mobile overlay */}
       <div
         data-testid="mobile-menu-overlay"
-        className={`fixed inset-0 z-[60] bg-[#1a9647] flex flex-col transition-opacity duration-500 lg:hidden ${
+        className={`fixed inset-0 z-[70] bg-[#01261d] flex flex-col transition-opacity duration-500 lg:hidden ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
         <div className="flex items-center justify-between px-6 py-6">
-          <span className="w-10" />
-          <Logo onDark />
+          <Logo />
           <button
             data-testid="mobile-menu-close"
             onClick={() => setMenuOpen(false)}
-            className="text-[#f4eee4] p-2 min-h-[48px] min-w-[48px] flex items-center justify-center"
+            className="text-white p-2 min-h-[48px] min-w-[48px] flex items-center justify-center"
             aria-label="Close menu"
           >
             <X size={26} strokeWidth={1.5} />
           </button>
         </div>
-        <nav className="flex-1 flex flex-col items-center justify-center gap-9 px-8 -mt-12">
-          {MOBILE_NAV.map((item) => (
+        <nav className="flex-1 flex flex-col items-center justify-center gap-8 px-8 -mt-6">
+          {NAV_ITEMS.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               end={item.to === "/"}
               data-testid={`mobile-nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
               className={({ isActive }) =>
-                `font-display italic text-4xl md:text-5xl ${
-                  isActive ? "text-[#b89d77]" : "text-[#f4eee4]"
+                `font-display italic text-3xl md:text-5xl ${
+                  isActive ? "text-[#c9a96e]" : "text-white"
                 }`
               }
             >
               {item.label}
             </NavLink>
           ))}
-          <Link
-            to="/contact"
-            data-testid="mobile-cta-button"
-            className="btn-pill mt-6 border-[#d4c4a8] text-[#f4eee4] hover:bg-[#b89d77] hover:border-[#b89d77]"
-          >
-            Get A Quote
-          </Link>
         </nav>
       </div>
     </>

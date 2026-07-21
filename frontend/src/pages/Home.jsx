@@ -1,73 +1,78 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import {
+  Compass,
+  ClipboardCheck,
+  Home as HomeIcon,
+  Hammer,
+  Building2,
+  Warehouse,
+  Truck,
+} from "lucide-react";
 import Reveal, { GoldRule } from "../components/Reveal";
 import { IMAGES, BANNER_INTERIOR, PORTFOLIO_PROJECTS } from "../lib/images";
-import { TESTIMONIALS, FEATURED_TESTIMONIAL } from "../lib/team";
+import { TESTIMONIALS } from "../lib/team";
 
-const SERVICES = [
-  {
-    eyebrow: "Custom Homes",
-    image: IMAGES.cottageExterior,
-    title: "Define Your Legacy with a Custom Home in the Kawarthas",
-    body: "From your home's architectural style to the interior design, we infuse your vision into every detail. Choose everything from your floor plan, building materials, smart home technology, and sustainable elements. This custom home is your crowning achievement. Build it with Timberline.",
-    cta: "Explore Custom Homes",
-    href: "/our-process",
-  },
-  {
-    eyebrow: "Lakefront Cottages",
-    image: BANNER_INTERIOR,
-    title: "Create the Ultimate Lakefront Cottage Experience",
-    body: "Envision your own vacation cottage on remote lake shores surrounded by beautiful natural landscape. This secluded haven is your escape from the stresses of urban living and a place for rejuvenation. Build your personal retreat with Timberline.",
-    cta: "Explore Cottages",
-    href: "/our-process",
-  },
-  {
-    eyebrow: "Boathouses",
-    image: IMAGES.user8,
-    title: "Upgrade Your Waterfront with a Custom Boathouse",
-    body: "Transform your home into the ultimate lakefront destination. With decades of experience in lakefront construction, we have become experts in custom boathouses, docks, and waterside living — built to last on Kawartha lakes.",
-    cta: "Explore Boathouses",
-    href: "/our-process",
-  },
-  {
-    eyebrow: "Renovations",
-    image: IMAGES.greatRoomBar,
-    title: "Reimagine Your Space with Renovations & Additions",
-    body: "A renovation or new addition can breathe new life into your home, cottage, or boathouse. We craft each detail to reflect your vision and current lifestyle. Enjoy a renewed sense of energy with a custom renovation by Timberline.",
-    cta: "Explore Renovations",
-    href: "/our-process",
-  },
+const SLIDES = [
+  { image: IMAGES.cottageExterior, alt: "Custom lakefront cottage exterior" },
+  { image: BANNER_INTERIOR,        alt: "Great room with timber beams" },
+  { image: IMAGES.user7,           alt: "Timberline custom home detail" },
+  { image: IMAGES.user18,          alt: "Kawartha lakefront living" },
 ];
 
-const PROCESS = [
-  { n: "01", title: "Share Your Vision",     body: "We collaborate with you to understand your vision and curate ideas based on your budget. This allows us to formulate plans with achievable outcomes." },
-  { n: "02", title: "Concept Development",   body: "Our designers and architectural technologists create custom concepts that embody your vision — detailed plans, specifications, and a clear path forward." },
-  { n: "03", title: "Finishing Selection",   body: "Choose the final touches that define the character of your space. Every detail is selected to align with your personal style and the overall design theme." },
-  { n: "04", title: "Build Your Project",    body: "We initiate construction and manage the entire project from start to finish, keeping you well-informed every step of the way." },
+const OFFERINGS = [
+  { icon: Compass,        name: "Custom Design",           image: IMAGES.greatRoomBar,   body: "In-house architectural design tailored to your land and lifestyle." },
+  { icon: ClipboardCheck, name: "Planning & Permitting",   image: IMAGES.processHero,    body: "We manage every permit, conservation and municipal approval." },
+  { icon: HomeIcon,       name: "Custom Builds",           image: IMAGES.cottageExterior,body: "Homes, cottages, boathouses, bunkies and garages — one crew, one standard." },
+  { icon: Hammer,         name: "Renovations & Additions", image: IMAGES.user18,         body: "Reimagine an existing home or expand it with sensitivity to what's already there." },
+  { icon: Building2,      name: "Commercial Builds",       image: IMAGES.shopBuild,      body: "Purpose-built commercial spaces with the same craft as our residential work." },
+  { icon: Warehouse,      name: "Storage Rentals",         image: IMAGES.user11,         body: "Clean, secure Woodview storage units for seasonal, boat and contractor use." },
+  { icon: Truck,          name: "Heavy Equipment",         image: IMAGES.experienceBg,   body: "In-house excavation, septic, landscaping and site services." },
+];
+
+const MARQUEE = [
+  IMAGES.cottageExterior, BANNER_INTERIOR, IMAGES.user7, IMAGES.user8,
+  IMAGES.user11, IMAGES.user18, IMAGES.user26, IMAGES.greatRoomBar,
 ];
 
 const Home = () => {
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setSlide((s) => (s + 1) % SLIDES.length);
+    }, 6000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <main data-testid="home-page">
-      {/* HERO */}
+      {/* HERO SLIDER */}
       <section
         data-testid="hero-section"
         className="relative min-h-screen w-full flex items-end justify-center overflow-hidden"
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center ken-burns"
-          style={{ backgroundImage: `url(${IMAGES.cottageExterior})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#01261d]/30 via-transparent to-[#01261d]/80" />
+        {SLIDES.map((s, i) => (
+          <div
+            key={s.image}
+            data-testid={`hero-slide-${i}`}
+            className={`absolute inset-0 bg-cover bg-center slide ${
+              i === slide ? "active ken-burns" : ""
+            }`}
+            style={{ backgroundImage: `url(${s.image})` }}
+            aria-hidden={i !== slide}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#01261d]/40 via-transparent to-[#01261d]/85" />
 
-        <div className="relative z-10 text-center px-6 max-w-6xl pb-28 md:pb-40">
+        <div className="relative z-10 text-center px-6 max-w-6xl pb-40 md:pb-52">
           <Reveal>
             <div className="eyebrow eyebrow-light mb-8">
               Custom Design and Build
             </div>
             <h1
               className="font-display text-white leading-[0.98] tracking-tight"
-              style={{ fontSize: "clamp(3.2rem, 9vw, 8rem)" }}
+              style={{ fontSize: "clamp(3rem, 8.5vw, 7.5rem)" }}
             >
               Building with <em className="text-[#c9a96e] not-italic font-medium">Nature.</em>
             </h1>
@@ -77,331 +82,227 @@ const Home = () => {
             <p className="mt-8 text-white/85 text-[0.72rem] md:text-[0.78rem] tracking-[0.32em] uppercase font-light">
               Peterborough + Kawarthas
             </p>
-            <p className="mt-9 text-white/80 text-sm md:text-base font-light leading-[1.9] max-w-xl mx-auto tracking-wide">
-              Timberline is consistently advancing our products and services, maintaining our focus on quality regardless of the size of project.
-            </p>
             <Link
-              to="/contact"
+              to="/what-we-offer"
               data-testid="hero-cta-button"
-              className="btn-pill mt-12 border-[#c9a96e] text-white hover:bg-[#c9a96e] hover:text-[#01261d] hover:border-[#c9a96e]"
+              className="btn-pill mt-12 border-[#c9a96e] text-white hover:bg-[#c9a96e] hover:text-white hover:border-[#c9a96e]"
             >
-              Begin a Conversation
+              Our Services
             </Link>
           </Reveal>
         </div>
 
-        {/* Award callout — bottom-left of hero */}
-        <div
-          data-testid="hero-award-callout"
-          className="hidden md:block absolute bottom-8 left-6 md:left-10 z-10 max-w-xs bg-[#01261d]/70 backdrop-blur-sm border border-[#c9a96e]/40 p-6"
-        >
-          <div className="eyebrow text-[#c9a96e] mb-3">CHBA National Finalist</div>
-          <h4 className="font-display text-white text-xl leading-tight">
-            Top 5 Finalist — National Housing Awards of Excellence
-          </h4>
-          <p className="mt-3 text-white/70 text-xs font-light leading-relaxed">
-            Recognized among the top 5 of 700+ entries across all categories for our Rustic Stoney Lake Home project.
-          </p>
+        {/* Slider indicators */}
+        <div className="absolute bottom-24 md:bottom-28 left-1/2 -translate-x-1/2 z-10 flex gap-3">
+          {SLIDES.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setSlide(i)}
+              data-testid={`hero-slide-dot-${i}`}
+              aria-label={`Go to slide ${i + 1}`}
+              className={`h-[2px] transition-all duration-500 ${
+                i === slide ? "w-10 bg-[#c9a96e]" : "w-5 bg-white/40 hover:bg-white/70"
+              }`}
+            />
+          ))}
         </div>
 
-        {/* Experience badge */}
-        <div
-          data-testid="hero-experience-badge"
-          className="absolute top-24 md:top-28 right-6 md:right-10 z-10 flex items-center gap-3 border border-[#c9a96e]/60 bg-[#01261d]/40 backdrop-blur-sm px-5 py-3 rounded-full"
+        {/* Water ripple SVG wave */}
+        <svg
+          className="absolute -bottom-px left-0 right-0 w-full h-16 md:h-20 z-10"
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          aria-hidden="true"
         >
-          <span className="font-display text-[#c9a96e] text-2xl md:text-3xl leading-none">30+</span>
-          <span className="text-white text-[0.62rem] md:text-[0.68rem] tracking-[0.26em] uppercase font-light leading-snug max-w-[8ch]">
-            Years<br />Experience
-          </span>
-        </div>
+          <path
+            d="M0,40 C240,80 480,10 720,40 C960,70 1200,20 1440,50 L1440,80 L0,80 Z"
+            fill="#ffffff"
+            opacity="0.9"
+          />
+          <path
+            d="M0,55 C240,90 480,30 720,55 C960,80 1200,40 1440,60 L1440,80 L0,80 Z"
+            fill="#ffffff"
+          />
+        </svg>
       </section>
 
-      {/* INTRO */}
-      <section className="py-32 md:py-44 bg-white">
+      {/* COMPLETE SERVICE INTRO */}
+      <section className="pt-24 md:pt-32 pb-16 md:pb-20 bg-white">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <Reveal>
             <div className="flex justify-center"><GoldRule delay={150} /></div>
-            <div className="eyebrow mt-6">Timberline Custom Homes</div>
+            <div className="eyebrow mt-6">Complete Service</div>
             <h2
-              className="mt-9 font-display text-[#01261d] leading-[1.05] tracking-tight"
-              style={{ fontSize: "clamp(2.4rem, 5vw, 4.5rem)" }}
+              className="mt-7 font-display text-[#01261d] leading-[1.05] tracking-tight"
+              style={{ fontSize: "clamp(2rem, 4.4vw, 3.6rem)" }}
             >
-              Design-Build Services for<br />Homes of Distinction
-            </h2>
-            <div className="flex justify-center mt-10"><GoldRule delay={300} /></div>
-            <p className="mt-10 text-[#3a3531] text-base md:text-lg font-light leading-[2]">
-              With over thirty years of experience, we have mastered the art of custom home building and bespoke construction. Our passion for creative design and exceptional craftsmanship ensures your project redefines luxury living. Build a home that's a living, breathing reflection of you.
-            </p>
-            <Link to="/contact" data-testid="intro-cta-button" className="btn-pill mt-14">
-              Schedule a Call
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ALTERNATING SERVICE BLOCKS — full-bleed magazine layout */}
-      {SERVICES.map((svc, idx) => {
-        const reverse = idx % 2 === 1;
-        const bg = idx % 2 === 0 ? "bg-[#fafaf7]" : "bg-white";
-        return (
-          <section
-            key={svc.title}
-            data-testid={`service-block-${idx}`}
-            className={`${bg} relative overflow-hidden`}
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[80vh]">
-              <Reveal
-                variant={reverse ? "right" : "left"}
-                className={`lg:col-span-7 ${reverse ? "lg:order-2" : ""}`}
-              >
-                <div className="relative h-[60vh] lg:h-full min-h-[480px] overflow-hidden">
-                  <img
-                    src={svc.image}
-                    alt={svc.title}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              </Reveal>
-              <Reveal
-                variant={reverse ? "left" : "right"}
-                delay={120}
-                className={`lg:col-span-5 ${reverse ? "lg:order-1" : ""} flex items-center`}
-              >
-                <div className="px-6 md:px-14 py-16 lg:py-24 max-w-xl mx-auto">
-                  <GoldRule delay={200} />
-                  <div className="eyebrow mt-6">{svc.eyebrow}</div>
-                  <h3
-                    className="mt-6 font-display text-[#01261d] leading-[1.1] tracking-tight"
-                    style={{ fontSize: "clamp(1.9rem, 3.4vw, 3.2rem)" }}
-                  >
-                    {svc.title}
-                  </h3>
-                  <p className="mt-8 text-[#3a3531] text-base md:text-lg font-light leading-[2]">
-                    {svc.body}
-                  </p>
-                  <Link
-                    to={svc.href}
-                    data-testid={`service-cta-${idx}`}
-                    className="btn-pill mt-10"
-                  >
-                    {svc.cta}
-                  </Link>
-                </div>
-              </Reveal>
-            </div>
-          </section>
-        );
-      })}
-
-      {/* HANDCRAFTED LUXURY — dark editorial banner */}
-      <section className="relative py-36 md:py-52 bg-[#01261d] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center ken-burns opacity-25"
-          style={{ backgroundImage: `url(${IMAGES.experienceBg})` }}
-        />
-        <div className="absolute inset-0 bg-[#01261d]/65" />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-          <Reveal>
-            <div className="flex justify-center"><GoldRule delay={150} wide /></div>
-            <div className="eyebrow eyebrow-light mt-7">Our Philosophy</div>
-            <h2
-              className="mt-9 font-display text-white leading-[1.1] tracking-tight"
-              style={{ fontSize: "clamp(2.2rem, 4.6vw, 4rem)" }}
-            >
-              Merging Handcrafted Luxury<br />With Sustainable Elegance
+              A Full Design-Build Experience
             </h2>
             <div className="flex justify-center mt-9"><GoldRule delay={300} /></div>
-            <p className="mt-10 text-white/80 text-base md:text-lg font-light leading-[2]">
-              With over thirty years of building custom homes, we have become experts in the construction processes for Ontario's great outdoors. Our design-build experts create architectural masterpieces in harmony with nature. Experience a lifestyle others only dream of with a custom build by Timberline.
+            <p className="mt-9 text-[#3a3531] text-base md:text-lg font-light leading-[2]">
+              At Timberline, we deliver a complete design-build experience, guiding clients through every stage of their project — from the initial concept to the finishing touches.
             </p>
-            <Link to="/contact" data-testid="luxury-cta-button" className="btn-pill mt-12 border-[#c9a96e] text-white hover:bg-[#c9a96e] hover:text-[#01261d] hover:border-[#c9a96e]">
-              Schedule a Call
-            </Link>
           </Reveal>
         </div>
       </section>
 
-      {/* FEATURED TESTIMONIAL — large editorial pull-quote */}
-      <section data-testid="featured-testimonial" className="py-32 md:py-44 bg-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <Reveal>
-            <div className="font-display text-[#c9a96e] text-8xl md:text-9xl leading-none mb-2" aria-hidden="true">"</div>
-            <p
-              className="font-display italic text-[#01261d] leading-[1.45]"
-              style={{ fontSize: "clamp(1.4rem, 2.4vw, 2.2rem)" }}
-            >
-              {FEATURED_TESTIMONIAL.quote}
-            </p>
-            <div className="mt-12 flex justify-center"><GoldRule delay={200} /></div>
-            <div className="mt-8 text-[#3a3531] text-sm font-medium tracking-wide">
-              — {FEATURED_TESTIMONIAL.author}
-            </div>
-            <div className="text-[0.7rem] tracking-[0.28em] uppercase text-[#c9a96e] mt-2">
-              {FEATURED_TESTIMONIAL.location}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* TRANSFORM YOUR VISION — collage with bigger images */}
-      <section className="py-32 md:py-44 bg-[#fafaf7]">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-          <Reveal variant="left" className="lg:col-span-7">
-            <div className="grid grid-cols-2 gap-5 md:gap-7">
-              <div className="aspect-[3/4] overflow-hidden">
-                <img src={IMAGES.user11} alt="Timberline craftsmanship" className="w-full h-full object-cover" loading="lazy" />
-              </div>
-              <div className="aspect-[3/4] overflow-hidden mt-14">
-                <img src={IMAGES.user18} alt="Timberline craftsmanship" className="w-full h-full object-cover" loading="lazy" />
-              </div>
-            </div>
-          </Reveal>
-          <Reveal variant="right" delay={120} className="lg:col-span-5 lg:pl-6">
-            <div>
-              <GoldRule delay={200} />
-              <div className="eyebrow mt-6">Our Approach</div>
-              <h2
-                className="mt-7 font-display text-[#01261d] leading-[1.05] tracking-tight"
-                style={{ fontSize: "clamp(2.2rem, 4.2vw, 3.4rem)" }}
-              >
-                Transform Your Vision Into an Architectural Masterpiece
-              </h2>
-              <p className="mt-9 text-[#3a3531] text-base md:text-lg font-light leading-[2]">
-                When you build with us, we treat you like family. Our approach to custom home building provides you with next-level customization. We deliver a personalized experience with the highest standards of quality, luxury, and craftsmanship. Live an inspired life with a custom build by Timberline.
-              </p>
-              <Link to="/contact" data-testid="transform-cta-button" className="btn-pill mt-10">
-                Schedule a Call
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* PORTFOLIO PREVIEW — bigger 2-up + 1-up layout */}
-      <section data-testid="portfolio-preview" className="py-32 md:py-44 bg-white">
+      {/* WHAT WE OFFER GRID */}
+      <section data-testid="what-we-offer-section" className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <Reveal>
-            <div className="text-center max-w-2xl mx-auto">
+            <div className="text-center max-w-2xl mx-auto mb-16">
               <div className="flex justify-center"><GoldRule delay={150} /></div>
-              <div className="eyebrow mt-6">Selected Work</div>
+              <div className="eyebrow mt-6">What We Offer</div>
               <h2
-                className="mt-7 font-display text-[#01261d] leading-[1.05] tracking-tight"
-                style={{ fontSize: "clamp(2.4rem, 5vw, 4.5rem)" }}
+                className="mt-7 font-display text-[#01261d] leading-tight tracking-tight"
+                style={{ fontSize: "clamp(2.2rem, 4.4vw, 3.6rem)" }}
               >
-                View Our Portfolio<br />of Luxury Homes
+                Every Discipline. One Roof.
               </h2>
-              <div className="flex justify-center mt-10"><GoldRule delay={300} /></div>
+              <div className="flex justify-center mt-9"><GoldRule delay={300} /></div>
             </div>
           </Reveal>
 
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
-            {PORTFOLIO_PROJECTS.slice(0, 2).map((p, i) => (
-              <Reveal key={p.slug} variant="scale" delay={i * 120}>
-                <Link
-                  to="/portfolio"
-                  data-testid={`portfolio-preview-card-${i}`}
-                  className="group block"
-                >
-                  <div className="aspect-[4/5] overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
+            {OFFERINGS.map((o, i) => {
+              const Icon = o.icon;
+              return (
+                <Reveal key={o.name} variant="scale" delay={(i % 3) * 100}>
+                  <Link
+                    to="/what-we-offer"
+                    data-testid={`offering-card-${o.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                    className="group relative block aspect-[4/5] overflow-hidden"
+                  >
                     <img
-                      src={p.image}
-                      alt={p.title}
-                      className="w-full h-full object-cover transition-transform duration-[1400ms] group-hover:scale-105"
+                      src={o.image}
+                      alt={o.name}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1400ms] group-hover:scale-105"
                       loading="lazy"
                     />
-                  </div>
-                  <div className="mt-7">
-                    <div className="eyebrow">{p.category}</div>
-                    <h3 className="mt-4 font-display text-[#01261d] text-3xl leading-tight group-hover:text-[#c9a96e] transition-colors">
-                      {p.title}
-                    </h3>
-                    <div className="mt-5 flex items-center gap-2 text-[0.72rem] tracking-[0.28em] uppercase text-[#c9a96e]">
-                      <span>View Project</span>
-                      <ArrowRight size={14} strokeWidth={1.5} className="transition-transform group-hover:translate-x-1" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#01261d]/90 via-[#01261d]/40 to-transparent" />
+                    <div className="absolute inset-0 flex flex-col justify-end p-8">
+                      <Icon className="text-[#c9a96e] mb-4" size={26} strokeWidth={1.4} />
+                      <div className="eyebrow eyebrow-light mb-2">{o.name}</div>
+                      <h3 className="font-display text-white text-2xl md:text-[1.75rem] leading-tight">
+                        {o.body}
+                      </h3>
+                      <div className="mt-4 h-[2px] w-8 bg-[#c9a96e] transition-all duration-500 group-hover:w-16" />
                     </div>
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
+                  </Link>
+                </Reveal>
+              );
+            })}
           </div>
 
           <div className="mt-16 flex justify-center">
-            <Link to="/portfolio" data-testid="portfolio-preview-cta" className="btn-pill">
-              View Full Portfolio
+            <Link to="/what-we-offer" data-testid="what-we-offer-cta" className="btn-pill">
+              See What We Offer
             </Link>
           </div>
         </div>
       </section>
 
-      {/* PROCESS */}
-      <section data-testid="process-section" className="py-32 md:py-44 bg-[#fafaf7]">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      {/* BRAND MESSAGE — full-width dark banner */}
+      <section data-testid="memories-section" className="relative py-36 md:py-52 bg-[#01261d] overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center ken-burns opacity-40"
+          style={{ backgroundImage: `url(${IMAGES.experienceBg})` }}
+        />
+        <div className="absolute inset-0 bg-[#01261d]/60" />
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <Reveal>
-            <div className="text-center max-w-2xl mx-auto">
-              <div className="flex justify-center"><GoldRule delay={150} /></div>
-              <div className="eyebrow mt-6">A Simple Process</div>
-              <h2
-                className="mt-7 font-display text-[#01261d] leading-[1.05] tracking-tight"
-                style={{ fontSize: "clamp(2.4rem, 5vw, 4.5rem)" }}
-              >
-                Build Your Vision With<br />a Simple Process
-              </h2>
-              <div className="flex justify-center mt-10"><GoldRule delay={300} /></div>
-            </div>
+            <div className="flex justify-center"><GoldRule delay={150} wide /></div>
+            <div className="eyebrow eyebrow-light mt-7">Our Promise</div>
+            <h2
+              className="mt-9 font-display text-white leading-[1.1] tracking-tight uppercase"
+              style={{ fontSize: "clamp(1.9rem, 4.4vw, 3.6rem)" }}
+            >
+              We create memories in the Kawarthas,<br />not just buildings.
+            </h2>
+            <div className="flex justify-center mt-10"><GoldRule delay={300} /></div>
+            <p className="mt-10 text-white/85 text-base md:text-lg font-light leading-[2] max-w-3xl mx-auto">
+              Our clients trust Timberline to creatively design and build their high quality custom project where they will pursue their dreams, raise their family, welcome their friends and retire. Building a project that represents our clients by matching their needs and aspirations creates more than just a building, but memories to extend among generations.
+            </p>
+            <Link to="/about" data-testid="memories-cta" className="btn-pill mt-12 border-[#c9a96e] text-white hover:bg-[#c9a96e] hover:text-white hover:border-[#c9a96e]">
+              Learn About Us
+            </Link>
           </Reveal>
-
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14 lg:gap-12">
-            {PROCESS.map((s, i) => (
-              <Reveal key={s.n} delay={i * 120}>
-                <div data-testid={`home-process-${s.n}`}>
-                  <div
-                    className="font-display text-[#c9a96e] leading-none tracking-tight"
-                    style={{ fontSize: "clamp(3.5rem, 6.5vw, 5.5rem)" }}
-                  >
-                    {s.n}
-                  </div>
-                  <div className="mt-5"><GoldRule delay={200} /></div>
-                  <h3 className="mt-6 font-display text-[#01261d] text-2xl md:text-3xl leading-tight">
-                    {s.title}
-                  </h3>
-                  <p className="mt-6 text-[#3a3531] text-sm md:text-base font-light leading-[1.95]">
-                    {s.body}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* TESTIMONIALS LIST */}
-      <section data-testid="testimonials-section" className="py-32 md:py-44 bg-white">
+      {/* PROJECT MARQUEE */}
+      <section data-testid="project-marquee" className="py-24 md:py-32 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 text-center">
+          <Reveal>
+            <div className="flex justify-center"><GoldRule delay={150} /></div>
+            <div className="eyebrow mt-6">Selected Work</div>
+            <h2
+              className="mt-7 font-display text-[#01261d] leading-tight tracking-tight"
+              style={{ fontSize: "clamp(2.2rem, 4.4vw, 3.6rem)" }}
+            >
+              Craftsmanship in Every Detail
+            </h2>
+            <div className="flex justify-center mt-9"><GoldRule delay={300} /></div>
+          </Reveal>
+        </div>
+
+        <div className="relative w-full marquee-pause">
+          <div className="flex marquee gap-6 will-change-transform">
+            {[...MARQUEE, ...MARQUEE].map((src, i) => (
+              <div
+                key={`m-${i}`}
+                data-testid={`marquee-tile-${i}`}
+                className="relative shrink-0 w-[280px] md:w-[400px] lg:w-[480px] aspect-[4/3] overflow-hidden group"
+              >
+                <img
+                  src={src}
+                  alt="Timberline project"
+                  className="w-full h-full object-cover transition-transform duration-[1400ms] group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-[#01261d]/0 group-hover:bg-[#01261d]/45 transition-colors duration-500" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-14 flex justify-center">
+          <Link to="/portfolio" data-testid="marquee-cta" className="btn-pill">
+            View Portfolio
+          </Link>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section data-testid="testimonials-section" className="py-28 md:py-36 bg-[#f5f0e6]">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <Reveal>
-            <div className="text-center max-w-2xl mx-auto">
+            <div className="text-center max-w-2xl mx-auto mb-16">
               <div className="flex justify-center"><GoldRule delay={150} /></div>
               <div className="eyebrow mt-6">Client Stories</div>
               <h2
-                className="mt-7 font-display text-[#01261d] leading-[1.05] tracking-tight"
-                style={{ fontSize: "clamp(2.4rem, 5vw, 4.5rem)" }}
+                className="mt-7 font-display text-[#01261d] leading-tight tracking-tight"
+                style={{ fontSize: "clamp(2.2rem, 4.4vw, 3.6rem)" }}
               >
-                Our Valued Clients<br />Tell Their Stories
+                What Clients Are Saying
               </h2>
-              <div className="flex justify-center mt-10"><GoldRule delay={300} /></div>
+              <div className="flex justify-center mt-9"><GoldRule delay={300} /></div>
             </div>
           </Reveal>
 
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={t.author} delay={i * 120}>
-                <div data-testid={`testimonial-card-${i}`}>
+                <div
+                  data-testid={`testimonial-card-${i}`}
+                  className="bg-white p-10 md:p-12 h-full flex flex-col border border-[#c9a96e]/20"
+                >
                   <div className="font-display text-[#c9a96e] text-6xl leading-none mb-2" aria-hidden="true">"</div>
-                  <p className="font-display italic text-[#01261d] text-xl leading-[1.55]">
+                  <p className="font-display italic text-[#01261d] text-lg md:text-xl leading-[1.6] flex-1">
                     {t.quote}
                   </p>
                   <div className="mt-8"><GoldRule delay={200} /></div>
-                  <div className="mt-7 text-[#3a3531] text-sm font-medium">— {t.author}</div>
+                  <div className="mt-6 text-[#2b2622] text-sm font-medium">— {t.author}</div>
                   <div className="text-[0.7rem] tracking-[0.28em] uppercase text-[#c9a96e] mt-1.5">
                     {t.location}
                   </div>
@@ -409,6 +310,44 @@ const Home = () => {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* DESIGN BUILD CLOSING SECTION */}
+      <section
+        data-testid="design-build-closing"
+        className="relative py-40 md:py-56 bg-[#01261d] overflow-hidden"
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-center ken-burns opacity-35"
+          style={{ backgroundImage: `url(${PORTFOLIO_PROJECTS[0]?.image || IMAGES.cottageExterior})` }}
+        />
+        <div className="absolute inset-0 bg-[#01261d]/65" />
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+          <Reveal>
+            <div className="flex justify-center"><GoldRule delay={150} wide /></div>
+            <div className="eyebrow eyebrow-light mt-7">The Complete Process</div>
+            <h2
+              className="mt-9 font-display text-white leading-[1.02] tracking-tight"
+              style={{ fontSize: "clamp(3rem, 8vw, 7rem)" }}
+            >
+              Design<span className="text-[#c9a96e] mx-4 md:mx-6">·</span>Build
+            </h2>
+            <div className="flex justify-center mt-10"><GoldRule delay={300} /></div>
+            <p className="mt-9 font-display italic text-white/85 text-xl md:text-2xl">
+              Concept · Design · Permitting · Construction · Finishing
+            </p>
+            <p className="mt-8 text-white/70 text-base md:text-lg font-light leading-[2] max-w-2xl mx-auto">
+              Building with Nature.  Since 1989.
+            </p>
+            <Link
+              to="/portfolio"
+              data-testid="design-build-cta"
+              className="btn-pill mt-12 border-[#c9a96e] text-white hover:bg-[#c9a96e] hover:text-white hover:border-[#c9a96e]"
+            >
+              See Our Work
+            </Link>
+          </Reveal>
         </div>
       </section>
     </main>
