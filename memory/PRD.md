@@ -1,45 +1,65 @@
 # Timberline Custom Homes — PRD
 
 ## Original Problem
-Build a multi-page luxury custom home builder website for "Timberline Custom Homes" (Kawartha Lakes, ON) — Architectural Digest meets cottage country craftsmanship. Pages: Home, Our Process, About Us, Contact Us. Brand: #01261d navy, #231f20 charcoal, #00a34f forest green. Playfair Display + Montserrat. Contact form submissions emailed to rajsoni48879@gmail.com via Resend.
+Build a multi-page luxury custom home builder website for "Timberline Custom Homes" (Peterborough & the Kawarthas). Architectural Digest editorial feel married to the client's warm, nature-inspired brand (forest green, water ripples). Pages: Home, About, Our Process, What We Offer, Portfolio, Contact. Brand: #01261d deep forest / #1a9647 kelly green accent / #c9a96e warm gold / #f5f0e6 cream. Playfair Display (headings) + Inter (body). Contact form submissions delivered via Resend.
 
 ## Architecture
-- **Frontend**: React 19 + React Router 7 + Tailwind, lucide-react icons, Intersection Observer for reveal animations
-- **Backend**: FastAPI + Resend SDK (async via asyncio.to_thread)
-- **Email**: Resend, sender `onboarding@resend.dev`, recipient configurable via `RECIPIENT_EMAIL`
+- **Frontend**: React 19 + React Router 7 + Tailwind, lucide-react icons, Intersection Observer for reveal + gold-rule animations, marquee & Ken Burns effects
+- **Backend**: FastAPI + Resend SDK (async via `asyncio.to_thread`)
+- **Email**: Resend, sender configurable, recipient `rajsoni48879@gmail.com` by default
+- **Shared components**: `Header` (announcement strip + logo + Since-1989 badge), `Footer`, `PageHero`, `Reveal` + `GoldRule`
 
 ## Pages Implemented (2026-02)
-- `/` Home: Hero (user cottage photo), Foundation two-column, Services 12-card dark grid, Magazine gallery (6 tiles), 30 Years experience banner, Memories mission, Testimonials (3 cards)
-- `/our-process` Process: PageHero + 6 numbered steps + CTA
-- `/about` About: PageHero + History (3 paragraphs) + Stats bar (4) + Values (4) + Office Team (8) + Field Teams (4)
-- `/contact` Contact: PageHero + Contact info + Floating-label form with 11 fields, conditional Other inputs, Resend submission, success/error states
+- `/` Home: Ken-Burns hero slider (4 slides + water-ripple SVG), Complete Service intro, "Every Discipline. One Roof." offering grid (7 disciplines), Our Promise dark banner, "Craftsmanship in Every Detail" scrolling marquee, Testimonials, Design·Build closing banner
+- `/about`: PageHero, Our History (3 paragraphs, photo), Stats (4), Office Team (8) + Field Team (4), Awards & Memberships (4), Testimonials
+- `/our-process`: PageHero, 6 alternating numbered steps with script numerals, CTA band
+- `/what-we-offer`: PageHero, Complete Service intro, 7 alternating discipline blocks with bullet highlights, CTA band
+- `/portfolio`: PageHero, category filter (6 categories), 10-project editorial grid, CTA band
+- `/contact`: PageHero, contact info block + floating-label inquiry form (11 fields, conditional "Other"), Resend submission with success/error states
 
 ## User Personas
-- **Prospective client**: Cottage/home seeker browsing trust signals, work, and finally submitting inquiry
-- **Office admin (rajsoni48879@gmail.com)**: Receives formatted inquiry emails with all fields
+- **Prospective client**: Cottage / custom-home seeker browsing trust signals, portfolio and process before submitting an inquiry
+- **Office admin (rajsoni48879@gmail.com)**: Receives formatted inquiry emails from the /api/contact route
 
 ## Core Requirements
-- Multi-page navigation with sticky scroll-aware header
-- Floating-label form with conditional fields
-- Email delivery via Resend
-- Premium editorial aesthetic, fade-up reveal animations
-- Fully responsive (mobile hamburger overlay)
+- Multi-page navigation with sticky, scroll-aware header (green announcement strip + main header)
+- Floating-label form with conditional "Other" fields and full validation
+- Email delivery via Resend (503 fallback if key missing)
+- Premium editorial aesthetic with hybrid nature-inspired brand cues (water ripple, Since-1989 leaf badge, gold rule)
+- Fully responsive with mobile hamburger overlay
 
-## Status — 2026-02
-- [x] All pages built and routed
-- [x] Header / Footer persistent with sticky behaviour
-- [x] Contact form posts to /api/contact
-- [x] Backend Resend integration coded; returns 503 with clear message until RESEND_API_KEY supplied
-- [x] Testing agent: 100% pass on backend (9/9) and frontend
-- [ ] User must paste RESEND_API_KEY in /app/backend/.env to enable live email delivery
+## Status — 2026-02 (Current)
+- [x] All 6 pages built and routed
+- [x] Header / Footer persistent, scroll-aware with sticky white transformation
+- [x] Announcement strip (green) on top of every page
+- [x] Logo (LOGO_FINAL-02) with white contrast plate; "Since 1989" baked into logo
+- [x] Hero slider (7 user photos, 4 s auto-advance) with subtle wave divider at bottom
+- [x] Playfair Display + Inter font stack
+- [x] Scrolling project marquee on Home
+- [x] Contact form posts to `/api/contact` and Resend delivery is live
+- [x] `RESEND_API_KEY` configured in `/app/backend/.env`
+- [x] Home.jsx refactored into `HeroSlider`, `ServiceCards`, `ScrollingGallery` components
+- [x] What We Offer cards show titles only (icon + name)
+- [x] "We create memories in the Kawarthas..." tagline + paragraph as What-We-Offer intro
 
-## Backlog (P1)
-- Domain verification on Resend for custom sender (e.g. inquiries@timberlinecustomhomes.ca)
-- Real project case-study pages behind gallery tiles
+## What's Been Implemented — Timeline
+- **2026-02 (initial)**: Multi-page skeleton, Resend integration, floating-label form
+- **2026-02 (iteration 2)**: Gilbert+Burke cream/champagne aesthetic
+- **2026-02 (iteration 3)**: Multi-million dollar pure-white editorial refactor
+- **2026-02 (iteration 4)**: Hybrid restructure — green announcement strip, hero carousel, Since-1989 badge, water-ripple, scrolling marquee, `WhatWeOffer` page, removed AskRay widget, Playfair + Inter typography
+- **2026-02 (iteration 5)**: New client logo (LOGO_FINAL-02) with white backing plate; removed redundant Since-1989 text
+- **2026-02 (iteration 6)**: 7-image hero slider (user-supplied assets, 4 s cadence), Home.jsx refactored into `HeroSlider` / `ServiceCards` / `ScrollingGallery` components, What We Offer cards title-only, memories tagline promoted as brand statement above services
+
+## Backlog
+
+### P1
+- Real project case-study pages behind portfolio tiles
+- Replace placeholder Unsplash tiles with client-supplied project photography
+- Domain verification on Resend for custom sender (`inquiries@timberlinecustomhomes.ca`)
+
+### P2
 - Google Analytics / Search Console
 - CMS for non-dev edits to project gallery
-
-## Backlog (P2)
 - Multi-language (EN/FR)
 - Newsletter signup
 - Instagram feed embed

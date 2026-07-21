@@ -45,7 +45,7 @@ const Portfolio = () => {
       />
 
       {/* CATEGORY FILTER */}
-      <section className="pt-16 md:pt-20 pb-8 md:pb-10 bg-white sticky-safe">
+      <section className="pt-16 md:pt-20 pb-8 md:pb-10 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
             {CATEGORIES.map((cat) => (

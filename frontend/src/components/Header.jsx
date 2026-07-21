@@ -13,13 +13,19 @@ const NAV_ITEMS = [
 ];
 
 const Logo = ({ scrolled = false }) => (
-  <img
-    src={LOGO_LIGHT}
-    alt="Timberline Custom Homes — Since 1989"
-    className={`w-auto object-contain transition-all duration-500 ${
-      scrolled ? "h-14 md:h-16" : "h-16 md:h-20"
+  <div
+    className={`transition-all duration-500 flex items-center ${
+      scrolled ? "px-0 py-0" : "bg-white/92 backdrop-blur-sm px-4 py-2 rounded-sm shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
     }`}
-  />
+  >
+    <img
+      src={LOGO_LIGHT}
+      alt="Timberline Custom Homes — Since 1989"
+      className={`w-auto object-contain transition-all duration-500 ${
+        scrolled ? "h-12 md:h-14" : "h-11 md:h-14"
+      }`}
+    />
+  </div>
 );
 
 export const Header = () => {
@@ -75,20 +81,8 @@ export const Header = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between gap-6">
-          <Link to="/" data-testid="site-logo" className="flex items-center gap-4 shrink-0">
+          <Link to="/" data-testid="site-logo" className="flex items-center shrink-0">
             <Logo scrolled={scrolled} />
-            {/* Since 1989 badge */}
-            <div
-              data-testid="since-1989-badge"
-              className={`hidden md:flex flex-col items-center justify-center rounded-full border transition-colors duration-500 ${
-                scrolled
-                  ? "border-[#c9a96e] text-[#1a9647]"
-                  : "border-[#c9a96e]/70 text-white"
-              } w-14 h-14`}
-            >
-              <span className="font-script text-[#c9a96e] text-sm leading-none">Since</span>
-              <span className="font-display text-[0.72rem] leading-none mt-0.5">1989</span>
-            </div>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
@@ -132,7 +126,11 @@ export const Header = () => {
         }`}
       >
         <div className="flex items-center justify-between px-6 py-6">
-          <Logo />
+          <img
+            src={LOGO_LIGHT}
+            alt="Timberline Custom Homes — Since 1989"
+            className="h-12 w-auto object-contain bg-white/95 px-2 py-1 rounded-sm"
+          />
           <button
             data-testid="mobile-menu-close"
             onClick={() => setMenuOpen(false)}

@@ -17,11 +17,13 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           <div>
-            <img
-              src={LOGO_LIGHT}
-              alt="Timberline Custom Homes"
-              className="h-16 md:h-20 w-auto object-contain -ml-2"
-            />
+            <div className="bg-white/95 inline-flex px-4 py-3 rounded-sm">
+              <img
+                src={LOGO_LIGHT}
+                alt="Timberline Custom Homes"
+                className="h-14 md:h-16 w-auto object-contain"
+              />
+            </div>
             <p className="mt-7 text-sm text-[#f4eee4]/70 font-light leading-relaxed max-w-xs">
               Kawartha &nbsp;|&nbsp; Peterborough &nbsp;|&nbsp; Lakefield &nbsp;|&nbsp; Surrounding Areas
             </p>

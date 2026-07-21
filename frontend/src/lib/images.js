@@ -1,5 +1,5 @@
 // Centralized image URLs for Timberline Custom Homes
-export const LOGO_LIGHT = "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/7qxjrtxa_IMG_6006.png";
+export const LOGO_LIGHT = "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/6fxeneg8_LOGO_FINAL-02.png";
 export const BANNER_INTERIOR = "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/96doj20j_Banner-01.jpg";
 
 export const IMAGES = {
@@ -29,6 +29,17 @@ export const IMAGES = {
   galleryC: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=80",
   galleryD: "https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=1400&q=80",
 };
+
+// Hero background slider — user-supplied luxury project photography
+export const HERO_SLIDES = [
+  { image: IMAGES.cottageExterior, alt: "Timberline lakefront custom home exterior" },
+  { image: IMAGES.user7,           alt: "Timberline architectural detail" },
+  { image: IMAGES.user8,           alt: "Custom boathouse on the Kawarthas" },
+  { image: IMAGES.user11,          alt: "Custom home interior craftsmanship" },
+  { image: IMAGES.user18,          alt: "Kawartha lakefront living room" },
+  { image: IMAGES.greatRoomBar,    alt: "Great room with timber beams" },
+  { image: IMAGES.user26,          alt: "Lakeside bunkie and dock" },
+];
 
 export const PORTFOLIO_PROJECTS = [
   {
