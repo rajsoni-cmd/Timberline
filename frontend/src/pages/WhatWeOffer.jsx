@@ -30,7 +30,7 @@ const OFFERINGS = [
   {
     icon: HomeIcon,
     name: "Custom Builds",
-    image: IMAGES.cottageExterior,
+    image: IMAGES.customBuildsRender,
     body: "Custom homes, cottages, boathouses, bunkies and garages — every build managed by a Timberline Project Manager and delivered by our long-tenured field team.",
     highlights: ["Custom homes & cottages", "Boathouses & bunkies", "Garages & outbuildings"],
   },

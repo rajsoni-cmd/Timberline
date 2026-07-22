@@ -14,7 +14,7 @@ import { IMAGES } from "../lib/images";
 const OFFERINGS = [
   { icon: Compass,        name: "Custom Design",           image: IMAGES.customDesignRender },
   { icon: ClipboardCheck, name: "Planning & Permitting",   image: IMAGES.planningPermittingRender },
-  { icon: HomeIcon,       name: "Custom Builds",           image: IMAGES.cottageExterior },
+  { icon: HomeIcon,       name: "Custom Builds",           image: IMAGES.customBuildsRender },
   { icon: Hammer,         name: "Renovation & Addition",   image: IMAGES.user18 },
   { icon: Building2,      name: "Commercial Builds",       image: IMAGES.shopBuild },
   { icon: Truck,          name: "Heavy Equipment",         image: IMAGES.experienceBg },

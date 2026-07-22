@@ -57,7 +57,7 @@ export const HeroSlider = () => {
           <Link
             to="/what-we-offer"
             data-testid="hero-cta-button"
-            className="btn-pill mt-10"
+            className="btn-pill mt-4"
           >
             Our Services
           </Link>
