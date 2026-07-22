@@ -18,7 +18,7 @@ const OFFERINGS = [
   { icon: Hammer,         name: "Renovation & Addition",   image: IMAGES.renovationsRender },
   { icon: Building2,      name: "Commercial Builds",       image: IMAGES.commercialBuildsRender },
   { icon: Truck,          name: "Heavy Equipment",         image: IMAGES.heavyEquipmentRender },
-  { icon: Warehouse,      name: "Storage Rentals",         image: IMAGES.user11 },
+  { icon: Warehouse,      name: "Storage Rentals",         image: IMAGES.storageRentalsRender },
 ];
 
 export const ServiceCards = () => {

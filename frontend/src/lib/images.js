@@ -26,6 +26,7 @@ export const IMAGES = {
   renovationsRender: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/qelpi13s_4-%20Renovations%20%26%20Additions.webp",
   commercialBuildsRender: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/iuo47s68_5-%20Commercial%20Builds.webp",
   heavyEquipmentRender: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/rwmv2da5_6-%20Heavy%20Equipment.webp",
+  storageRentalsRender: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/2uur2xdj_7-%20Storage%20Rentals.webp",
   designBuildClosing: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/ic2k5m3o_3-%20Bottom%20of%20Homepage%20Photo.jpg",
 
   // Unsplash — luxury cottage country

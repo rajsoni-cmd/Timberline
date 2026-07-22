@@ -51,7 +51,7 @@ const OFFERINGS = [
   {
     icon: Warehouse,
     name: "Storage Rentals",
-    image: IMAGES.user11,
+    image: IMAGES.storageRentalsRender,
     body: "Modern, dry, secure storage units in Woodview — sized for seasonal, boat, contractor, and cottage-country storage with drive-up access year-round.",
     highlights: ["Multiple unit sizes", "Drive-up access", "Woodview, ON"],
   },
