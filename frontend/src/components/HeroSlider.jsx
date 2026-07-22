@@ -18,7 +18,7 @@ export const HeroSlider = () => {
   return (
     <section
       data-testid="hero-section"
-      className="relative min-h-screen w-full flex items-end justify-center overflow-hidden"
+      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden"
     >
       {HERO_SLIDES.map((s, i) => (
         <div
@@ -34,7 +34,7 @@ export const HeroSlider = () => {
       ))}
       <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/70" />
 
-      <div className="relative z-10 text-center px-6 max-w-6xl pb-40 md:pb-52">
+      <div className="relative z-10 text-center px-6 max-w-6xl pt-16 md:pt-24">
         <Reveal>
           <div
             data-testid="hero-content-plate"
