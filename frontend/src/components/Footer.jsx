@@ -85,27 +85,26 @@ export const Footer = () => {
             <div className="eyebrow eyebrow-light text-[#d4c4a8]">Proud Members Of</div>
           </div>
 
-          {/* Logo strip — single soft cream band so transparent logos remain legible */}
-          <div className="mb-10 flex justify-center">
-            <div
-              data-testid="membership-logos"
-              className="inline-flex flex-wrap items-center justify-center gap-8 md:gap-10 lg:gap-12 bg-white/95 rounded-md px-8 md:px-12 py-6 md:py-7"
-            >
-              {MEMBERSHIP_LOGOS.map((m) => (
-                <div
-                  key={m.name}
-                  data-testid={`membership-logo-${m.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                  className="flex items-center justify-center h-14 md:h-16 transition-opacity duration-300 opacity-90 hover:opacity-100"
-                >
-                  <img
-                    src={m.image}
-                    alt={m.name}
-                    className="max-h-full max-w-[110px] md:max-w-[130px] w-auto object-contain"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
+          {/* Logo strip — transparent, no background */}
+          <div
+            data-testid="membership-logos"
+            className="flex flex-wrap items-center justify-center gap-10 md:gap-14 lg:gap-16 mb-10"
+          >
+            {MEMBERSHIP_LOGOS.map((m) => (
+              <div
+                key={m.name}
+                data-testid={`membership-logo-${m.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                className="flex items-center justify-center h-14 md:h-16 transition-opacity duration-300 opacity-85 hover:opacity-100"
+              >
+                <img
+                  src={m.image}
+                  alt={m.name}
+                  className="max-h-full max-w-[110px] md:max-w-[130px] w-auto object-contain"
+                  style={{ filter: "brightness(0) invert(1)", mixBlendMode: "screen" }}
+                  loading="lazy"
+                />
+              </div>
+            ))}
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5 text-[#f4eee4]/60 text-[0.68rem] tracking-[0.28em] uppercase font-light">
