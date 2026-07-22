@@ -4,11 +4,11 @@ export const BANNER_INTERIOR = "https://customer-assets.emergentagent.com/job_ti
 
 // Membership / accreditation badges displayed in the footer
 export const MEMBERSHIP_LOGOS = [
-  { name: "WSIB Ontario",                 image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/91pgnk2d_WSIB%20Ont.png" },
-  { name: "East Kawartha Chamber",        image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/ct7m5xmh_wolf_filled%20%281%29.png" },
-  { name: "Tarion Registered Builder",    image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/f3bbiyjs_Tarion-Seal_BW.png" },
-  { name: "RenoMark",                     image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/7209is2k_renomark-logo-trans-background.png" },
-  { name: "Government of Ontario",        image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/027gk6oe_ontario-logo-1-e1647530998691.jpg" },
+  { name: "Government of Ontario",       image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/zkfzxvxm_Logo5.png" },
+  { name: "RenoMark",                    image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/nptamcgd_Logo4.png" },
+  { name: "Tarion Registered Builder",   image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/vs4v8dl5_Logo3.png" },
+  { name: "East Kawartha Chamber",       image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/6ne0rk1p_Logo2.png" },
+  { name: "WSIB Ontario",                image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/91pgnk2d_WSIB%20Ont.png" },
 ];
 
 export const IMAGES = {
