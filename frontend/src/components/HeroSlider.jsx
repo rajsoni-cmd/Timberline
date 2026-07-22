@@ -32,27 +32,32 @@ export const HeroSlider = () => {
           aria-hidden={i !== slide}
         />
       ))}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#01261d]/40 via-transparent to-[#01261d]/85" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/70" />
 
       <div className="relative z-10 text-center px-6 max-w-6xl pb-40 md:pb-52">
         <Reveal>
-          <div className="eyebrow eyebrow-light mb-8">Custom Design and Build</div>
-          <h1
-            className="font-display text-white leading-[0.98] tracking-tight"
-            style={{ fontSize: "clamp(3rem, 8.5vw, 7.5rem)" }}
+          <div
+            data-testid="hero-content-plate"
+            className="mx-auto max-w-4xl px-6 md:px-12 py-10 md:py-14 rounded-md bg-black/25 backdrop-blur-[6px] border border-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.35)]"
           >
-            Building with <em className="text-[#c9a96e] not-italic font-medium">Nature.</em>
-          </h1>
-          <div className="flex justify-center mt-10">
-            <GoldRule delay={400} wide />
+            <div className="eyebrow eyebrow-light mb-6 font-semibold">Custom Design and Build</div>
+            <h1
+              className="font-display text-white leading-[0.98] tracking-tight font-bold"
+              style={{ fontSize: "clamp(3rem, 8.5vw, 7.5rem)" }}
+            >
+              Building with <em className="text-[#c9a96e] not-italic font-bold">Nature.</em>
+            </h1>
+            <div className="flex justify-center mt-8">
+              <GoldRule delay={400} wide />
+            </div>
+            <p className="mt-7 text-white text-[0.78rem] md:text-[0.86rem] tracking-[0.32em] uppercase font-bold">
+              Peterborough + Kawarthas
+            </p>
           </div>
-          <p className="mt-8 text-white/85 text-[0.72rem] md:text-[0.78rem] tracking-[0.32em] uppercase font-light">
-            Peterborough + Kawarthas
-          </p>
           <Link
             to="/what-we-offer"
             data-testid="hero-cta-button"
-            className="btn-pill mt-12 border-[#c9a96e] text-white hover:bg-[#c9a96e] hover:text-white hover:border-[#c9a96e]"
+            className="btn-pill mt-10"
           >
             Our Services
           </Link>

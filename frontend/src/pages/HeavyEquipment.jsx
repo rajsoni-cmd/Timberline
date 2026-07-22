@@ -101,7 +101,7 @@ const HeavyEquipment = () => {
               From Raw Land to Finished Home
             </h2>
             <div className="flex justify-center mt-10"><GoldRule delay={300} /></div>
-            <Link to="/contact" data-testid="he-cta" className="btn-pill mt-12 border-[#c9a96e] text-white hover:bg-[#c9a96e] hover:text-[#01261d] hover:border-[#c9a96e]">
+            <Link to="/contact" data-testid="he-cta" className="btn-pill mt-12">
               Discuss Your Site
             </Link>
           </Reveal>

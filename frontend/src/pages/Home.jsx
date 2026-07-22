@@ -3,7 +3,7 @@ import Reveal, { GoldRule } from "../components/Reveal";
 import HeroSlider from "../components/HeroSlider";
 import ServiceCards from "../components/ServiceCards";
 import ScrollingGallery from "../components/ScrollingGallery";
-import { IMAGES, PORTFOLIO_PROJECTS } from "../lib/images";
+import { IMAGES } from "../lib/images";
 import { TESTIMONIALS } from "../lib/team";
 
 const Home = () => {
@@ -54,7 +54,7 @@ const Home = () => {
             <p className="mt-10 text-white/85 text-base md:text-lg font-light leading-[2] max-w-3xl mx-auto">
               At Timberline, we deliver a complete design-build experience, guiding clients through every stage of their project — from the initial concept to the finishing touches.
             </p>
-            <Link to="/about" data-testid="memories-cta" className="btn-pill mt-12 border-[#c9a96e] text-white hover:bg-[#c9a96e] hover:text-white hover:border-[#c9a96e]">
+            <Link to="/about" data-testid="memories-cta" className="btn-pill mt-12">
               Learn About Us
             </Link>
           </Reveal>
@@ -109,31 +109,48 @@ const Home = () => {
         className="relative py-40 md:py-56 bg-[#01261d] overflow-hidden"
       >
         <div
-          className="absolute inset-0 bg-cover bg-center ken-burns opacity-35"
-          style={{ backgroundImage: `url(${PORTFOLIO_PROJECTS[0]?.image || IMAGES.cottageExterior})` }}
+          className="absolute inset-0 bg-cover bg-center ken-burns opacity-40"
+          style={{ backgroundImage: `url(${IMAGES.designBuildClosing})` }}
         />
         <div className="absolute inset-0 bg-[#01261d]/65" />
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
           <Reveal>
             <div className="flex justify-center"><GoldRule delay={150} wide /></div>
             <div className="eyebrow eyebrow-light mt-7">The Complete Process</div>
-            <h2
-              className="mt-9 font-display text-white leading-[1.02] tracking-tight"
-              style={{ fontSize: "clamp(3rem, 8vw, 7rem)" }}
-            >
-              Design<span className="text-[#c9a96e] mx-4 md:mx-6">·</span>Build
-            </h2>
-            <div className="flex justify-center mt-10"><GoldRule delay={300} /></div>
-            <p className="mt-9 font-display italic text-white/85 text-xl md:text-2xl">
-              Concept · Design · Permitting · Construction · Finishing
-            </p>
-            <p className="mt-8 text-white/70 text-base md:text-lg font-light leading-[2] max-w-2xl mx-auto">
-              Building with Nature.  Since 1989.
-            </p>
+
+            <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-y-16 md:gap-x-16 items-center">
+              {/* Design side */}
+              <div className="md:text-right md:pr-8 md:border-r md:border-[#c9a96e]/40">
+                <h2
+                  className="font-display text-white leading-[0.95] tracking-tight"
+                  style={{ fontSize: "clamp(3rem, 7.5vw, 6rem)" }}
+                >
+                  Design<span className="text-[#c9a96e]">.</span>
+                </h2>
+                <p className="mt-6 font-display italic text-white/90 text-lg md:text-xl lg:text-2xl">
+                  Building with Nature.
+                </p>
+              </div>
+
+              {/* Build side */}
+              <div className="md:text-left md:pl-8">
+                <h2
+                  className="font-display text-white leading-[0.95] tracking-tight"
+                  style={{ fontSize: "clamp(3rem, 7.5vw, 6rem)" }}
+                >
+                  Build<span className="text-[#c9a96e]">.</span>
+                </h2>
+                <p className="mt-6 font-display italic text-white/90 text-lg md:text-xl lg:text-2xl">
+                  Since 1989.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex justify-center mt-14"><GoldRule delay={300} /></div>
             <Link
               to="/portfolio"
               data-testid="design-build-cta"
-              className="btn-pill mt-12 border-[#c9a96e] text-white hover:bg-[#c9a96e] hover:text-white hover:border-[#c9a96e]"
+              className="btn-pill mt-12"
             >
               See Our Work
             </Link>

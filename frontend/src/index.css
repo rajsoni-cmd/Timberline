@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Dancing+Script:wght@500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -26,8 +26,8 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, sans-serif;
-  font-weight: 300;
+  font-family: 'Open Sans', system-ui, sans-serif;
+  font-weight: 400;
   line-height: 1.75;
   background: #ffffff;
   color: var(--tl-text);
@@ -52,57 +52,60 @@ body {
 
 /* Typography */
 .font-display {
-  font-family: 'Playfair Display', 'Georgia', serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 .font-script {
   font-family: 'Dancing Script', cursive;
 }
 .font-body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .eyebrow {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.3em;
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--tl-gold);
 }
 .eyebrow-light  { color: #d4c4a8; }
 .eyebrow-forest { color: var(--tl-forest); }
 
-/* Pill CTA */
+/* Pill CTA — black background, white text */
 .btn-pill {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.22em;
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: 9999px;
   padding: 0.95rem 2.2rem;
   display: inline-block;
-  border: 1px solid var(--tl-gold);
-  background: transparent;
-  color: var(--tl-text);
-  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+  border: 1px solid #000000;
+  background: #000000;
+  color: #ffffff;
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, transform 0.3s ease;
   cursor: pointer;
   line-height: 1;
 }
 .btn-pill:hover {
-  background: var(--tl-gold);
+  background: #1a1a1a;
   color: #ffffff;
-  border-color: var(--tl-gold);
+  border-color: #1a1a1a;
+  transform: translateY(-1px);
 }
 .btn-pill-dark {
-  background: var(--tl-forest-dark);
+  background: #000000;
   color: #ffffff;
-  border-color: var(--tl-forest-dark);
+  border-color: #000000;
 }
 .btn-pill-dark:hover {
-  background: var(--tl-gold);
+  background: #1a1a1a;
   color: #ffffff;
-  border-color: var(--tl-gold);
+  border-color: #1a1a1a;
 }
 
 /* Decorative gold rule */
@@ -164,8 +167,8 @@ body {
   padding: 8px 0 10px;
   font-size: 0.95rem;
   color: var(--tl-text);
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   outline: none;
   transition: border-color 0.35s ease;
   border-radius: 0;
@@ -180,7 +183,7 @@ body {
 }
 .tl-field label {
   position: absolute; left: 0; top: 30px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 0.75rem; letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(43, 38, 34, 0.55);

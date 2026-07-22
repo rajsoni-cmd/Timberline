@@ -1,5 +1,5 @@
 // Centralized image URLs for Timberline Custom Homes
-export const LOGO_LIGHT = "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/6fxeneg8_LOGO_FINAL-02.png";
+export const LOGO_LIGHT = "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/q4rjsxnu_Final_Logo.png";
 export const BANNER_INTERIOR = "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/96doj20j_Banner-01.jpg";
 
 // Membership / accreditation badges displayed in the footer
@@ -22,6 +22,7 @@ export const IMAGES = {
   user26: "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/qsj47hzn_26.jpg",
   customDesignRender: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/olakgvbb_1%20-%20Custom%20Design.webp",
   planningPermittingRender: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/r3jial7x_2-%20Planning%20and%20Permitting.webp",
+  designBuildClosing: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/ic2k5m3o_3-%20Bottom%20of%20Homepage%20Photo.jpg",
 
   // Unsplash — luxury cottage country
   heroExterior:    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80",

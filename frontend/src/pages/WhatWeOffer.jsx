@@ -178,7 +178,7 @@ const WhatWeOffer = () => {
               Ready to Build Your Vision?
             </h2>
             <div className="flex justify-center mt-10"><GoldRule delay={300} /></div>
-            <Link to="/contact" data-testid="wwo-cta" className="btn-pill mt-12 border-[#c9a96e] text-white hover:bg-[#c9a96e] hover:text-white hover:border-[#c9a96e]">
+            <Link to="/contact" data-testid="wwo-cta" className="btn-pill mt-12">
               Begin a Conversation
             </Link>
           </Reveal>

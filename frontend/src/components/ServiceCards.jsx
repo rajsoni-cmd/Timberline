@@ -55,7 +55,7 @@ export const ServiceCards = () => {
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1400ms] group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#01261d]/90 via-[#01261d]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
                   <div className="absolute inset-0 flex flex-col justify-end p-8">
                     <Icon className="text-[#c9a96e] mb-4" size={26} strokeWidth={1.4} />
                     <div className="eyebrow eyebrow-light mb-2">{o.name}</div>
