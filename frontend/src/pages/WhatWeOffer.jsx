@@ -37,7 +37,7 @@ const OFFERINGS = [
   {
     icon: Hammer,
     name: "Renovations & Additions",
-    image: IMAGES.user18,
+    image: IMAGES.renovationsRender,
     body: "Reimagine an existing home or expand it with sensitivity to what's already there. Our carpenters have worked on heritage and new-build alike — the transition is seamless.",
     highlights: ["Full home renovations", "Kitchen & bath", "Structural additions"],
   },
