@@ -44,7 +44,7 @@ const OFFERINGS = [
   {
     icon: Building2,
     name: "Commercial Builds",
-    image: BANNER_INTERIOR,
+    image: IMAGES.commercialBuildsRender,
     body: "Purpose-built commercial spaces with the same craft as our residential work — mixed-use, hospitality, professional offices, and light industrial across Peterborough & the Kawarthas.",
     highlights: ["Mixed-use buildings", "Hospitality spaces", "Professional offices"],
   },
@@ -58,7 +58,7 @@ const OFFERINGS = [
   {
     icon: Truck,
     name: "Heavy Equipment",
-    image: IMAGES.experienceBg,
+    image: IMAGES.heavyEquipmentRender,
     body: "In 2014 we built a 3,200 sq ft shop to house and maintain our heavy equipment fleet — keeping excavation, septic, backfilling, landscaping and site services fully in-house.",
     highlights: ["Excavation & site prep", "Septic installation", "Landscaping & grading"],
   },

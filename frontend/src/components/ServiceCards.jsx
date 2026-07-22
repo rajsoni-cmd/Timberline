@@ -16,8 +16,8 @@ const OFFERINGS = [
   { icon: ClipboardCheck, name: "Planning & Permitting",   image: IMAGES.planningPermittingRender },
   { icon: HomeIcon,       name: "Custom Builds",           image: IMAGES.customBuildsRender },
   { icon: Hammer,         name: "Renovation & Addition",   image: IMAGES.renovationsRender },
-  { icon: Building2,      name: "Commercial Builds",       image: IMAGES.shopBuild },
-  { icon: Truck,          name: "Heavy Equipment",         image: IMAGES.experienceBg },
+  { icon: Building2,      name: "Commercial Builds",       image: IMAGES.commercialBuildsRender },
+  { icon: Truck,          name: "Heavy Equipment",         image: IMAGES.heavyEquipmentRender },
   { icon: Warehouse,      name: "Storage Rentals",         image: IMAGES.user11 },
 ];
 
