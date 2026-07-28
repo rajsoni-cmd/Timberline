@@ -2,13 +2,13 @@
 export const LOGO_LIGHT = "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/q4rjsxnu_Final_Logo.png";
 export const BANNER_INTERIOR = "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/96doj20j_Banner-01.jpg";
 
-// Membership / accreditation badges displayed in the footer
+// Membership / accreditation badges displayed in the footer (white-on-transparent versions)
 export const MEMBERSHIP_LOGOS = [
-  { name: "Government of Ontario",       image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/zkfzxvxm_Logo5.png" },
-  { name: "RenoMark",                    image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/nptamcgd_Logo4.png" },
-  { name: "Tarion Registered Builder",   image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/vs4v8dl5_Logo3.png" },
-  { name: "East Kawartha Chamber",       image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/6ne0rk1p_Logo2.png" },
-  { name: "WSIB Ontario",                image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/91pgnk2d_WSIB%20Ont.png" },
+  { name: "Government of Ontario",       image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/bwc5tzgt_Image1.png" },
+  { name: "RenoMark",                    image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/d9cyj0yj_Image2.png" },
+  { name: "Tarion Registered Builder",   image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/rvvn8js4_Image3.png" },
+  { name: "East Kawartha Chamber",       image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/objcrdc8_Image4.png" },
+  { name: "WSIB Ontario",                image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/zf0wtdbk_Image6.png" },
 ];
 
 export const IMAGES = {
