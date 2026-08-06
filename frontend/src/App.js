@@ -8,6 +8,7 @@ import Process from "./pages/Process";
 import WhatWeOffer from "./pages/WhatWeOffer";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
+import Testimonials from "./pages/Testimonials";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/our-process" element={<Process />} />
           <Route path="/what-we-offer" element={<WhatWeOffer />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />

@@ -17,7 +17,7 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           <div>
-            <div className="bg-white/95 inline-flex px-4 py-3 rounded-sm">
+            <div className="inline-flex">
               <img
                 src={LOGO_LIGHT}
                 alt="Timberline Custom Homes"
@@ -53,7 +53,7 @@ export const Footer = () => {
 
           <FooterCol heading="Office Location">
             <div className="leading-relaxed">
-              5584 ON-28 Unit 5,<br />Woodview, ON K0L 3E0
+              5584 Highway 28,<br />Woodview, ON K0L 3E0
             </div>
           </FooterCol>
 

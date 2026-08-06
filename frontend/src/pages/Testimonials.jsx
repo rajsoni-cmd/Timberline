@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import Reveal, { GoldRule } from "../components/Reveal";
 import PageHero from "../components/PageHero";
 import { IMAGES } from "../lib/images";
+import { TESTIMONIALS } from "../lib/team";
 
-const ALL_TESTIMONIALS = [
+// Historical testimonials preserved on the dedicated page for depth
+const HISTORICAL_TESTIMONIALS = [
   {
-    quote: "Ray, Dave, John, Heather, Riley, and the entire team at Timberline — I just want to express my sincere thanks and appreciation for all you and the rest of the team and subs have done to get us back to our cottage. It has been a stressful year since the fire and you all have been so professional and accommodating. It was amazing to walk in on Friday afternoon and see the transformation that has been made. We were overwhelmed at the new look and the detail and appreciate the hard work involved. It was so nice to sit in the living room and look around at the view, once again. We never appreciate things until they are gone, and the entire Timberline team has revitalized the cottage and brought it back to life, and even better! I know there are still several small things to complete over the coming few weeks, but we are so thankful to be able to use the cottage so soon, as you predicted on schedule. Thanks so, so much, once again for giving us back our cottage.",
+    quote: "Ray, Dave, John, Heather, Riley, and the entire team at Timberline — I just want to express my sincere thanks and appreciation for all you and the rest of the team and subs have done to get us back to our cottage. It has been a stressful year since the fire and you all have been so professional and accommodating. It was amazing to walk in on Friday afternoon and see the transformation that has been made. We were overwhelmed at the new look and the detail and appreciate the hard work involved.",
     author: "Mark & Florence",
     location: "Chemong Lake, 2019",
   },
@@ -29,28 +31,15 @@ const ALL_TESTIMONIALS = [
     author: "D.G.",
     location: "Balsam Lake",
   },
-  {
-    quote: "From our initial consultation to the final walkthrough, Timberline made building our custom home seamless. We wouldn't hesitate to recommend them to anyone looking to build in the Kawarthas.",
-    author: "The Campbell Family",
-    location: "Lakefield, ON",
-  },
-  {
-    quote: "The craftsmanship is honestly the best we've seen in twenty years of cottage country. Honest communication, no surprises, and a finish that still stops people in the doorway.",
-    author: "Jonathan R.",
-    location: "Pigeon Lake",
-  },
-  {
-    quote: "Three generations of our family will gather under this roof. Ray and his team understood that we weren't just building a home — we were building a place to come back to. Every detail reflects that.",
-    author: "The Lin Family",
-    location: "Buckhorn Lake",
-  },
 ];
+
+const ALL_TESTIMONIALS = [...TESTIMONIALS, ...HISTORICAL_TESTIMONIALS];
 
 const Testimonials = () => {
   return (
     <main data-testid="testimonials-page">
       <PageHero
-        eyebrow="What Clients Are Saying"
+        eyebrow="Client Stories"
         title="Client Stories"
         subtitle="Three decades of relationships — in our clients' own words."
         image={IMAGES.contactHero}
@@ -67,7 +56,7 @@ const Testimonials = () => {
                   className="flex flex-col"
                 >
                   <div className="font-display text-[#c9a96e] text-7xl leading-none mb-2" aria-hidden="true">&ldquo;</div>
-                  <p className="font-display italic text-[#01261d] text-xl md:text-2xl leading-[1.55]">
+                  <p className="font-display italic text-[#01261d] text-xl md:text-2xl leading-[1.55] whitespace-pre-line">
                     {t.quote}
                   </p>
                   <div className="mt-9"><GoldRule delay={200} /></div>
