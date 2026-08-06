@@ -31,6 +31,37 @@ const Home = () => {
         </div>
       </section>
 
+      {/* COMPLETE SERVICE — long-form brand story */}
+      <section
+        data-testid="complete-service-section"
+        className="py-24 md:py-32 bg-[#f5f0e6]"
+      >
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <Reveal>
+            <div className="text-center mb-14">
+              <div className="flex justify-center"><GoldRule delay={150} /></div>
+              <div className="eyebrow mt-6">Our Approach</div>
+              <h2
+                className="mt-7 font-display text-[#01261d] leading-[1.1] tracking-tight uppercase"
+                style={{ fontSize: "clamp(2rem, 4.6vw, 3.6rem)" }}
+              >
+                Complete Service
+              </h2>
+              <div className="flex justify-center mt-8"><GoldRule delay={300} /></div>
+            </div>
+
+            <div className="space-y-8 text-[#3a3531] text-base md:text-lg font-light leading-[2]">
+              <p>
+                Timberline provides our <span className="italic font-medium">"complete service"</span> for designing and building your envisioned project by partnering with our clients each step of the way — from the concept stage to developing the plans, obtaining permits and variances, engineering, excavation, to the final finished product including services and landscaping. Timberline designs and builds all sizes of projects, including homes, cottages, renovations, additions, bunkies, garages, boathouses, docks and more. Introducing heavy equipment has expanded our services to site preparation, demolition, excavation, backfilling, road building, septic installation and landscaping — ultimately developing our clients' projects from the ground up.
+              </p>
+              <p>
+                Our reputation and referrals help form a trust that brings the Timberline team and clients together to reach a common goal of a unique, quality build. We are constantly advancing our products and services, maintaining our focus on quality regardless of the size of the project. Timberline exceeds building code standards to ensure that each project is energy efficient and dependable. Enrolled with Tarion Home Warranty since being established in 1989, we reassure our clients that we stand behind our projects.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <ServiceCards />
 
       <ScrollingGallery />
