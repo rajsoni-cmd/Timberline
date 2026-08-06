@@ -9,7 +9,7 @@ const MARQUEE = [
 
 export const ScrollingGallery = () => {
   return (
-    <section data-testid="project-marquee" className="py-24 md:py-32 bg-white overflow-hidden">
+    <section data-testid="project-marquee" className="py-14 md:py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 text-center">
         <Reveal>
           <div className="flex justify-center"><GoldRule delay={150} /></div>
@@ -30,7 +30,7 @@ export const ScrollingGallery = () => {
             <div
               key={`m-${i}`}
               data-testid={`marquee-tile-${i}`}
-              className="relative shrink-0 w-[280px] md:w-[400px] lg:w-[480px] aspect-[4/3] overflow-hidden group"
+              className="relative shrink-0 w-[300px] md:w-[420px] lg:w-[500px] aspect-[4/5] overflow-hidden group"
             >
               <img
                 src={src}

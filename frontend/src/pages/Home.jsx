@@ -4,6 +4,7 @@ import HeroSlider from "../components/HeroSlider";
 import ServiceCards from "../components/ServiceCards";
 import ScrollingGallery from "../components/ScrollingGallery";
 import TestimonialCard from "../components/TestimonialCard";
+import FAQ from "../components/FAQ";
 import { IMAGES } from "../lib/images";
 import { TESTIMONIALS } from "../lib/team";
 
@@ -13,7 +14,7 @@ const Home = () => {
       <HeroSlider />
 
       {/* BRAND STATEMENT — intro to What We Offer */}
-      <section data-testid="memories-intro" className="pt-24 md:pt-32 pb-16 md:pb-20 bg-white">
+      <section data-testid="memories-intro" className="pt-16 md:pt-20 pb-10 md:pb-12 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <Reveal>
             <div className="flex justify-center"><GoldRule delay={150} /></div>
@@ -35,7 +36,7 @@ const Home = () => {
       {/* COMPLETE SERVICE — long-form brand story */}
       <section
         data-testid="complete-service-section"
-        className="py-24 md:py-32 bg-[#f5f0e6]"
+        className="py-14 md:py-20 bg-[#f5f0e6]"
       >
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <Reveal>
@@ -68,7 +69,7 @@ const Home = () => {
       <ScrollingGallery />
 
       {/* TESTIMONIALS */}
-      <section data-testid="testimonials-section" className="py-28 md:py-36 bg-[#f5f0e6]">
+      <section data-testid="testimonials-section" className="py-16 md:py-24 bg-[#f5f0e6]">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -101,10 +102,12 @@ const Home = () => {
         </div>
       </section>
 
+      <FAQ />
+
       {/* DESIGN BUILD CLOSING SECTION */}
       <section
         data-testid="design-build-closing"
-        className="relative py-40 md:py-56 bg-[#01261d] overflow-hidden"
+        className="relative py-24 md:py-32 bg-[#01261d] overflow-hidden"
       >
         <div
           className="absolute inset-0 bg-cover bg-center ken-burns opacity-40"

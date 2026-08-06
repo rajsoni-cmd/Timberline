@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Reveal, { GoldRule } from "../components/Reveal";
 import PageHero from "../components/PageHero";
+import TestimonialCard from "../components/TestimonialCard";
 import { IMAGES } from "../lib/images";
 import { TESTIMONIALS } from "../lib/team";
 
@@ -48,24 +49,9 @@ const Testimonials = () => {
 
       <section className="py-28 md:py-40 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-20 gap-x-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14 items-start">
             {ALL_TESTIMONIALS.map((t, i) => (
-              <Reveal key={t.author} delay={(i % 2) * 120}>
-                <div
-                  data-testid={`testimonials-page-card-${i}`}
-                  className="flex flex-col"
-                >
-                  <div className="font-display text-[#c9a96e] text-7xl leading-none mb-2" aria-hidden="true">&ldquo;</div>
-                  <p className="font-display italic text-[#01261d] text-xl md:text-2xl leading-[1.55] whitespace-pre-line">
-                    {t.quote}
-                  </p>
-                  <div className="mt-9"><GoldRule delay={200} /></div>
-                  <div className="mt-7 text-[#3a3531] text-sm font-medium">— {t.author}</div>
-                  <div className="text-[0.7rem] tracking-[0.28em] uppercase text-[#c9a96e] mt-1.5">
-                    {t.location}
-                  </div>
-                </div>
-              </Reveal>
+              <TestimonialCard key={t.author} testimonial={t} index={i} />
             ))}
           </div>
         </div>

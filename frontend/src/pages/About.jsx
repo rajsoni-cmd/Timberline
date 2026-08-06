@@ -1,7 +1,8 @@
-import { User, Award, Star } from "lucide-react";
+import { User, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 import Reveal, { GoldRule } from "../components/Reveal";
 import PageHero from "../components/PageHero";
+import TestimonialCard from "../components/TestimonialCard";
 import { IMAGES, BANNER_INTERIOR } from "../lib/images";
 import { OFFICE_TEAM, FIELD_TEAM, TESTIMONIALS } from "../lib/team";
 
@@ -273,43 +274,31 @@ const About = () => {
       <section id="testimonials" data-testid="about-testimonials-section" className="py-28 md:py-36 bg-white scroll-mt-28">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <Reveal>
-            <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="flex justify-center"><GoldRule delay={150} /></div>
-              <div className="eyebrow mt-6">Client Stories</div>
               <h2
-                className="mt-7 font-display text-[#01261d] leading-tight tracking-tight"
+                className="mt-8 font-display text-[#01261d] leading-tight tracking-tight uppercase"
                 style={{ fontSize: "clamp(2.2rem, 4.6vw, 4rem)" }}
               >
-                What Clients Are Saying
+                Client Stories
               </h2>
-              <div className="flex justify-center mt-9"><GoldRule delay={300} /></div>
+              <div className="flex justify-center mt-8"><GoldRule delay={300} /></div>
             </div>
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14 items-start">
             {TESTIMONIALS.map((t, i) => (
-              <Reveal key={t.author} delay={i * 120}>
-                <div data-testid={`about-testimonial-${i}`} className="flex flex-col">
-                  <div className="font-display text-[#c9a96e] text-6xl leading-none mb-2" aria-hidden="true">&ldquo;</div>
-                  <p className="font-display italic text-[#01261d] text-lg md:text-xl leading-[1.6] flex-1">
-                    {t.quote}
-                  </p>
-                  <div className="mt-8"><GoldRule delay={200} /></div>
-                  <div className="mt-6 text-[#2b2622] text-sm font-medium">— {t.author}</div>
-                  <div className="text-[0.7rem] tracking-[0.28em] uppercase text-[#c9a96e] mt-1.5">
-                    {t.location}
-                  </div>
-                </div>
-              </Reveal>
+              <TestimonialCard key={t.author} testimonial={t} index={i} />
             ))}
           </div>
 
           <div className="mt-16 flex justify-center">
-            <Link to="/contact" data-testid="about-testimonials-cta" className="btn-pill">
-              <span className="inline-flex items-center gap-2">
-                <Star size={12} strokeWidth={2} className="text-[#c9a96e]" />
-                Share Your Story
-              </span>
+            <Link
+              to="/testimonials"
+              data-testid="about-testimonials-cta"
+              className="btn-pill"
+            >
+              Read More Client Stories
             </Link>
           </div>
         </div>

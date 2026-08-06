@@ -32,7 +32,7 @@ const OfferingCard = ({ offering, index }) => {
       <Link
         to="/what-we-offer"
         data-testid={`offering-card-${offering.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-        className="group relative block aspect-[4/5] overflow-hidden"
+        className="group relative block aspect-[4/3] overflow-hidden"
       >
         <img
           src={offering.image}
@@ -53,7 +53,7 @@ const OfferingCard = ({ offering, index }) => {
 
 export const ServiceCards = () => {
   return (
-    <section data-testid="what-we-offer-section" className="py-20 md:py-28 bg-white">
+    <section data-testid="what-we-offer-section" className="py-14 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
