@@ -2,7 +2,7 @@ import { useState } from "react";
 import Reveal, { GoldRule } from "./Reveal";
 
 // Character threshold — below this we don't show a Read More toggle.
-const CLAMP_THRESHOLD = 280;
+const CLAMP_THRESHOLD = 220;
 
 const TestimonialCard = ({ testimonial, index }) => {
   const [expanded, setExpanded] = useState(false);
@@ -22,7 +22,7 @@ const TestimonialCard = ({ testimonial, index }) => {
           <p
             data-testid={`testimonial-quote-${index}`}
             className={`font-display italic text-[#01261d] text-lg md:text-xl leading-[1.6] whitespace-pre-line ${
-              !expanded && isLong ? "line-clamp-4" : ""
+              !expanded && isLong ? "line-clamp-6" : ""
             }`}
           >
             {testimonial.quote}
