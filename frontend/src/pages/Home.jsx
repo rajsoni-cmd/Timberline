@@ -33,34 +33,6 @@ const Home = () => {
 
       <ServiceCards />
 
-      {/* BRAND MESSAGE — full-width dark banner */}
-      <section data-testid="memories-section" className="relative py-36 md:py-52 bg-[#01261d] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center ken-burns opacity-40"
-          style={{ backgroundImage: `url(${IMAGES.experienceBg})` }}
-        />
-        <div className="absolute inset-0 bg-[#01261d]/60" />
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <Reveal>
-            <div className="flex justify-center"><GoldRule delay={150} wide /></div>
-            <div className="eyebrow eyebrow-light mt-7">A Complete Design-Build Experience</div>
-            <h2
-              className="mt-9 font-display text-white leading-[1.1] tracking-tight"
-              style={{ fontSize: "clamp(1.9rem, 4.4vw, 3.6rem)" }}
-            >
-              From concept to keys — one team, one standard.
-            </h2>
-            <div className="flex justify-center mt-10"><GoldRule delay={300} /></div>
-            <p className="mt-10 text-white/85 text-base md:text-lg font-light leading-[2] max-w-3xl mx-auto">
-              At Timberline, we deliver a complete design-build experience, guiding clients through every stage of their project — from the initial concept to the finishing touches.
-            </p>
-            <Link to="/about" data-testid="memories-cta" className="btn-pill mt-12">
-              Learn About Us
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-
       <ScrollingGallery />
 
       {/* TESTIMONIALS */}

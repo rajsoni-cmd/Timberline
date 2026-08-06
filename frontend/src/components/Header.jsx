@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, X, Phone, ChevronDown, Plus, Minus } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, Plus, Minus, Facebook, Instagram, Linkedin } from "lucide-react";
 import { LOGO_LIGHT } from "../lib/images";
 
 // Navigation model. Items with `children` render a hover-dropdown on desktop
@@ -33,18 +33,12 @@ const NAV_ITEMS = [
   { to: "/contact",     label: "Contact Us" },
 ];
 
-const Logo = ({ scrolled = false }) => (
-  <div
-    className={`transition-all duration-500 flex items-center ${
-      scrolled ? "px-0 py-0" : "bg-white/92 backdrop-blur-sm px-4 py-2 rounded-sm shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
-    }`}
-  >
+const Logo = () => (
+  <div className="flex items-center">
     <img
       src={LOGO_LIGHT}
       alt="Timberline Custom Homes — Since 1989"
-      className={`w-auto object-contain transition-all duration-500 ${
-        scrolled ? "h-12 md:h-14" : "h-11 md:h-14"
-      }`}
+      className="w-auto object-contain h-16 md:h-20 lg:h-24"
     />
   </div>
 );
@@ -57,13 +51,11 @@ const splitHash = (to) => {
 
 // Desktop nav link (plain or dropdown-parent). Sub-links use react-router Link
 // so we can carry hashes into location and let ScrollToHash handle offset.
-const DesktopNavLink = ({ item, scrolled }) => {
+const DesktopNavLink = ({ item }) => {
   const [open, setOpen] = useState(false);
   const hasChildren = Array.isArray(item.children) && item.children.length > 0;
-  const linkColor = scrolled
-    ? "text-[#2b2622] hover:text-[#1a9647]"
-    : "text-white hover:text-[#c9a96e]";
-  const activeColor = scrolled ? "text-[#1a9647]" : "text-[#c9a96e]";
+  const linkColor = "text-white hover:text-[#c9a96e]";
+  const activeColor = "text-[#c9a96e]";
 
   if (!hasChildren) {
     return (
@@ -72,7 +64,7 @@ const DesktopNavLink = ({ item, scrolled }) => {
         end={item.to === "/"}
         data-testid={`nav-link-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
         className={({ isActive }) =>
-          `nav-underline uppercase tracking-[0.22em] text-[0.72rem] font-medium transition-colors ${linkColor} ${
+          `nav-underline uppercase tracking-[0.22em] text-[0.72rem] font-semibold transition-colors ${linkColor} ${
             isActive ? `active ${activeColor}` : ""
           }`
         }
@@ -92,7 +84,7 @@ const DesktopNavLink = ({ item, scrolled }) => {
         to={item.to}
         data-testid={`nav-link-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
         className={({ isActive }) =>
-          `nav-underline uppercase tracking-[0.22em] text-[0.72rem] font-medium transition-colors inline-flex items-center gap-1.5 ${linkColor} ${
+          `nav-underline uppercase tracking-[0.22em] text-[0.72rem] font-semibold transition-colors inline-flex items-center gap-1.5 ${linkColor} ${
             isActive ? `active ${activeColor}` : ""
           }`
         }
@@ -231,56 +223,90 @@ export const Header = () => {
 
   return (
     <>
-      {/* Announcement strip */}
+      {/* Slim contact strip */}
       <div
         data-testid="announcement-strip"
-        className="fixed top-0 left-0 right-0 z-[55] bg-[#1a9647] text-white/95 text-[0.68rem] md:text-[0.72rem] tracking-[0.24em] uppercase font-light px-4 py-2 flex items-center justify-center gap-4 md:gap-8"
+        className="fixed top-0 left-0 right-0 z-[55] bg-[#0e3d24] text-white/95 text-[0.68rem] md:text-[0.72rem] tracking-[0.24em] uppercase font-light px-4 py-2 flex items-center justify-between gap-4"
       >
-        <span className="hidden sm:inline">CHBA National Awards Finalist · Top 5</span>
-        <span className="hidden sm:inline text-white/50">·</span>
-        <a
-          href="tel:7056544312"
-          className="inline-flex items-center gap-2 hover:text-[#c9a96e] transition-colors"
-          data-testid="announcement-phone"
-        >
-          <Phone size={12} strokeWidth={2} className="opacity-90" />
-          (705) 654-4312
-        </a>
-        <span className="hidden md:inline text-white/50">·</span>
-        <a
-          href="mailto:info@timberlinecustomhomes.ca"
-          className="hidden md:inline hover:text-[#c9a96e] transition-colors"
-        >
-          info@timberlinecustomhomes.ca
-        </a>
+        {/* Left spacer (hidden on small screens) */}
+        <div className="hidden md:block flex-1" />
+
+        {/* Center: phone + email */}
+        <div className="flex items-center justify-center gap-4 md:gap-6">
+          <a
+            href="tel:7056544312"
+            className="inline-flex items-center gap-2 hover:text-[#c9a96e] transition-colors"
+            data-testid="announcement-phone"
+          >
+            <Phone size={12} strokeWidth={2} className="opacity-90" />
+            (705) 654-4312
+          </a>
+          <span className="hidden md:inline text-white/40">·</span>
+          <a
+            href="mailto:info@timberlinecustomhomes.ca"
+            className="hidden md:inline hover:text-[#c9a96e] transition-colors"
+          >
+            info@timberlinecustomhomes.ca
+          </a>
+        </div>
+
+        {/* Right: social icons */}
+        <div data-testid="social-icons" className="flex items-center gap-3 md:gap-4 md:flex-1 md:justify-end">
+          <a
+            href="https://www.facebook.com/timberlinecustomhomes"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            data-testid="social-facebook"
+            className="text-white/85 hover:text-[#c9a96e] transition-colors"
+          >
+            <Facebook size={14} strokeWidth={1.8} />
+          </a>
+          <a
+            href="https://www.instagram.com/timberlinecustomhomes"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            data-testid="social-instagram"
+            className="text-white/85 hover:text-[#c9a96e] transition-colors"
+          >
+            <Instagram size={14} strokeWidth={1.8} />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/timberline-custom-homes"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            data-testid="social-linkedin"
+            className="text-white/85 hover:text-[#c9a96e] transition-colors"
+          >
+            <Linkedin size={14} strokeWidth={1.8} />
+          </a>
+        </div>
       </div>
 
-      {/* Main header */}
+      {/* Main header — forest green */}
       <header
         data-testid="site-header"
-        className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "top-9 bg-white/95 backdrop-blur-md py-3 shadow-[0_1px_0_rgba(0,0,0,0.06)]"
-            : "top-9 bg-transparent py-5"
+        className={`fixed left-0 right-0 z-50 transition-all duration-500 top-9 bg-[#3c7b43] ${
+          scrolled ? "py-2 shadow-[0_2px_20px_rgba(0,0,0,0.25)]" : "py-3"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between gap-6">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10 flex items-center justify-between gap-6">
           <Link to="/" data-testid="site-logo" className="flex items-center shrink-0">
-            <Logo scrolled={scrolled} />
+            <Logo />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
             {NAV_ITEMS.map((item) => (
-              <DesktopNavLink key={item.to} item={item} scrolled={scrolled} />
+              <DesktopNavLink key={item.to} item={item} />
             ))}
           </nav>
 
           <button
             data-testid="mobile-menu-toggle"
             onClick={() => setMenuOpen(true)}
-            className={`lg:hidden p-2 min-h-[48px] min-w-[48px] flex items-center justify-center transition-colors ${
-              scrolled ? "text-[#2b2622]" : "text-white"
-            }`}
+            className="lg:hidden p-2 min-h-[48px] min-w-[48px] flex items-center justify-center text-white"
             aria-label="Open menu"
           >
             <Menu size={24} strokeWidth={1.5} />

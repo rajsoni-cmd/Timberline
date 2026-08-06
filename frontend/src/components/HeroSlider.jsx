@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Reveal, { GoldRule } from "./Reveal";
 import { HERO_SLIDES } from "../lib/images";
 
@@ -40,10 +39,15 @@ export const HeroSlider = () => {
             data-testid="hero-content-plate"
             className="mx-auto max-w-4xl px-6 md:px-12 py-10 md:py-14 rounded-md bg-black/25 backdrop-blur-[6px] border border-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.35)]"
           >
-            <div className="eyebrow eyebrow-light mb-6 font-semibold">Custom Design and Build</div>
+            <div
+              data-testid="hero-eyebrow"
+              className="mb-6 text-white uppercase tracking-[0.3em] text-sm md:text-base lg:text-lg font-semibold"
+            >
+              Custom Design and Build
+            </div>
             <h1
               className="font-display text-white leading-[0.98] tracking-tight font-bold"
-              style={{ fontSize: "clamp(3rem, 8.5vw, 7.5rem)" }}
+              style={{ fontSize: "clamp(2.4rem, 6.5vw, 5.5rem)" }}
             >
               Building with <em className="text-[#c9a96e] not-italic font-bold">Nature.</em>
             </h1>
@@ -54,13 +58,6 @@ export const HeroSlider = () => {
               Peterborough + Kawarthas
             </p>
           </div>
-          <Link
-            to="/what-we-offer"
-            data-testid="hero-cta-button"
-            className="btn-pill mt-4"
-          >
-            Our Services
-          </Link>
         </Reveal>
       </div>
 
