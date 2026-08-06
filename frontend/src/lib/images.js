@@ -49,13 +49,10 @@ export const IMAGES = {
 
 // Hero background slider — user-supplied luxury project photography
 export const HERO_SLIDES = [
-  { image: IMAGES.cottageExterior, alt: "Timberline lakefront custom home exterior" },
-  { image: IMAGES.user7,           alt: "Timberline architectural detail" },
-  { image: IMAGES.user8,           alt: "Custom boathouse on the Kawarthas" },
-  { image: IMAGES.user11,          alt: "Custom home interior craftsmanship" },
-  { image: IMAGES.user18,          alt: "Kawartha lakefront living room" },
-  { image: IMAGES.greatRoomBar,    alt: "Great room with timber beams" },
-  { image: IMAGES.user26,          alt: "Lakeside bunkie and dock" },
+  { image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/1bydvg6n_1%20%282%29.webp",           alt: "Timberline timberframe home with wraparound porch in autumn" },
+  { image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/3j62dltp_2.1%20%281%29.webp",         alt: "Modern lakeside custom home in the Kawarthas" },
+  { image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/4ro2l22u_IMG_3987%20%281%29.webp",    alt: "Timberframe estate with detached garage" },
+  { image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/qd54dbh9_IMG_5933%20%281%29.webp",    alt: "Contemporary poolside custom residence" },
 ];
 
 export const PORTFOLIO_PROJECTS = [
