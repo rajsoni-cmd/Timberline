@@ -263,7 +263,7 @@ export const Header = () => {
             <Facebook size={14} strokeWidth={1.8} />
           </a>
           <a
-            href="https://www.instagram.com/timberlinecustomhomes"
+            href="https://www.instagram.com/timb_erlinecustomhomes/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -273,7 +273,7 @@ export const Header = () => {
             <Instagram size={14} strokeWidth={1.8} />
           </a>
           <a
-            href="https://www.linkedin.com/company/timberline-custom-homes"
+            href="https://www.linkedin.com/company/timberline-custom-homes/?originalSubdomain=ca"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
