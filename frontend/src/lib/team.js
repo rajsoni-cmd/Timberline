@@ -1,12 +1,14 @@
 export const OFFICE_TEAM = [
   { name: "Ray Northey", title: "Owner", since: "1989" },
   { name: "Calli Northey", title: "Human Resources Generalist / Admin", since: "2014" },
-  { name: "Bethaney Taylor", title: "Human Resources / Workflow Coordinator", since: "2018" },
+  { name: "Bethaney Lippert", title: "Human Resources / Workflow Coordinator", since: "2018" },
   { name: "Adam Leggett", title: "Senior Architectural Technologist", since: "2008" },
   { name: "Riley Martens", title: "Design Consultant & Architectural Technologist", since: "2018" },
   { name: "Andrew Wallachy", title: "Construction Project Manager", since: "2021" },
   { name: "Kevin Grubb", title: "Production General Manager & Senior Construction Estimator", since: "2023" },
   { name: "Chris Clouthier", title: "Project & Quality Control Manager", since: "2005" },
+  { name: "Kyle Reyns", title: "Lead Carpenter", since: "2016" },
+  { name: "Jason Clouthier", title: "Lead Carpenter", since: "2025" },
 ];
 
 export const FIELD_TEAM = [

@@ -1,4 +1,5 @@
-import { User, Award } from "lucide-react";
+import { useState } from "react";
+import { User, Award, Plus, Minus } from "lucide-react";
 import { Link } from "react-router-dom";
 import Reveal, { GoldRule } from "../components/Reveal";
 import PageHero from "../components/PageHero";
@@ -16,25 +17,194 @@ const STATS = [
 const AWARDS = [
   {
     year: "2024",
-    title: "CHBA National Awards of Excellence",
-    detail: "Top 5 Finalist — Rustic Stoney Lake Home",
+    groups: [
+      {
+        org: "Peterborough & The Kawarthas (PKHBA) Housing Design Awards",
+        items: [
+          "Custom Built Home over 4,001 SF — GOLD",
+          "Custom Built Home 2,501–4,000 SF — BRONZE",
+          "Custom Built Home 2,501–4,000 SF — FINALIST",
+          "Custom Built Home up to 2,500 SF — GOLD",
+          "Custom Built Home up to 2,500 SF — SILVER",
+          "Bathroom over $30,000 — WINNER",
+          "Outdoor Amenity Space — WINNER",
+          "Auxiliary Structure — WINNER",
+        ],
+      },
+    ],
   },
   {
-    year: "2020",
-    title: "PKHBA Renovator of the Year",
-    detail: "Housing Design Awards (tied)",
+    year: "2023",
+    groups: [
+      {
+        org: "Peterborough & The Kawarthas (PKHBA) Housing Design Awards",
+        items: [
+          "Custom Home Builder of the Year",
+          "Custom Built Home over 4,001 SF — WINNER",
+          "Renovations over $500,000 — FINALIST",
+        ],
+      },
+    ],
   },
   {
     year: "2019",
-    title: "PKHBA Housing Design Awards",
-    detail: "Multiple category recognitions",
+    groups: [
+      {
+        org: "Ontario Home Builders (OHBA) Awards of Distinction",
+        items: [
+          "Custom Home 3,001–5,000 SF — WINNER",
+          "Custom Home up to 3,000 SF — FINALIST",
+        ],
+      },
+    ],
   },
   {
-    year: "1989 – Present",
-    title: "Tarion Registered Builder",
-    detail: "Enrolled since incorporation — every project warranted",
+    year: "2018",
+    groups: [
+      {
+        org: "Ontario Home Builders (OHBA) Awards of Distinction",
+        items: ["Custom Home 5,000–10,000 SF — WINNER"],
+      },
+    ],
+  },
+  {
+    year: "2016",
+    groups: [
+      {
+        org: "CHBA National Awards of Housing Excellence",
+        items: ["Custom Homes Detached Over 3,500 SF — FINALIST"],
+      },
+      {
+        org: "Logix Awards",
+        items: ["Large Residential — WINNER"],
+      },
+      {
+        org: "Readers Select Awards",
+        items: ["Home Builders Category — GOLD"],
+      },
+    ],
+  },
+  {
+    year: "2015",
+    groups: [
+      {
+        org: "Peterborough & The Kawarthas (PKHBA) Housing Design Awards",
+        items: [
+          "Custom Home Builder of the Year",
+          "Custom Built Home over 2,501 SF — WINNER",
+          "Home Renovations $75,001–$200,000 — WINNER",
+          "Home Renovations over $200,001 — WINNER",
+        ],
+      },
+      {
+        org: "Ontario Home Builders (OHBA) Awards of Distinction",
+        items: ["Most Outstanding Custom Home over 5,001 SF — WINNER"],
+      },
+      {
+        org: "Kawartha Chamber of Commerce",
+        items: ["Outstanding Business Achievement — WINNER (Tied)"],
+      },
+    ],
+  },
+  {
+    year: "2014",
+    groups: [
+      {
+        org: "Peterborough & The Kawarthas (PKHBA) Housing Design Awards",
+        items: ["Any Room in the House — WINNER"],
+      },
+    ],
+  },
+  {
+    year: "2013",
+    groups: [
+      {
+        org: "Peterborough & The Kawarthas (PKHBA) Housing Design Awards",
+        items: [
+          "Best Kitchen Renovation — WINNER",
+          "Best Internet Website — WINNER",
+        ],
+      },
+    ],
   },
 ];
+
+// Expandable year row for the awards accordion
+const AwardYearRow = ({ yearGroup, index }) => {
+  const [open, setOpen] = useState(index === 0);
+  return (
+    <Reveal delay={index * 60}>
+      <div
+        data-testid={`award-year-${yearGroup.year}`}
+        className="border-b border-[#c9a96e]/25 last:border-b-0"
+      >
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          data-testid={`award-year-toggle-${yearGroup.year}`}
+          className="w-full grid grid-cols-[auto_1fr_auto] items-center gap-4 md:gap-6 py-6 md:py-7 text-left group"
+        >
+          {/* Year */}
+          <div className="font-display text-[#c9a96e] text-2xl md:text-3xl tracking-tight leading-none min-w-[80px]">
+            {yearGroup.year}
+          </div>
+
+          {/* Award count line */}
+          <div className="font-display text-[#01261d] text-base md:text-lg leading-snug tracking-tight group-hover:text-[#c9a96e] transition-colors">
+            {yearGroup.groups.reduce((n, g) => n + g.items.length, 0)}{" "}
+            {yearGroup.groups.reduce((n, g) => n + g.items.length, 0) === 1
+              ? "Recognition"
+              : "Recognitions"}
+            <span className="hidden md:inline text-[#3a3531] font-light italic text-sm ml-2">
+              — {yearGroup.groups.map((g) => g.org.split(" ")[0]).join(" · ")}
+            </span>
+          </div>
+
+          {/* Plus/Minus */}
+          <span
+            className={`shrink-0 w-9 h-9 rounded-full border border-[#01261d]/25 flex items-center justify-center transition-all duration-300 ${
+              open ? "bg-[#01261d] border-[#01261d]" : "bg-transparent"
+            }`}
+          >
+            {open ? (
+              <Minus size={16} strokeWidth={2} className="text-[#c9a96e]" />
+            ) : (
+              <Plus size={16} strokeWidth={2} className="text-[#01261d] group-hover:text-[#c9a96e] transition-colors" />
+            )}
+          </span>
+        </button>
+
+        <div
+          className={`overflow-hidden transition-all duration-500 ease-out ${
+            open ? "max-h-[1200px] opacity-100 pb-8" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="md:pl-[104px] space-y-6">
+            {yearGroup.groups.map((g) => (
+              <div key={g.org}>
+                <div className="text-[0.72rem] tracking-[0.22em] uppercase text-[#c9a96e] font-semibold mb-3">
+                  {g.org}
+                </div>
+                <ul className="space-y-1.5">
+                  {g.items.map((item, k) => (
+                    <li
+                      key={k}
+                      className="text-[#3a3531] text-[0.95rem] md:text-base font-light leading-[1.7] flex gap-3"
+                    >
+                      <Award size={14} strokeWidth={1.6} className="text-[#c9a96e] mt-1.5 shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </Reveal>
+  );
+};
 
 const TeamCard = ({ person, idx, testPrefix }) => (
   <Reveal variant="scale" delay={idx * 60}>
@@ -91,12 +261,6 @@ const About = () => {
             <div>
               <GoldRule delay={200} />
               <div className="eyebrow mt-6">Since 1989</div>
-              <h2
-                className="mt-7 font-display text-[#01261d] leading-[1.05] tracking-tight uppercase"
-                style={{ fontSize: "clamp(2.2rem, 4.6vw, 4rem)" }}
-              >
-                From Two-Person Crew to<br />30+ Craftspeople
-              </h2>
               <div className="mt-9"><GoldRule delay={350} /></div>
               <div className="mt-10 space-y-7 text-[#3a3531] text-base md:text-lg font-light leading-[2]">
                 <p>
@@ -234,37 +398,10 @@ const About = () => {
             </div>
           </Reveal>
 
-          {/* Condensed year-by-year timeline */}
+          {/* Year-by-year accordion */}
           <div className="max-w-4xl mx-auto">
             {AWARDS.map((a, i) => (
-              <Reveal key={`${a.year}-${a.title}`} delay={i * 80}>
-                <div
-                  data-testid={`award-row-${i}`}
-                  className="group grid grid-cols-[auto_1fr] md:grid-cols-[140px_60px_1fr] items-center gap-4 md:gap-6 py-7 border-b border-[#c9a96e]/25 last:border-b-0"
-                >
-                  {/* Year */}
-                  <div className="col-span-2 md:col-span-1 font-display text-[#c9a96e] text-2xl md:text-3xl tracking-tight leading-none">
-                    {a.year}
-                  </div>
-
-                  {/* Small icon medallion */}
-                  <div className="hidden md:flex w-12 h-12 rounded-full bg-[#01261d] items-center justify-center shrink-0 transition-transform duration-500 group-hover:scale-110">
-                    <Award className="text-[#c9a96e]" size={22} strokeWidth={1.6} />
-                  </div>
-
-                  {/* Award title + subtle detail */}
-                  <div className="col-span-2 md:col-span-1">
-                    <div className="font-display text-[#01261d] text-lg md:text-xl leading-snug tracking-tight">
-                      {a.title}
-                    </div>
-                    {a.detail && (
-                      <div className="text-[#3a3531] text-sm md:text-[0.95rem] font-light italic mt-1.5">
-                        {a.detail}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </Reveal>
+              <AwardYearRow key={a.year} yearGroup={a} index={i} />
             ))}
           </div>
         </div>
