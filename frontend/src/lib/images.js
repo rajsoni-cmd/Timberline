@@ -1,5 +1,6 @@
 // Centralized image URLs for Timberline Custom Homes
-export const LOGO_LIGHT = "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/yhn64n05_Final_Logo%20copy1.png";
+export const LOGO_LIGHT = "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/j2fpy1m9_Final_Logo2.png";
+export const LOGO_FOOTER = "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/8pfnimch_Timberline_Custom_Homes_Logo%20No%20Writing.jpg";
 export const BANNER_INTERIOR = "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/96doj20j_Banner-01.jpg";
 
 // Membership / accreditation badges displayed in the footer (white-on-transparent versions)

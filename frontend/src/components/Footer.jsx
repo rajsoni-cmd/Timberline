@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { LOGO_LIGHT, MEMBERSHIP_LOGOS } from "../lib/images";
+import { LOGO_FOOTER, MEMBERSHIP_LOGOS } from "../lib/images";
 
 const FooterCol = ({ heading, children }) => (
   <div>
@@ -19,13 +19,13 @@ export const Footer = () => {
           <div>
             <div className="inline-flex">
               <img
-                src={LOGO_LIGHT}
+                src={LOGO_FOOTER}
                 alt="Timberline Custom Homes"
-                className="h-14 md:h-16 w-auto object-contain"
+                className="h-16 md:h-20 w-auto object-contain"
               />
             </div>
             <p className="mt-7 text-sm text-[#f4eee4]/70 font-light leading-relaxed max-w-xs">
-              Kawartha &nbsp;|&nbsp; Peterborough &nbsp;|&nbsp; Lakefield &nbsp;|&nbsp; Surrounding Areas
+              Stoney Lake &nbsp;|&nbsp; Kawarthas &nbsp;|&nbsp; Peterborough &nbsp;|&nbsp; Lakefield &nbsp;|&nbsp; Surrounding Areas
             </p>
           </div>
 
@@ -107,16 +107,15 @@ export const Footer = () => {
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5 text-[#f4eee4]/60 text-[0.68rem] tracking-[0.28em] uppercase font-light">
-            <span>Tarion New Home Warranty</span>
-            <span className="hidden sm:inline text-[#c9a96e]/40">·</span>
-            <span>East Kawartha Chamber of Commerce</span>
-            <span className="hidden sm:inline text-[#c9a96e]/40">·</span>
-            <span>Peterborough &amp; Kawarthas HBA</span>
-            <span className="hidden sm:inline text-[#c9a96e]/40">·</span>
-            <span>WSIB / CSPAAT</span>
-            <span className="hidden sm:inline text-[#c9a96e]/40">·</span>
-            <span>Government of Ontario</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-3 text-center text-[#f4eee4]/70 text-[0.72rem] tracking-[0.22em] uppercase font-light">
+            <span>HCRA Member</span>
+            <span>Tarion Warranty</span>
+            <span>Renomark Member</span>
+            <span>WSIB Insured</span>
+            <span>PKHBA Member</span>
+            <span>OHBA Member</span>
+            <span>CHBA Member</span>
+            <span>Ptbo &amp; Kawarthas Chamber of Commerce Member</span>
           </div>
         </div>
 

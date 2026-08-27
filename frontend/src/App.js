@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import FAQ from "./components/FAQ";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Process from "./pages/Process";
@@ -24,6 +25,7 @@ function App() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <FAQ />
         <Footer />
       </BrowserRouter>
     </div>

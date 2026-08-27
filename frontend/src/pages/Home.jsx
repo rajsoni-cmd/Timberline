@@ -4,7 +4,6 @@ import HeroSlider from "../components/HeroSlider";
 import ServiceCards from "../components/ServiceCards";
 import ScrollingGallery from "../components/ScrollingGallery";
 import TestimonialCard from "../components/TestimonialCard";
-import FAQ from "../components/FAQ";
 import { IMAGES } from "../lib/images";
 import { TESTIMONIALS } from "../lib/team";
 
@@ -12,26 +11,6 @@ const Home = () => {
   return (
     <main data-testid="home-page">
       <HeroSlider />
-
-      {/* BRAND STATEMENT — intro to What We Offer */}
-      <section data-testid="memories-intro" className="pt-16 md:pt-20 pb-10 md:pb-12 bg-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <Reveal>
-            <div className="flex justify-center"><GoldRule delay={150} /></div>
-            <div className="eyebrow mt-6">Our Promise</div>
-            <h2
-              className="mt-7 font-display text-[#01261d] leading-[1.1] tracking-tight uppercase"
-              style={{ fontSize: "clamp(1.9rem, 4.4vw, 3.6rem)" }}
-            >
-              We create memories in the Kawarthas,<br />not just buildings.
-            </h2>
-            <div className="flex justify-center mt-9"><GoldRule delay={300} /></div>
-            <p className="mt-9 text-[#3a3531] text-base md:text-lg font-light leading-[2]">
-              Our clients trust Timberline to creatively design and build their high quality custom project where they will pursue their dreams, raise their family, welcome their friends and retire. Building a project that represents our clients by matching their needs and aspirations creates more than just a building, but memories to extend among generations.
-            </p>
-          </Reveal>
-        </div>
-      </section>
 
       {/* COMPLETE SERVICE — long-form brand story */}
       <section
@@ -66,10 +45,44 @@ const Home = () => {
 
       <ServiceCards />
 
+      {/* BRAND STATEMENT — placed below What We Offer */}
+      <section
+        data-testid="memories-intro"
+        className="relative py-14 md:py-20 overflow-hidden"
+      >
+        {/* Background image + soft overlay so text stays legible */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-25"
+          style={{ backgroundImage: `url(${IMAGES.designBuildClosing})` }}
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-white/70" aria-hidden="true" />
+
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+          <Reveal>
+            <div className="flex justify-center"><GoldRule delay={150} /></div>
+            <div className="eyebrow mt-6">Our Promise</div>
+            <h2
+              className="mt-7 font-display text-[#01261d] leading-[1.1] tracking-tight uppercase"
+              style={{ fontSize: "clamp(1.9rem, 4.4vw, 3.6rem)" }}
+            >
+              We create memories in the Kawarthas,<br />not just buildings.
+            </h2>
+            <div className="flex justify-center mt-9"><GoldRule delay={300} /></div>
+            <p className="mt-9 text-[#3a3531] text-base md:text-lg font-light leading-[2]">
+              Our clients trust Timberline to creatively design and build their high quality custom project where they will pursue their dreams, raise their family, welcome their friends and retire. Building a project that represents our clients by matching their needs and aspirations creates more than just a building, but memories to extend among generations.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       <ScrollingGallery />
 
       {/* TESTIMONIALS */}
-      <section data-testid="testimonials-section" className="py-16 md:py-24 bg-[#f5f0e6]">
+      <section
+        data-testid="testimonials-section"
+        className="py-16 md:py-24 bg-[#f5f0e6]"
+      >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -101,8 +114,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <FAQ />
 
       {/* DESIGN BUILD CLOSING SECTION */}
       <section

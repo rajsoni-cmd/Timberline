@@ -17,13 +17,13 @@ export const HeroSlider = () => {
   return (
     <section
       data-testid="hero-section"
-      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#01261d]"
     >
       {HERO_SLIDES.map((s, i) => (
         <div
           key={s.image}
           data-testid={`hero-slide-${i}`}
-          className={`absolute inset-0 bg-cover bg-center slide ${
+          className={`absolute inset-0 bg-cover bg-top bg-no-repeat slide ${
             i === slide ? "active ken-burns" : ""
           }`}
           style={{ backgroundImage: `url(${s.image})` }}

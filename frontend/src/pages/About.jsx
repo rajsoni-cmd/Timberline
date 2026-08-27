@@ -9,7 +9,7 @@ import { OFFICE_TEAM, FIELD_TEAM, TESTIMONIALS } from "../lib/team";
 
 const STATS = [
   { number: "300+", label: "Projects Completed" },
-  { number: "37+",  label: "Years in Business" },
+  { number: "1989",  label: "Year Established" },
   { number: "30",   label: "Skilled Team Members" },
   { number: "20+",  label: "Year Longest Serving" },
 ];
@@ -270,7 +270,7 @@ const About = () => {
                   As our company expanded, so did our capabilities. In 2004, we constructed a workshop to support custom millwork, woodworking, beam preparation, pre-finishing, flooring, exterior components, and other specialized services for our projects. In 2014, we added a second facility dedicated to our heavy equipment division, allowing us to maintain, repair, and operate our fleet in-house while providing year-round employment for our operators.
                 </p>
                 <p>
-                  For more than 37 years, Timberline has had the privilege of helping families bring their dream homes and cottages to life. From the very beginning, our business has grown through referrals and word-of-mouth — a reflection of the relationships we've built and the trust our clients place in us. When you build with Timberline, you're not just hiring a builder — you're partnering with a team that's invested in creating a home where your family can make memories for generations to come.
+                  Since 1989, Timberline has had the privilege of helping families bring their dream homes and cottages to life. From the very beginning, our business has grown through referrals and word-of-mouth — a reflection of the relationships we've built and the trust our clients place in us. When you build with Timberline, you're not just hiring a builder — you're partnering with a team that's invested in creating a home where your family can make memories for generations to come.
                 </p>
                 <p>
                   Timberline typically builds within a 100 km radius of our office location in Woodview, expanding from the Township of North Kawartha, Selwyn, and Douro-Dummer to Havelock-Belmont-Methuen — including towns such as Apsley, Youngs Point, Woodview, Burleigh Falls, Buckhorn, Ennismore, Lakefield, Bridgenorth, Norwood, Peterborough, Havelock and more. You can observe the beautifully integrated workmanship of Timberline Custom Homes along the shorelines in the Kawartha Lakes. Although the majority of our projects are built along the shorelines, we are ready to design and build your dream project in the middle of the woods or a lot in town.

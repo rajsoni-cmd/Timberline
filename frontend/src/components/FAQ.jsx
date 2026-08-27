@@ -11,7 +11,7 @@ const FAQS = [
           Timberline is located and primarily builds in the Kawartha Lakes region of Ontario, Canada. We typically provide our services surrounding Apsley, Buckhorn, Lakefield, Bridgenorth, Peterborough, Havelock, Norwood, Burleigh Falls and Woodview.
         </p>
         <p>
-          Common lakes where you can notice our remarkable projects along the shorelines are: Jacks Lake, Koshabog Lake, Big Cedar Lake, Julian Lake, Eels Lake, Lovesick Lake, Anstruther Lake, Chandos Lake, Buckhorn Lake, Loon Lake, Belmont Lake, Chemong Lake, Rice Lake, Mississauga Lake, Gold Lake, Kathewanooka Lake, Catchacoma Lake and notably Stoney Lake. Although we generally build in these areas, we are not limited to them and may expand our range.
+          Common lakes where you can see our projects along the shoreline include: Jacks Lake, Koshabog Lake, Big Cedar Lake, Julian Lake, Eels Lake, Lovesick Lake, Anstruther Lake, Chandos Lake, Buckhorn Lake, Loon Lake, Belmont Lake, Chemong Lake, Rice Lake, Mississauga Lake, Gold Lake, Kathewanooka Lake, Catchacoma Lake, and notably Stoney Lake. While we generally build in these areas, we are not limited to them and may expand our range.
         </p>
       </>
     ),
@@ -20,7 +20,7 @@ const FAQS = [
     q: "What type of home is a Timberline Custom Home?",
     a: (
       <p>
-        Timberline builds more than just homes — we design and build custom homes, cottages, renovations, additions, boathouses, garages, bunkies, docks, and more of all sizes. Each project is completely custom to your own personal needs and requests. We provide our own expertise to assist you in designing your ultimate dream project — any style, any size. If you have been working with an architect, we would be delighted to work with them as well. Timberline accentuates the timber look in the majority of our projects, incorporating real timbers combined with false beam work throughout the interior and exterior. Although the timber work is not all completely structural, the results are the same desired appearance.
+        Timberline builds more than just homes — we design and build custom homes, cottages, renovations, additions, boathouses, garages, bunkies, docks, and more, of all sizes. Each project is completely custom to your personal needs and requests. We provide our own expertise to help design your ultimate dream project, in any style and any size. If you&apos;re already working with an architect, we&apos;d be delighted to work with them as well. Timberline accentuates the timber look throughout the majority of our projects, incorporating real timbers combined with false beam work across the interior and exterior. While the timber work isn&apos;t always structural, the result carries the same desired appearance.
       </p>
     ),
   },
@@ -28,7 +28,47 @@ const FAQS = [
     q: "Is a Timberline home expensive?",
     a: (
       <p>
-        We pride ourselves at Timberline on providing the best quality-built custom projects with top-notch services. We keep value-for-money in mind when assisting you with your finishing choices throughout your entire project and you will find our pricing fair. If you decide to build with Timberline, you will receive a detailed contract outlining each stage of the build. There are many variables when discussing the cost of a project — you have control of your final cost with the decisions of products and materials you select for your dream project. It is easy to go over budget; with our assistance we do our best to help ensure you remain within your budget while achieving the same desired look. Timberline has no hidden fees and we pride ourselves on honesty and integrity. Let us prove it to you.
+        We pride ourselves on delivering the best quality-built custom projects with top-notch service. We keep value for money in mind as we help guide your finishing choices, and you&apos;ll find our pricing fair. If you build with Timberline, you&apos;ll receive a detailed contract outlining each stage of the build. Cost depends on many variables — you control your final cost through the products and materials you choose. It&apos;s easy to go over budget; our team helps you stay within budget while still achieving your desired look. Timberline has no hidden fees — we pride ourselves on honesty and integrity. Let us prove it to you.
+      </p>
+    ),
+  },
+  {
+    q: "What is your price per square foot?",
+    a: (
+      <p>
+        We don&apos;t provide an upfront price per square foot, as it can be misleading. Every Timberline project is custom and requires individual consideration. Because of this, an initial consultation is important to understand your tastes and lifestyle needs — after which you&apos;ll receive a rough estimate. A final design is needed before we can provide a final price.
+      </p>
+    ),
+  },
+  {
+    q: "At what point do I have to pay any money?",
+    a: (
+      <p>
+        Timberline&apos;s initial consultation is always free — you&apos;re welcome to visit our office, or we can visit your potential building site to discuss your ideas and vision. If you&apos;d like us to proceed with a rough design sketch, a small fee applies, based on the size of your project.
+      </p>
+    ),
+  },
+  {
+    q: "Are you comfortable building on challenging terrain (e.g. rock)?",
+    a: (
+      <p>
+        Yes — we have experience building on all types of terrain, including rock and challenging lots. It&apos;s what sets Timberline apart from the competition.
+      </p>
+    ),
+  },
+  {
+    q: "How soon can you build?",
+    a: (
+      <p>
+        Physical building can typically begin within a month of drawings and permit completion, depending on the season and weather.
+      </p>
+    ),
+  },
+  {
+    q: "How long does it take to build a Timberline home?",
+    a: (
+      <p>
+        Once your custom design is complete, you can expect the build to take 4 months to 1 year, depending on the size, detail, and weather conditions of your project. Your final finishing decisions throughout the build also affect the timeline.
       </p>
     ),
   },

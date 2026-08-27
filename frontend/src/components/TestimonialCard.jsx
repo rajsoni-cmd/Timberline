@@ -12,13 +12,26 @@ const TestimonialCard = ({ testimonial, index }) => {
     <Reveal delay={index * 120}>
       <div
         data-testid={`testimonial-card-${index}`}
-        className="bg-white p-10 md:p-12 flex flex-col border border-[#c9a96e]/20 h-full"
+        className="bg-white flex flex-col border border-[#c9a96e]/20 h-full overflow-hidden"
       >
-        <div className="font-display text-[#c9a96e] text-6xl leading-none mb-2" aria-hidden="true">
-          &ldquo;
-        </div>
+        {testimonial.image && (
+          <div className="relative w-full aspect-[4/3] overflow-hidden">
+            <img
+              src={testimonial.image}
+              alt={`Project by Timberline for ${testimonial.author}`}
+              className="w-full h-full object-cover transition-transform duration-[1400ms] hover:scale-105"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/30" />
+          </div>
+        )}
 
-        <div className="relative flex-1">
+        <div className="p-10 md:p-12 flex flex-col flex-1">
+          <div className="font-display text-[#c9a96e] text-6xl leading-none mb-2" aria-hidden="true">
+            &ldquo;
+          </div>
+
+          <div className="relative flex-1">
           <p
             data-testid={`testimonial-quote-${index}`}
             className={`font-display italic text-[#01261d] text-lg md:text-xl leading-[1.6] whitespace-pre-line ${
@@ -44,6 +57,7 @@ const TestimonialCard = ({ testimonial, index }) => {
         <div className="mt-6 text-[#2b2622] text-sm font-medium">— {testimonial.author}</div>
         <div className="text-[0.7rem] tracking-[0.28em] uppercase text-[#c9a96e] mt-1.5">
           {testimonial.location}
+        </div>
         </div>
       </div>
     </Reveal>
