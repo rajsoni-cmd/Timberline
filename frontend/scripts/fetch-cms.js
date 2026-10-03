@@ -34,7 +34,7 @@ const QUERY = `{
     "slug": slug.current, name, tagline, description, "cover": cover.asset->url
   },
   "projects": *[_type == "project" && defined(slug.current) && defined(category)] | order(orderRank asc){
-    "slug": slug.current, name, location, description,
+    "slug": slug.current, name, location, description, designer, squareFootage,
     "category": category->slug.current,
     "cover": cover.asset->url,
     "images": gallery[defined(asset)].asset->url,

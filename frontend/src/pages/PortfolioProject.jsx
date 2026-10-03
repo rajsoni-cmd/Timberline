@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Reveal, { GoldRule } from "../components/Reveal";
 import PageHero from "../components/PageHero";
 import Breadcrumb from "../components/Breadcrumb";
+import { ProjectSpecs, ProjectDescription } from "../components/ProjectDetails";
 import Lightbox from "../components/Lightbox";
 import { getProject, getAdjacent } from "../lib/portfolioData";
 
@@ -57,11 +58,10 @@ const PortfolioProject = () => {
                 >
                   {project.name}
                 </h1>
+                <ProjectSpecs project={project} />
               </div>
               <div className="md:col-span-7">
-                <p className="text-[#3a3531] text-base md:text-lg font-light leading-[1.95]">
-                  {project.description}
-                </p>
+                <ProjectDescription text={project.description} />
               </div>
             </div>
           </Reveal>

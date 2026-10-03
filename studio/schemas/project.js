@@ -44,7 +44,25 @@ export default defineType({
       type: 'string',
       description: 'Example: Stoney Lake, ON',
     }),
-    defineField({name: 'description', title: 'Description', type: 'text', rows: 4}),
+    defineField({
+      name: 'description',
+      title: 'Description (optional)',
+      type: 'text',
+      rows: 5,
+      description: 'A short blurb about the project. Leave empty to hide it. Leave an empty line between paragraphs.',
+    }),
+    defineField({
+      name: 'designer',
+      title: 'Designer (optional)',
+      type: 'string',
+      description: 'Shown on the project page only if filled in. Example: Timberline In-House Design',
+    }),
+    defineField({
+      name: 'squareFootage',
+      title: 'Square Footage (optional)',
+      type: 'string',
+      description: 'Shown on the project page only if filled in. Example: 3,200 sq ft',
+    }),
     defineField({
       name: 'cover',
       title: 'Cover photo',

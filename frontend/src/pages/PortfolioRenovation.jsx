@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Reveal, { GoldRule } from "../components/Reveal";
 import PageHero from "../components/PageHero";
 import Breadcrumb from "../components/Breadcrumb";
+import { ProjectSpecs, ProjectDescription } from "../components/ProjectDetails";
 import BeforeAfter from "../components/BeforeAfter";
 import { getProject, getAdjacent } from "../lib/portfolioData";
 
@@ -49,12 +50,11 @@ const PortfolioRenovation = () => {
                 >
                   {project.name}
                 </h1>
+                <ProjectSpecs project={project} />
               </div>
               <div className="md:col-span-7">
-                <p className="text-[#3a3531] text-base md:text-lg font-light leading-[1.95]">
-                  {project.description}
-                </p>
-                <p className="mt-5 text-[0.7rem] tracking-[0.28em] uppercase text-[#c9a96e] font-semibold">
+                <ProjectDescription text={project.description} />
+                <p className={`${project.description ? "mt-5 " : ""}text-[0.7rem] tracking-[0.28em] uppercase text-[#c9a96e] font-semibold`}>
                   Drag the slider to compare before &amp; after
                 </p>
               </div>
