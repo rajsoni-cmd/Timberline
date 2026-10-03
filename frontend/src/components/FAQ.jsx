@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import Reveal, { GoldRule } from "./Reveal";
+import { CMS, hasItems } from "../lib/cms";
 
-const FAQS = [
+const DEFAULT_FAQS = [
   {
     q: "What area do you build in?",
     a: (
@@ -73,6 +74,24 @@ const FAQS = [
     ),
   },
 ];
+
+// FAQs from the CMS editor (blank line = new paragraph); falls back to the list above.
+const FAQS = hasItems(CMS.faqs)
+  ? CMS.faqs.map((f) => ({
+      q: f.question,
+      a: (
+        <>
+          {String(f.answer || "")
+            .split(/\n\s*\n/)
+            .map((para) => para.trim())
+            .filter(Boolean)
+            .map((para, i) => (
+              <p key={i} className="whitespace-pre-line">{para}</p>
+            ))}
+        </>
+      ),
+    }))
+  : DEFAULT_FAQS;
 
 const FAQItem = ({ item, index, open, onToggle }) => {
   return (

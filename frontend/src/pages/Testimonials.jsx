@@ -3,7 +3,8 @@ import Reveal, { GoldRule } from "../components/Reveal";
 import PageHero from "../components/PageHero";
 import TestimonialCard from "../components/TestimonialCard";
 import { IMAGES } from "../lib/images";
-import { TESTIMONIALS } from "../lib/team";
+import { TESTIMONIALS, ALL_CMS_TESTIMONIALS } from "../lib/team";
+import { banner } from "../lib/cms";
 
 // Historical testimonials preserved on the dedicated page for depth
 const HISTORICAL_TESTIMONIALS = [
@@ -34,16 +35,13 @@ const HISTORICAL_TESTIMONIALS = [
   },
 ];
 
-const ALL_TESTIMONIALS = [...TESTIMONIALS, ...HISTORICAL_TESTIMONIALS];
+const ALL_TESTIMONIALS = ALL_CMS_TESTIMONIALS || [...TESTIMONIALS, ...HISTORICAL_TESTIMONIALS];
 
 const Testimonials = () => {
   return (
     <main data-testid="testimonials-page">
       <PageHero
-        eyebrow="Client Stories"
-        title="Client Stories"
-        subtitle="Three decades of relationships — in our clients' own words."
-        image={IMAGES.contactHero}
+        {...banner("testimonials", { eyebrow: "Client Stories", title: "Client Stories", subtitle: "Three decades of relationships — in our clients' own words.", image: IMAGES.contactHero })}
         testId="testimonials-hero"
       />
 
@@ -51,7 +49,7 @@ const Testimonials = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14 items-start">
             {ALL_TESTIMONIALS.map((t, i) => (
-              <TestimonialCard key={t.author} testimonial={t} index={i} />
+              <TestimonialCard key={`${t.author}-${i}`} testimonial={t} index={i} />
             ))}
           </div>
         </div>

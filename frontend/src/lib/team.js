@@ -1,4 +1,6 @@
-export const OFFICE_TEAM = [
+import { CMS, hasItems } from "./cms";
+
+const DEFAULT_OFFICE_TEAM = [
   { name: "Ray Northey", title: "Owner", since: "1989" },
   { name: "Calli Northey", title: "Human Resources Generalist / Admin", since: "2014" },
   { name: "Bethaney Lippert", title: "Human Resources / Workflow Coordinator", since: "2018" },
@@ -9,7 +11,7 @@ export const OFFICE_TEAM = [
   { name: "Chris Clouthier", title: "Project & Quality Control Manager", since: "2005" },
 ];
 
-export const FIELD_TEAM = [
+const DEFAULT_FIELD_TEAM = [
   { name: "Brian Rigden", title: "Lead Carpenter", since: "1999" },
   { name: "Dave Young", title: "Lead Carpenter", since: "2014" },
   { name: "Kyle Reyns", title: "Lead Carpenter", since: "2016" },
@@ -18,7 +20,7 @@ export const FIELD_TEAM = [
   { name: "Mike Lavender", title: "Shop Production Lead", since: "2023" },
 ];
 
-export const TESTIMONIALS = [
+const DEFAULT_TESTIMONIALS = [
   {
     quote: "We want to thank Timberline for helping us build our dream cottage! We had a positive experience from the design to the planning and building of our cottage. The team was professional and offered us timely advice and guidance whenever issues arose. The final product exceeded our expectations in every way. We were very satisfied with the quality of the workmanship and the finished product. We appreciated how the Timberline team was very approachable and worked together seamlessly to keep the project on track. We would not hesitate to recommend Timberline to others!",
     author: "C & E Travaglini",
@@ -44,3 +46,22 @@ export const FEATURED_TESTIMONIAL = {
   author: "D.G.",
   location: "Balsam Lake",
 };
+
+// ── Content from the CMS editor (falls back to the lists above) ──
+const team = hasItems(CMS.team) ? CMS.team : null;
+export const OFFICE_TEAM = team ? team.filter((m) => m.group !== "field") : DEFAULT_OFFICE_TEAM;
+export const FIELD_TEAM = team ? team.filter((m) => m.group === "field") : DEFAULT_FIELD_TEAM;
+
+const cmsTestimonials = hasItems(CMS.testimonials)
+  ? CMS.testimonials.map((t) => ({ ...t, location: t.location || "", image: t.image || undefined }))
+  : null;
+
+// Featured on Home + About
+// (if none are ticked "Feature on Home", the first three are used)
+const featured = cmsTestimonials ? cmsTestimonials.filter((t) => t.showOnHome) : [];
+export const TESTIMONIALS = cmsTestimonials
+  ? (featured.length ? featured : cmsTestimonials.slice(0, 3))
+  : DEFAULT_TESTIMONIALS;
+
+// Every testimonial (Testimonials page). null = use the page's built-in list.
+export const ALL_CMS_TESTIMONIALS = cmsTestimonials;

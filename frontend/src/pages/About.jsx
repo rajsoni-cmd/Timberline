@@ -3,6 +3,7 @@ import { User, Award, Plus, Minus } from "lucide-react";
 import { Link } from "react-router-dom";
 import Reveal, { GoldRule } from "../components/Reveal";
 import PageHero from "../components/PageHero";
+import { banner } from "../lib/cms";
 import TestimonialCard from "../components/TestimonialCard";
 import { IMAGES, BANNER_INTERIOR } from "../lib/images";
 import { OFFICE_TEAM, FIELD_TEAM, TESTIMONIALS } from "../lib/team";
@@ -243,9 +244,7 @@ const About = () => {
   return (
     <main data-testid="about-page">
       <PageHero
-        title="Our History"
-        subtitle="Three decades of craftsmanship, community, and trust."
-        image={BANNER_INTERIOR}
+        {...banner("about", { title: "Our History", subtitle: "Three decades of craftsmanship, community, and trust.", image: BANNER_INTERIOR })}
         testId="about-hero"
       />
 

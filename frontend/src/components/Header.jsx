@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, Phone, ChevronDown, Plus, Minus, Facebook, Instagram, Linkedin } from "lucide-react";
 import { LOGO_LIGHT } from "../lib/images";
+import { SITE } from "../lib/site";
 
 // Navigation model. Items with `children` render a hover-dropdown on desktop
 // and an expandable accordion on mobile.
@@ -234,26 +235,26 @@ export const Header = () => {
         {/* Center: phone + email */}
         <div className="flex items-center justify-center gap-4 md:gap-6">
           <a
-            href="tel:7056544312"
+            href={SITE.phoneHref}
             className="inline-flex items-center gap-2 hover:text-[#c9a96e] transition-colors"
             data-testid="announcement-phone"
           >
             <Phone size={12} strokeWidth={2} className="opacity-90" />
-            (705) 654-4312
+            {SITE.phone}
           </a>
           <span className="hidden md:inline text-white/40">·</span>
           <a
-            href="mailto:info@timberlinecustomhomes.ca"
+            href={`mailto:${SITE.email}`}
             className="hidden md:inline hover:text-[#c9a96e] transition-colors"
           >
-            info@timberlinecustomhomes.ca
+            {SITE.email}
           </a>
         </div>
 
         {/* Right: social icons */}
         <div data-testid="social-icons" className="flex items-center gap-3 md:gap-4 md:flex-1 md:justify-end">
           <a
-            href="https://www.facebook.com/timberlinecustomhomes"
+            href={SITE.facebook}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -263,7 +264,7 @@ export const Header = () => {
             <Facebook size={14} strokeWidth={1.8} />
           </a>
           <a
-            href="https://www.instagram.com/timb_erlinecustomhomes/"
+            href={SITE.instagram}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -273,7 +274,7 @@ export const Header = () => {
             <Instagram size={14} strokeWidth={1.8} />
           </a>
           <a
-            href="https://www.linkedin.com/company/timberline-custom-homes/?originalSubdomain=ca"
+            href={SITE.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"

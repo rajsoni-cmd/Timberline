@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { LOGO_FOOTER, MEMBERSHIP_LOGOS } from "../lib/images";
+import { SITE } from "../lib/site";
 
 const FooterCol = ({ heading, children }) => (
   <div>
@@ -53,7 +54,7 @@ export const Footer = () => {
 
           <FooterCol heading="Office Location">
             <div className="leading-relaxed">
-              5584 Highway 28,<br />Woodview, ON K0L 3E0
+              {SITE.addressLine1 || "5584 Highway 28"},<br />{SITE.addressLine2 || "Woodview, ON K0L 3E0"}
             </div>
           </FooterCol>
 
@@ -61,8 +62,8 @@ export const Footer = () => {
             <div>
               <span className="text-[#f4eee4]/55 text-xs tracking-[0.18em] uppercase">Local</span>
               <div className="mt-1">
-                <a href="tel:7056544312" className="hover:text-[#b89d77] transition-colors">
-                  (705) 654-4312
+                <a href={SITE.phoneHref} className="hover:text-[#b89d77] transition-colors">
+                  {SITE.phone}
                 </a>
               </div>
             </div>
@@ -70,10 +71,10 @@ export const Footer = () => {
               <span className="text-[#f4eee4]/55 text-xs tracking-[0.18em] uppercase">Email</span>
               <div className="mt-1">
                 <a
-                  href="mailto:info@timberlinecustomhomes.ca"
+                  href={`mailto:${SITE.email}`}
                   className="hover:text-[#b89d77] transition-colors break-all"
                 >
-                  info@timberlinecustomhomes.ca
+                  {SITE.email}
                 </a>
               </div>
             </div>

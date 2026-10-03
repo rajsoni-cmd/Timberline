@@ -1,0 +1,4 @@
+# Shortcut to the content editor (Sanity Studio)
+/studio      https://timberline.sanity.studio   302
+/studio/*    https://timberline.sanity.studio   302
+/admin       https://timberline.sanity.studio   302

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Plus, Minus, ArrowRight } from "lucide-react";
 import Reveal, { GoldRule } from "../components/Reveal";
 import PageHero from "../components/PageHero";
+import { banner } from "../lib/cms";
 import { IMAGES } from "../lib/images";
 
 // ─────────────────────────────────────────────────────────────
@@ -234,10 +235,7 @@ const Process = () => {
   return (
     <main data-testid="process-page">
       <PageHero
-        eyebrow="How We Work"
-        title="Our Process"
-        subtitle="A comprehensive, one-stop building experience — from vision to move-in."
-        image={IMAGES.processHero}
+        {...banner("process", { eyebrow: "How We Work", title: "Our Process", subtitle: "A comprehensive, one-stop building experience — from vision to move-in.", image: IMAGES.processHero })}
         testId="process-hero"
       />
 

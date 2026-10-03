@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Truck, Shovel, Droplets, Trees, Wrench, Hammer } from "lucide-react";
 import Reveal, { GoldRule } from "../components/Reveal";
 import PageHero from "../components/PageHero";
+import { banner } from "../lib/cms";
 import { IMAGES } from "../lib/images";
 
 const EQUIPMENT_SERVICES = [
@@ -17,10 +18,7 @@ const HeavyEquipment = () => {
   return (
     <main data-testid="heavy-equipment-page">
       <PageHero
-        eyebrow="Heavy Equipment Division"
-        title="Heavy Equipment Construction"
-        subtitle="A fully in-house fleet, operated year-round by our own tradespeople."
-        image={IMAGES.processHero}
+        {...banner("heavyEquipment", { eyebrow: "Heavy Equipment Division", title: "Heavy Equipment Construction", subtitle: "A fully in-house fleet, operated year-round by our own tradespeople.", image: IMAGES.processHero })}
         testId="he-hero"
       />
 

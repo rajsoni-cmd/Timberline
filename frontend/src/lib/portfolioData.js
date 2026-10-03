@@ -1,6 +1,7 @@
 // Portfolio data model — all category + project content lives here.
 // Pages are read-only consumers of this file.
 import { IMAGES } from "./images";
+import { CMS, hasItems } from "./cms";
 
 // Convenience: a small reusable pool of placeholder images drawn from
 // the existing images library so no new URLs are needed yet.
@@ -32,7 +33,7 @@ const pick = (n, offset = 0) =>
 // ─────────────────────────────────────────────────────────────
 // CATEGORIES
 // ─────────────────────────────────────────────────────────────
-export const PORTFOLIO = [
+const DEFAULT_PORTFOLIO = [
   {
     slug: "new-builds",
     name: "New Builds",
@@ -157,7 +158,7 @@ export const PORTFOLIO = [
   {
     slug: "renovations-additions",
     name: "Renovations & Additions",
-    tagline: "Before &amp; after",
+    tagline: "Before & after",
     description:
       "Full renovations and seamless additions — breathing new life into much-loved cottages and family homes.",
     cover: IMAGES.renovationsRender,
@@ -210,6 +211,21 @@ export const PORTFOLIO = [
     ],
   },
 ];
+
+// Content from the CMS editor (falls back to the list above when empty)
+const fromCms = () =>
+  CMS.categories.map((c) => ({
+    ...c,
+    projects: (CMS.projects || [])
+      .filter((p) => p.category === c.slug)
+      .map((p) =>
+        c.slug === "renovations-additions"
+          ? { ...p, images: undefined, pairs: p.pairs || [] }
+          : { ...p, pairs: undefined, images: p.images || [] }
+      ),
+  }));
+
+export const PORTFOLIO = hasItems(CMS.categories) ? fromCms() : DEFAULT_PORTFOLIO;
 
 // ─────────────────────────────────────────────────────────────
 // Lookup helpers

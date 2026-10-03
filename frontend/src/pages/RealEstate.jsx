@@ -2,16 +2,14 @@ import { Link } from "react-router-dom";
 import { Warehouse, MapPin, ArrowRight } from "lucide-react";
 import Reveal, { GoldRule } from "../components/Reveal";
 import PageHero from "../components/PageHero";
+import { banner } from "../lib/cms";
 import { IMAGES } from "../lib/images";
 
 const RealEstate = () => {
   return (
     <main data-testid="realestate-page">
       <PageHero
-        eyebrow="Real Estate"
-        title="Development & Storage"
-        subtitle="Beyond the build — Timberline's land development portfolio and Woodview storage rentals."
-        image={IMAGES.shopBuild}
+        {...banner("realEstate", { eyebrow: "Real Estate", title: "Development & Storage", subtitle: "Beyond the build — Timberline's land development portfolio and Woodview storage rentals.", image: IMAGES.shopBuild })}
         testId="realestate-hero"
       />
 

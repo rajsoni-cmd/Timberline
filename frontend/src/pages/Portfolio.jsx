@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Reveal, { GoldRule } from "../components/Reveal";
 import PageHero from "../components/PageHero";
+import { banner } from "../lib/cms";
 import { IMAGES } from "../lib/images";
 import { PORTFOLIO } from "../lib/portfolioData";
 
@@ -42,10 +43,7 @@ const Portfolio = () => {
   return (
     <main data-testid="portfolio-page">
       <PageHero
-        eyebrow="Our Work"
-        title="Portfolio"
-        subtitle="Three decades of Kawartha craftsmanship — organized by discipline."
-        image={IMAGES.customBuildsRender}
+        {...banner("portfolio", { eyebrow: "Our Work", title: "Portfolio", subtitle: "Three decades of Kawartha craftsmanship — organized by discipline.", image: IMAGES.customBuildsRender })}
         testId="portfolio-hero"
       />
 

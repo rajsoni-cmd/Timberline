@@ -1,0 +1,24 @@
+{
+  "name": "timberline-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Content editor (Sanity Studio) for timberlinecustomhomes.ca",
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "seed": "sanity exec scripts/seed.js --with-user-token"
+  },
+  "dependencies": {
+    "@sanity/orderable-document-list": "^2.0.25",
+    "lexorank": "^1.0.5",
+    "react": "^19.2.2",
+    "react-dom": "^19.2.2",
+    "sanity": "^6.17.0",
+    "styled-components": "^6.1.15"
+  },
+  "engines": {
+    "node": ">=22.12"
+  }
+}

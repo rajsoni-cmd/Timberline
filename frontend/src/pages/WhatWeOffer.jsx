@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import Reveal, { GoldRule } from "../components/Reveal";
 import PageHero from "../components/PageHero";
+import { banner } from "../lib/cms";
 import { IMAGES, BANNER_INTERIOR } from "../lib/images";
 
 const OFFERINGS = [
@@ -68,10 +69,7 @@ const WhatWeOffer = () => {
   return (
     <main data-testid="what-we-offer-page">
       <PageHero
-        eyebrow="Complete Service"
-        title="What We Offer"
-        subtitle="From the first sketch to the last coat of stain — every discipline under one roof."
-        image={BANNER_INTERIOR}
+        {...banner("whatWeOffer", { eyebrow: "Complete Service", title: "What We Offer", subtitle: "From the first sketch to the last coat of stain — every discipline under one roof.", image: BANNER_INTERIOR })}
         testId="wwo-hero"
       />
 

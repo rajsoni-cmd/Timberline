@@ -1,3 +1,5 @@
+import { CMS, hasItems } from "./cms";
+
 // Centralized image URLs for Timberline Custom Homes
 export const LOGO_LIGHT = "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/j2fpy1m9_Final_Logo2.png";
 export const LOGO_FOOTER = "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/8pfnimch_Timberline_Custom_Homes_Logo%20No%20Writing.jpg";
@@ -49,12 +51,17 @@ export const IMAGES = {
 };
 
 // Hero background slider — user-supplied luxury project photography
-export const HERO_SLIDES = [
+const DEFAULT_HERO_SLIDES = [
   { image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/1bydvg6n_1%20%282%29.webp",           alt: "Timberline timberframe home with wraparound porch in autumn" },
   { image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/3j62dltp_2.1%20%281%29.webp",         alt: "Modern lakeside custom home in the Kawarthas" },
   { image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/4ro2l22u_IMG_3987%20%281%29.webp",    alt: "Timberframe estate with detached garage" },
   { image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/qd54dbh9_IMG_5933%20%281%29.webp",    alt: "Contemporary poolside custom residence" },
 ];
+
+const cmsSlides = CMS.settings && CMS.settings.heroSlides;
+export const HERO_SLIDES = hasItems(cmsSlides)
+  ? cmsSlides.map((h) => ({ image: h.image, alt: h.alt || "Timberline Custom Homes project" }))
+  : DEFAULT_HERO_SLIDES;
 
 export const PORTFOLIO_PROJECTS = [
   {

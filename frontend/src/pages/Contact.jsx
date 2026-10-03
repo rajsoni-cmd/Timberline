@@ -3,9 +3,11 @@ import { Phone, MapPin, Mail } from "lucide-react";
 import axios from "axios";
 import Reveal, { GoldRule } from "../components/Reveal";
 import PageHero from "../components/PageHero";
+import { banner } from "../lib/cms";
 import { IMAGES } from "../lib/images";
+import { SITE } from "../lib/site";
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const API = `${process.env.REACT_APP_BACKEND_URL || ""}/api`;
 
 const BUDGETS = ["Under $250K", "$250K–$500K", "$500K–$1M", "$1M–$2M", "$2M+"];
 const CONTRACTORS = ["None", "1–2", "3–5", "5+"];
@@ -73,10 +75,7 @@ const Contact = () => {
   return (
     <main data-testid="contact-page">
       <PageHero
-        eyebrow="Let's Build"
-        title="Contact Us"
-        subtitle="Tell us about your project — we'll be in touch shortly."
-        image={IMAGES.contactHero}
+        {...banner("contact", { eyebrow: "Let's Build", title: "Contact Us", subtitle: "Tell us about your project — we'll be in touch shortly.", image: IMAGES.contactHero })}
         testId="contact-hero"
       />
 
@@ -98,12 +97,12 @@ const Contact = () => {
               </p>
 
               <div className="mt-14 space-y-9">
-                <a href="tel:7056544312" data-testid="contact-phone" className="flex items-start gap-5 group">
+                <a href={SITE.phoneHref} data-testid="contact-phone" className="flex items-start gap-5 group">
                   <Phone className="text-[#c9a96e] mt-1 shrink-0" size={22} strokeWidth={1.4} />
                   <div>
                     <div className="text-[0.65rem] tracking-[0.28em] uppercase text-[#3a3531]/55">Phone</div>
                     <div className="font-display text-[#01261d] text-2xl md:text-3xl mt-1 group-hover:text-[#c9a96e] transition-colors">
-                      (705) 654-4312
+                      {SITE.phone}
                     </div>
                   </div>
                 </a>
@@ -113,17 +112,17 @@ const Contact = () => {
                   <div>
                     <div className="text-[0.65rem] tracking-[0.28em] uppercase text-[#3a3531]/55">Studio</div>
                     <div className="text-[#01261d] text-base md:text-lg mt-1 font-light leading-relaxed">
-                      5584 ON-28 Unit 5,<br />Woodview, ON K0L 3E0
+                      {SITE.addressLine1 || "5584 ON-28 Unit 5"},<br />{SITE.addressLine2 || "Woodview, ON K0L 3E0"}
                     </div>
                   </div>
                 </div>
 
-                <a href="mailto:info@timberlinecustomhomes.ca" data-testid="contact-email" className="flex items-start gap-5 group">
+                <a href={`mailto:${SITE.email}`} data-testid="contact-email" className="flex items-start gap-5 group">
                   <Mail className="text-[#c9a96e] mt-1 shrink-0" size={22} strokeWidth={1.4} />
                   <div>
                     <div className="text-[0.65rem] tracking-[0.28em] uppercase text-[#3a3531]/55">Email</div>
                     <div className="text-[#01261d] text-base md:text-lg mt-1 font-light group-hover:text-[#c9a96e] transition-colors break-all">
-                      info@timberlinecustomhomes.ca
+                      {SITE.email}
                     </div>
                   </div>
                 </a>

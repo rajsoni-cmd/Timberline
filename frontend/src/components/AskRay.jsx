@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { X, MessageCircle, Phone } from "lucide-react";
+import { SITE } from "../lib/site";
 
 const AVATAR = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80";
 
@@ -70,12 +71,12 @@ export const AskRay = () => {
 
             <div className="mt-6 space-y-3">
               <a
-                href="tel:7056544312"
+                href={SITE.phoneHref}
                 data-testid="ask-ray-call"
                 className="flex items-center gap-3 text-[#3a3531] text-sm hover:text-[#b89d77] transition-colors"
               >
                 <Phone size={16} strokeWidth={1.5} className="text-[#b89d77]" />
-                <span className="font-light">(705) 654-4312</span>
+                <span className="font-light">{SITE.phone}</span>
               </a>
               <Link
                 to="/contact"
