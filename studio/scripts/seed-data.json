@@ -7,19 +7,19 @@
     "linkedin": "https://www.linkedin.com/company/timberline-custom-homes/?originalSubdomain=ca",
     "heroSlides": [
       {
-        "image": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/1bydvg6n_1%20%282%29.webp",
+        "image": "/images/1bydvg6n_1-2-.webp",
         "alt": "Timberline timberframe home with wraparound porch in autumn"
       },
       {
-        "image": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/3j62dltp_2.1%20%281%29.webp",
+        "image": "/images/3j62dltp_2.1-1-.webp",
         "alt": "Modern lakeside custom home in the Kawarthas"
       },
       {
-        "image": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/4ro2l22u_IMG_3987%20%281%29.webp",
+        "image": "/images/4ro2l22u_IMG_3987-1-.webp",
         "alt": "Timberframe estate with detached garage"
       },
       {
-        "image": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/qd54dbh9_IMG_5933%20%281%29.webp",
+        "image": "/images/qd54dbh9_IMG_5933-1-.webp",
         "alt": "Contemporary poolside custom residence"
       }
     ]
@@ -28,7 +28,7 @@
     "about": {
       "title": "Our History",
       "subtitle": "Three decades of craftsmanship, community, and trust.",
-      "image": "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/96doj20j_Banner-01.jpg"
+      "image": "/images/96doj20j_Banner-01.jpg"
     },
     "process": {
       "eyebrow": "How We Work",
@@ -40,13 +40,13 @@
       "eyebrow": "Complete Service",
       "title": "What We Offer",
       "subtitle": "From the first sketch to the last coat of stain — every discipline under one roof.",
-      "image": "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/96doj20j_Banner-01.jpg"
+      "image": "/images/96doj20j_Banner-01.jpg"
     },
     "portfolio": {
       "eyebrow": "Our Work",
       "title": "Portfolio",
       "subtitle": "Three decades of Kawartha craftsmanship — organized by discipline.",
-      "image": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/5okni3ws_3-%20Custom%20Builds.jpg"
+      "image": "/images/5okni3ws_3-Custom-Builds.jpg"
     },
     "testimonials": {
       "eyebrow": "Client Stories",
@@ -79,7 +79,7 @@
       "name": "New Builds",
       "tagline": "Cottages & Homes",
       "description": "Custom cottages and homes designed around the land, built to live beautifully through every Kawartha season.",
-      "cover": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/5okni3ws_3-%20Custom%20Builds.jpg"
+      "cover": "/images/5okni3ws_3-Custom-Builds.jpg"
     },
     {
       "slug": "boathouses",
@@ -93,21 +93,21 @@
       "name": "Bunkies",
       "tagline": "Guest retreats",
       "description": "Small-footprint guest cabins built with the same care as the main cottage — because every square foot matters.",
-      "cover": "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/1urtq6bf_11.jpg"
+      "cover": "/images/1urtq6bf_11.jpg"
     },
     {
       "slug": "garages",
       "name": "Garages",
       "tagline": "Workshops & vehicle homes",
       "description": "Detached garages engineered for Kawartha winters — built with the same architectural language as the main house.",
-      "cover": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/olakgvbb_1%20-%20Custom%20Design.webp"
+      "cover": "/images/olakgvbb_1-Custom-Design.webp"
     },
     {
       "slug": "renovations-additions",
       "name": "Renovations & Additions",
       "tagline": "Before & after",
       "description": "Full renovations and seamless additions — breathing new life into much-loved cottages and family homes.",
-      "cover": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/qelpi13s_4-%20Renovations%20%26%20Additions.webp"
+      "cover": "/images/qelpi13s_4-Renovations-Additions.webp"
     }
   ],
   "projects": [
@@ -116,18 +116,18 @@
       "name": "Modern Hideaway",
       "location": "Stoney Lake, ON",
       "description": "A contemporary lakeside retreat tucked into the forest edge, blending timber, glass and granite into one quiet silhouette.",
-      "cover": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/ic2k5m3o_3-%20Bottom%20of%20Homepage%20Photo.jpg",
+      "cover": "/images/ic2k5m3o_3-Bottom-of-Homepage-Photo.jpg",
       "category": "new-builds",
       "gallery": [
-        "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/5okni3ws_3-%20Custom%20Builds.jpg",
-        "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/olakgvbb_1%20-%20Custom%20Design.webp",
-        "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/ic2k5m3o_3-%20Bottom%20of%20Homepage%20Photo.jpg",
-        "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/qelpi13s_4-%20Renovations%20%26%20Additions.webp",
+        "/images/5okni3ws_3-Custom-Builds.jpg",
+        "/images/olakgvbb_1-Custom-Design.webp",
+        "/images/ic2k5m3o_3-Bottom-of-Homepage-Photo.jpg",
+        "/images/qelpi13s_4-Renovations-Additions.webp",
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80",
-        "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/odjdbg5s_1.1.jpg",
+        "/images/odjdbg5s_1.1.jpg",
         "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80",
         "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80",
-        "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/t9xa1igv_13.jpg"
+        "/images/t9xa1igv_13.jpg"
       ]
     },
     {
@@ -135,16 +135,16 @@
       "name": "Family Getaway",
       "location": "Buckhorn Lake, ON",
       "description": "A multi-generational cottage with a wide-open great room, screened porch and timber-framed gable welcoming the whole family.",
-      "cover": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/olakgvbb_1%20-%20Custom%20Design.webp",
+      "cover": "/images/olakgvbb_1-Custom-Design.webp",
       "category": "new-builds",
       "gallery": [
-        "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/ic2k5m3o_3-%20Bottom%20of%20Homepage%20Photo.jpg",
-        "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/qelpi13s_4-%20Renovations%20%26%20Additions.webp",
+        "/images/ic2k5m3o_3-Bottom-of-Homepage-Photo.jpg",
+        "/images/qelpi13s_4-Renovations-Additions.webp",
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80",
-        "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/odjdbg5s_1.1.jpg",
+        "/images/odjdbg5s_1.1.jpg",
         "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80",
         "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80",
-        "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/t9xa1igv_13.jpg",
+        "/images/t9xa1igv_13.jpg",
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80"
       ]
     },
@@ -153,14 +153,14 @@
       "name": "Tranquil Stoney Retreat",
       "location": "Stoney Lake, ON",
       "description": "Quiet, considered architecture — natural materials, lake views framed from every room and a shoreline that feels untouched.",
-      "cover": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/5okni3ws_3-%20Custom%20Builds.jpg",
+      "cover": "/images/5okni3ws_3-Custom-Builds.jpg",
       "category": "new-builds",
       "gallery": [
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80",
-        "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/odjdbg5s_1.1.jpg",
+        "/images/odjdbg5s_1.1.jpg",
         "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80",
         "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80",
-        "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/t9xa1igv_13.jpg",
+        "/images/t9xa1igv_13.jpg",
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
         "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=80",
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80",
@@ -177,7 +177,7 @@
       "gallery": [
         "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80",
         "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80",
-        "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/t9xa1igv_13.jpg",
+        "/images/t9xa1igv_13.jpg",
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
         "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=80",
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80",
@@ -190,18 +190,18 @@
       "name": "Clear Haven",
       "location": "Clear Lake, ON",
       "description": "A refined family cottage designed for year-round living — bright, airy and anchored by handcrafted timber details.",
-      "cover": "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/odjdbg5s_1.1.jpg",
+      "cover": "/images/odjdbg5s_1.1.jpg",
       "category": "new-builds",
       "gallery": [
-        "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/t9xa1igv_13.jpg",
+        "/images/t9xa1igv_13.jpg",
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
         "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=80",
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80",
         "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=80",
         "https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=1400&q=80",
-        "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/j90o8w4j_7.jpg",
-        "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/l1dcul9q_8.jpg",
-        "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/1urtq6bf_11.jpg"
+        "/images/j90o8w4j_7.jpg",
+        "/images/l1dcul9q_8.jpg",
+        "/images/1urtq6bf_11.jpg"
       ]
     },
     {
@@ -212,11 +212,11 @@
       "cover": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80",
       "category": "boathouses",
       "gallery": [
-        "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/olakgvbb_1%20-%20Custom%20Design.webp",
-        "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/ic2k5m3o_3-%20Bottom%20of%20Homepage%20Photo.jpg",
-        "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/qelpi13s_4-%20Renovations%20%26%20Additions.webp",
+        "/images/olakgvbb_1-Custom-Design.webp",
+        "/images/ic2k5m3o_3-Bottom-of-Homepage-Photo.jpg",
+        "/images/qelpi13s_4-Renovations-Additions.webp",
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80",
-        "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/odjdbg5s_1.1.jpg",
+        "/images/odjdbg5s_1.1.jpg",
         "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80",
         "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80"
       ]
@@ -226,15 +226,15 @@
       "name": "Stoney Lake Boathouse",
       "location": "Stoney Lake, ON",
       "description": "Classic timber boathouse with cedar cladding, custom marine doors and a seamless dock integration.",
-      "cover": "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/qsj47hzn_26.jpg",
+      "cover": "/images/qsj47hzn_26.jpg",
       "category": "boathouses",
       "gallery": [
-        "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/qelpi13s_4-%20Renovations%20%26%20Additions.webp",
+        "/images/qelpi13s_4-Renovations-Additions.webp",
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80",
-        "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/odjdbg5s_1.1.jpg",
+        "/images/odjdbg5s_1.1.jpg",
         "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80",
         "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80",
-        "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/t9xa1igv_13.jpg",
+        "/images/t9xa1igv_13.jpg",
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80"
       ]
     },
@@ -243,13 +243,13 @@
       "name": "Lakeside Bunkie",
       "location": "Kawartha Lakes, ON",
       "description": "A quiet, timber-framed sleeping cabin on a rocky point — compact, warm and immersive.",
-      "cover": "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/1urtq6bf_11.jpg",
+      "cover": "/images/1urtq6bf_11.jpg",
       "category": "bunkies",
       "gallery": [
-        "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/odjdbg5s_1.1.jpg",
+        "/images/odjdbg5s_1.1.jpg",
         "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80",
         "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80",
-        "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/t9xa1igv_13.jpg",
+        "/images/t9xa1igv_13.jpg",
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
         "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=80"
       ]
@@ -259,11 +259,11 @@
       "name": "Timber Detached Garage",
       "location": "Peterborough County, ON",
       "description": "A three-bay detached garage with upper loft, timber accents and architectural pairing with the main residence.",
-      "cover": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/olakgvbb_1%20-%20Custom%20Design.webp",
+      "cover": "/images/olakgvbb_1-Custom-Design.webp",
       "category": "garages",
       "gallery": [
         "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80",
-        "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/t9xa1igv_13.jpg",
+        "/images/t9xa1igv_13.jpg",
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
         "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=80",
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80",
@@ -275,22 +275,22 @@
       "name": "Lakefront Renewal",
       "location": "Chemong Lake, ON",
       "description": "A dated 1970s cottage reimagined with vaulted ceilings, a timber-framed great room and a brand-new lakeside addition.",
-      "cover": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/qelpi13s_4-%20Renovations%20%26%20Additions.webp",
+      "cover": "/images/qelpi13s_4-Renovations-Additions.webp",
       "category": "renovations-additions",
       "pairs": [
         {
-          "before": "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/j90o8w4j_7.jpg",
-          "after": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/5okni3ws_3-%20Custom%20Builds.jpg",
+          "before": "/images/j90o8w4j_7.jpg",
+          "after": "/images/5okni3ws_3-Custom-Builds.jpg",
           "caption": "Front elevation — timber-framed porch and new entry"
         },
         {
-          "before": "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/wpdh3u3s_18.jpg",
-          "after": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/ic2k5m3o_3-%20Bottom%20of%20Homepage%20Photo.jpg",
+          "before": "/images/wpdh3u3s_18.jpg",
+          "after": "/images/ic2k5m3o_3-Bottom-of-Homepage-Photo.jpg",
           "caption": "Great room — vaulted ceilings replace the original flat deck"
         },
         {
           "before": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80",
-          "after": "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/t9xa1igv_13.jpg",
+          "after": "/images/t9xa1igv_13.jpg",
           "caption": "Kitchen — custom cabinetry and new sightline to the lake"
         }
       ]
@@ -300,17 +300,17 @@
       "name": "Cottage Addition",
       "location": "Buckhorn Lake, ON",
       "description": "A thoughtful side addition that doubled the living space while preserving the cottage's original lakeside character.",
-      "cover": "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/wpdh3u3s_18.jpg",
+      "cover": "/images/wpdh3u3s_18.jpg",
       "category": "renovations-additions",
       "pairs": [
         {
-          "before": "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/odjdbg5s_1.1.jpg",
+          "before": "/images/odjdbg5s_1.1.jpg",
           "after": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80",
           "caption": "Addition joins the original roofline without competing with it"
         },
         {
-          "before": "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/l1dcul9q_8.jpg",
-          "after": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/olakgvbb_1%20-%20Custom%20Design.webp",
+          "before": "/images/l1dcul9q_8.jpg",
+          "after": "/images/olakgvbb_1-Custom-Design.webp",
           "caption": "New living room opens onto an expanded deck"
         }
       ]
@@ -321,21 +321,21 @@
       "quote": "We want to thank Timberline for helping us build our dream cottage! We had a positive experience from the design to the planning and building of our cottage. The team was professional and offered us timely advice and guidance whenever issues arose. The final product exceeded our expectations in every way. We were very satisfied with the quality of the workmanship and the finished product. We appreciated how the Timberline team was very approachable and worked together seamlessly to keep the project on track. We would not hesitate to recommend Timberline to others!",
       "author": "C & E Travaglini",
       "location": "2026",
-      "image": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/qelpi13s_4-%20Renovations%20%26%20Additions.webp",
+      "image": "/images/qelpi13s_4-Renovations-Additions.webp",
       "showOnHome": true
     },
     {
       "quote": "Timberline Custom Homes was a stand-out partner as the builder of Sparrow Lodge. From beginning to end, they partnered with us to make our dream home a reality, translating our vision from plans to finished product with craftsmanship, quality and care. We couldn't have picked a better builder for this project — they should be incredibly proud of what they accomplished on this project.",
       "author": "Z & M Sparrow",
       "location": "2026",
-      "image": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/5okni3ws_3-%20Custom%20Builds.jpg",
+      "image": "/images/5okni3ws_3-Custom-Builds.jpg",
       "showOnHome": true
     },
     {
       "quote": "When we decided to custom design and build our retirement home we had several objectives in mind. After a succession of very typical suburban styled homes in the city we very much wanted to explore modern architecture and designs that feature very large open spaces and expansive vistas that would allow us to enjoy our beautiful natural forest and rocky lakeside setting all year long. While modern architecture was definitely our objective it was also very important for us to incorporate natural materials such as granite and wood products that would blend so well with our property. We wanted a design that optimized day to day living for a couple but would also easily accommodate visiting family and guests offering all privacy and well appointed accommodations.\n\nWorking with Adam, Timberline's in-house architect, we were able to translate our objectives and wish list into a beautiful custom home that met every requirement we had set. As a retired couple and with years of pent-up ambition to build a home we knew we'd be very active with the builder during the design and building process. Timberline was very facilitating with this approach. Fortunately, we also had the perfect pilot project for our planned home — a new Bunkie to be built on our property in the style of our eventual home. Building the Bunkie first gave us the opportunity to use it as a test bed for design elements and materials that we hoped to eventually use in our home and it also afforded us the opportunity to be onsite during the entire building process. This was a huge help for us.\n\nOne of the big advantages that Timberline brought to the table, in addition to their in-house design capability, their large and experienced construction staff and their strong trade and supplier relationships is their in-house excavating and landscaping services company — Northey Contracting. They handled everything from site servicing and preparations to final hardscaping services utilizing rocks uncovered on our own property during construction. Timberline helped us realize our goal to build a beautiful modern home within our naturally forested and rocky lakeside property.",
       "author": "W Smith",
       "location": "2026",
-      "image": "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/ic2k5m3o_3-%20Bottom%20of%20Homepage%20Photo.jpg",
+      "image": "/images/ic2k5m3o_3-Bottom-of-Homepage-Photo.jpg",
       "showOnHome": true
     },
     {

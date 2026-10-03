@@ -1,36 +1,36 @@
 import { CMS, hasItems } from "./cms";
 
 // Centralized image URLs for Timberline Custom Homes
-export const LOGO_LIGHT = "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/j2fpy1m9_Final_Logo2.png";
-export const LOGO_FOOTER = "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/8pfnimch_Timberline_Custom_Homes_Logo%20No%20Writing.jpg";
-export const BANNER_INTERIOR = "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/96doj20j_Banner-01.jpg";
+export const LOGO_LIGHT = "/images/j2fpy1m9_Final_Logo2.png";
+export const LOGO_FOOTER = "/images/8pfnimch_Timberline_Custom_Homes_Logo-No-Writing.jpg";
+export const BANNER_INTERIOR = "/images/96doj20j_Banner-01.jpg";
 
 // Membership / accreditation badges displayed in the footer (white-on-transparent versions)
 export const MEMBERSHIP_LOGOS = [
-  { name: "Government of Ontario",       image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/bwc5tzgt_Image1.png" },
-  { name: "RenoMark",                    image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/d9cyj0yj_Image2.png" },
-  { name: "Tarion Registered Builder",   image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/rvvn8js4_Image3.png" },
-  { name: "East Kawartha Chamber",       image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/objcrdc8_Image4.png" },
-  { name: "WSIB Ontario",                image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/zf0wtdbk_Image6.png" },
+  { name: "Government of Ontario",       image: "/images/bwc5tzgt_Image1.png" },
+  { name: "RenoMark",                    image: "/images/d9cyj0yj_Image2.png" },
+  { name: "Tarion Registered Builder",   image: "/images/rvvn8js4_Image3.png" },
+  { name: "East Kawartha Chamber",       image: "/images/objcrdc8_Image4.png" },
+  { name: "WSIB Ontario",                image: "/images/zf0wtdbk_Image6.png" },
 ];
 
 export const IMAGES = {
   // User-uploaded
-  cottageExterior: "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/odjdbg5s_1.1.jpg",
-  greatRoomBar: "https://customer-assets.emergentagent.com/job_9956be4d-4af9-4fb2-953e-beeddc6e792b/artifacts/t9xa1igv_13.jpg",
-  user7: "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/j90o8w4j_7.jpg",
-  user8: "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/l1dcul9q_8.jpg",
-  user11: "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/1urtq6bf_11.jpg",
-  user18: "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/wpdh3u3s_18.jpg",
-  user26: "https://customer-assets.emergentagent.com/job_timberline-studio/artifacts/qsj47hzn_26.jpg",
-  customDesignRender: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/olakgvbb_1%20-%20Custom%20Design.webp",
-  planningPermittingRender: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/r3jial7x_2-%20Planning%20and%20Permitting.webp",
-  customBuildsRender: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/5okni3ws_3-%20Custom%20Builds.jpg",
-  renovationsRender: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/qelpi13s_4-%20Renovations%20%26%20Additions.webp",
-  commercialBuildsRender: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/iuo47s68_5-%20Commercial%20Builds.webp",
-  heavyEquipmentRender: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/rwmv2da5_6-%20Heavy%20Equipment.webp",
-  storageRentalsRender: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/2uur2xdj_7-%20Storage%20Rentals.webp",
-  designBuildClosing: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/ic2k5m3o_3-%20Bottom%20of%20Homepage%20Photo.jpg",
+  cottageExterior: "/images/odjdbg5s_1.1.jpg",
+  greatRoomBar: "/images/t9xa1igv_13.jpg",
+  user7: "/images/j90o8w4j_7.jpg",
+  user8: "/images/l1dcul9q_8.jpg",
+  user11: "/images/1urtq6bf_11.jpg",
+  user18: "/images/wpdh3u3s_18.jpg",
+  user26: "/images/qsj47hzn_26.jpg",
+  customDesignRender: "/images/olakgvbb_1-Custom-Design.webp",
+  planningPermittingRender: "/images/r3jial7x_2-Planning-and-Permitting.webp",
+  customBuildsRender: "/images/5okni3ws_3-Custom-Builds.jpg",
+  renovationsRender: "/images/qelpi13s_4-Renovations-Additions.webp",
+  commercialBuildsRender: "/images/iuo47s68_5-Commercial-Builds.webp",
+  heavyEquipmentRender: "/images/rwmv2da5_6-Heavy-Equipment.webp",
+  storageRentalsRender: "/images/2uur2xdj_7-Storage-Rentals.webp",
+  designBuildClosing: "/images/ic2k5m3o_3-Bottom-of-Homepage-Photo.jpg",
 
   // Unsplash — luxury cottage country
   heroExterior:    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80",
@@ -52,10 +52,10 @@ export const IMAGES = {
 
 // Hero background slider — user-supplied luxury project photography
 const DEFAULT_HERO_SLIDES = [
-  { image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/1bydvg6n_1%20%282%29.webp",           alt: "Timberline timberframe home with wraparound porch in autumn" },
-  { image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/3j62dltp_2.1%20%281%29.webp",         alt: "Modern lakeside custom home in the Kawarthas" },
-  { image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/4ro2l22u_IMG_3987%20%281%29.webp",    alt: "Timberframe estate with detached garage" },
-  { image: "https://customer-assets-eiarnc6j.emergentagent.net/job_timberline-studio/artifacts/qd54dbh9_IMG_5933%20%281%29.webp",    alt: "Contemporary poolside custom residence" },
+  { image: "/images/1bydvg6n_1-2-.webp",           alt: "Timberline timberframe home with wraparound porch in autumn" },
+  { image: "/images/3j62dltp_2.1-1-.webp",         alt: "Modern lakeside custom home in the Kawarthas" },
+  { image: "/images/4ro2l22u_IMG_3987-1-.webp",    alt: "Timberframe estate with detached garage" },
+  { image: "/images/qd54dbh9_IMG_5933-1-.webp",    alt: "Contemporary poolside custom residence" },
 ];
 
 const cmsSlides = CMS.settings && CMS.settings.heroSlides;
