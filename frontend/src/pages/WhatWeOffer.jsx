@@ -22,7 +22,7 @@ const OFFERINGS = [
     body: [
       "Whether you\u2019re beginning with a collection of ideas or arriving with a fully developed architectural design, Timberline brings your vision to life through a highly personalized design experience. Our in-house design team works closely with you to refine your ideas, thoughtfully consider every detail, and transform your vision into an exceptional 3D rendering. From the first concept to the final design, every detail is thoughtfully considered, expertly designed and tailored to your vision.",
     ],
-    highlights: ["Site-specific design", "3D visualizations", "Interior selections"],
+    highlights: ["Site-specific design", "3D visualizations", "Interior & Exterior selections"],
   },
   {
     id: "planning-permitting",
@@ -32,7 +32,13 @@ const OFFERINGS = [
     body: [
       "The planning and permitting process can often feel overwhelming, but with Timberline, you don\u2019t have to navigate it alone. Our experienced in-house design team is well versed in the consultations, permits, approvals and requirements involved in bringing your project to life. We coordinate with the necessary professionals and authorities on your behalf, ensuring each stage is thoughtfully managed while keeping the process as seamless as possible \u2014 allowing you to focus on the excitement of watching your vision take shape.",
     ],
-    highlights: ["Planning, Amendments & Variances", "Engineers, Surveys & Consultants", "Building Permits"],
+    highlights: [
+      "Planning, Amendments & Variances",
+      "Engineers, Surveys & Consultants",
+      "Building Permits",
+      "Conservation Authorities",
+      "Archaeological, Environmental & Geotechnical Studies",
+    ],
   },
   {
     id: "custom-builds",
@@ -54,7 +60,7 @@ const OFFERINGS = [
       "Timberline takes the same pride in our exceptional additions and renovations as we do in the homes and cottages we build. Every project begins by listening closely to our clients\u2019 needs, aspirations, and vision, allowing us to create a design that is both beautifully considered and uniquely their own.",
       "Blending new construction seamlessly with an existing home presents its own challenges \u2014 and it\u2019s a challenge we embrace. Our expertise lies in thoughtfully marrying old and new, creating refined spaces where timeless character meets modern design.",
     ],
-    highlights: ["Home Renovations", "Additions", "Decks & Docks"],
+    highlights: ["Home Renovations", "Additions", "Decks, Docks & Covered Porches"],
   },
   {
     id: "commercial-builds",
@@ -72,9 +78,9 @@ const OFFERINGS = [
     name: "Storage Rentals",
     image: IMAGES.storageRentalsRender,
     body: [
-      "Whether you\u2019re preparing for an upcoming project with Timberline or simply require additional storage in the area, we offer convenient off-site storage options and storage units located behind our office.",
+      "Whether you\u2019re preparing for an upcoming project with Timberline or simply require additional storage in the area, we offer convenient, monitored off-site storage options and storage units located behind our office.",
     ],
-    highlights: ["Storage Unit Rentals", "Off-Site Trailer Storage"],
+    highlights: ["Storage Unit Rentals", "Off-Site Trailer Storage", "Off-Site C-Can Storage"],
   },
   {
     id: "heavy-equipment",
