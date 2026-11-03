@@ -1,11 +1,7 @@
 import { Link } from "react-router-dom";
 import Reveal, { GoldRule } from "./Reveal";
-import { IMAGES, BANNER_INTERIOR } from "../lib/images";
-
-const MARQUEE = [
-  IMAGES.cottageExterior, BANNER_INTERIOR, IMAGES.user7, IMAGES.user8,
-  IMAGES.user11, IMAGES.user18, IMAGES.user26, IMAGES.greatRoomBar,
-];
+// Selected Work photos (frontend/public/images/selected-work-1.jpg ... -10.jpg)
+const MARQUEE = Array.from({ length: 10 }, (_, i) => `/images/selected-work-${i + 1}.jpg`);
 
 export const ScrollingGallery = () => {
   return (
