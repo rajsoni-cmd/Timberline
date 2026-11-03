@@ -5,7 +5,6 @@ import Reveal, { GoldRule } from "../components/Reveal";
 import PageHero from "../components/PageHero";
 import { banner } from "../lib/cms";
 import TestimonialCard from "../components/TestimonialCard";
-import { IMAGES, BANNER_INTERIOR } from "../lib/images";
 import { OFFICE_TEAM, FIELD_TEAM, TESTIMONIALS } from "../lib/team";
 
 const STATS = [
@@ -269,7 +268,7 @@ const About = () => {
   return (
     <main data-testid="about-page">
       <PageHero
-        {...banner("about", { title: "Our History", subtitle: "Three decades of craftsmanship, community, and trust.", image: BANNER_INTERIOR })}
+        {...banner("about", { title: "Our History", subtitle: "Three decades of craftsmanship, community, and trust.", image: "/images/our-history-banner.jpg" })}
         testId="about-hero"
       />
 
@@ -278,7 +277,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20 items-start">
           <Reveal variant="left" className="md:col-span-5">
             <div className="relative aspect-[3/4] overflow-hidden">
-              <img src={IMAGES.shopBuild} alt="Timberline shop" className="w-full h-full object-cover" loading="lazy" />
+              <img src="/images/since-1989.jpg" alt="Timberline lakeside fire pit and patio overlooking the water" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </Reveal>
           <Reveal variant="right" delay={120} className="md:col-span-7">
@@ -336,8 +335,8 @@ const About = () => {
           <Reveal variant="right" delay={120} className="md:col-span-5 order-1 md:order-2">
             <div className="relative aspect-[3/4] overflow-hidden">
               <img
-                src={IMAGES.designBuildClosing}
-                alt="Timberline custom home nestled in the Kawartha forest"
+                src="/images/building-with-nature.jpg"
+                alt="Timberline lakeside home among the trees, reflected in the water"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
