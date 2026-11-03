@@ -17,6 +17,22 @@ const STATS = [
 
 const AWARDS = [
   {
+    year: "2026",
+    groups: [
+      {
+        org: "Peterborough & The Kawarthas (PKHBA) Housing Design Awards",
+        items: [
+          "Custom Home Builder of the Year — GOLD",
+          "Custom Built Home over 4,001 SF — SILVER",
+          "Custom Built Home 2,501–4,000 SF — SILVER",
+          "Custom Built Home up to 2,500 SF — SILVER",
+          "Renovations over $500,000 — SILVER",
+          "Auxiliary Structure — SILVER",
+        ],
+      },
+    ],
+  },
+  {
     year: "2024",
     groups: [
       {
