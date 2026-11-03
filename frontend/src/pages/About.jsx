@@ -213,8 +213,17 @@ const TeamCard = ({ person, idx, testPrefix }) => (
       data-testid={`${testPrefix}-${person.name.toLowerCase().replace(/\s+/g, "-")}`}
       className="flex flex-col items-center text-center px-2"
     >
-      <div className="w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#f5f0e6] flex items-center justify-center border border-[#c9a96e]/40 mb-6">
-        <User size={42} strokeWidth={1} className="text-[#01261d]/40" />
+      <div className="w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#f5f0e6] flex items-center justify-center border border-[#c9a96e]/40 mb-6 overflow-hidden">
+        {person.photo ? (
+          <img
+            src={person.photo}
+            alt={person.name}
+            loading="lazy"
+            className="w-full h-full object-cover object-[center_30%]"
+          />
+        ) : (
+          <User size={42} strokeWidth={1} className="text-[#01261d]/40" />
+        )}
       </div>
       <h4 className="font-display text-[#01261d] text-xl md:text-2xl leading-tight tracking-tight">
         {person.name}

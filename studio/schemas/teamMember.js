@@ -11,6 +11,12 @@ export default defineType({
   fields: [
     orderRankField({type: 'teamMember'}),
     defineField({name: 'name', title: 'Name', type: 'string', validation: (r) => r.required()}),
+    defineField({
+      name: 'photo',
+      title: 'Photo (optional)',
+      type: 'image',
+      description: 'A head-and-shoulders photo works best. It is shown in a circle on the About page. Leave empty to show the default icon.',
+    }),
     defineField({name: 'title', title: 'Job title', type: 'string'}),
     defineField({name: 'since', title: 'With Timberline since (year)', type: 'string'}),
     defineField({
@@ -29,7 +35,7 @@ export default defineType({
     }),
   ],
   preview: {
-    select: {title: 'name', subtitle: 'title', group: 'group'},
-    prepare: ({title, subtitle, group}) => ({title, subtitle: `${group === 'field' ? 'Field' : 'Office'} · ${subtitle || ''}`}),
+    select: {title: 'name', subtitle: 'title', group: 'group', media: 'photo'},
+    prepare: ({title, subtitle, group, media}) => ({title, media, subtitle: `${group === 'field' ? 'Field' : 'Office'} · ${subtitle || ''}`}),
   },
 })

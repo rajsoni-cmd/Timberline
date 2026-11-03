@@ -46,7 +46,7 @@ const QUERY = `{
     quote, author, location, "image": image.asset->url, showOnHome
   },
   "faqs": *[_type == "faq" && defined(question)] | order(orderRank asc){ question, answer },
-  "team": *[_type == "teamMember" && defined(name)] | order(orderRank asc){ name, title, since, group }
+  "team": *[_type == "teamMember" && defined(name)] | order(orderRank asc){ name, title, since, group, "photo": photo.asset->url }
 }`;
 
 // Ask Sanity's image CDN for a web-optimised size (auto WebP/AVIF).
@@ -67,6 +67,7 @@ function optimise(d) {
     p.pairs = (p.pairs || []).map((x) => ({ ...x, before: sized(x.before, 2000), after: sized(x.after, 2000) }));
   });
   (d.testimonials || []).forEach((t) => (t.image = sized(t.image, 1200)));
+  (d.team || []).forEach((m) => (m.photo = m.photo ? `${m.photo}?auto=format&fit=max&w=500&q=80` : undefined));
   return d;
 }
 
