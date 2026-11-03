@@ -53,7 +53,7 @@ const Home = () => {
         {/* Background image + soft overlay so text stays legible */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-25"
-          style={{ backgroundImage: `url(${IMAGES.designBuildClosing})` }}
+          style={{ backgroundImage: "url(/images/we-create-memories.jpg)" }}
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-white/70" aria-hidden="true" />
