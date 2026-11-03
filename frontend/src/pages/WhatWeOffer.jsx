@@ -197,7 +197,7 @@ const WhatWeOffer = () => {
       <section className="relative py-32 md:py-44 bg-[#01261d] overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center ken-burns opacity-30"
-          style={{ backgroundImage: `url(${IMAGES.experienceBg})` }}
+          style={{ backgroundImage: "url(/images/ready-to-build.jpg)" }}
         />
         <div className="absolute inset-0 bg-[#01261d]/65" />
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
