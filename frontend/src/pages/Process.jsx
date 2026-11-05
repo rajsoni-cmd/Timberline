@@ -59,6 +59,7 @@ const STAGE_2_SUBSECTIONS = [
           <li>Site plan approvals</li>
           <li>Environmental studies</li>
           <li>Slope stability studies</li>
+          <li>Archaeological studies</li>
         </ul>
       </>
     ),
@@ -324,6 +325,7 @@ const Process = () => {
                 <li>A list of likes, dislikes, non-negotiables, and wish-list items</li>
                 <li>A copy of the property tax bill</li>
                 <li>A property survey, if available</li>
+                <li>A copy of septic records</li>
               </ul>
 
               <p className="mt-6 font-medium text-[#01261d]">
@@ -398,16 +400,21 @@ const Process = () => {
             <RichBody>
               <p>Once permits and approvals are in place, construction begins.</p>
               <p className="mt-6">
-                Timberline manages every aspect of the building process, coordinating all materials, trades, subcontractors, suppliers, scheduling, inspections, and on-site operations from start to finish.
+                Timberline manages every aspect of the building process, coordinating all materials, subcontractors, suppliers, scheduling, inspections, and on-site operations from start to finish.
               </p>
               <p className="mt-6">
-                Because Timberline incorporates in-house framing crews, finishing carpenters, project managers, and heavy equipment operators directly within our company, we maintain greater involvement and scheduling control during:
+                With in-house framing and finishing carpenters, dedicated project managers, and the support of our sister company, Northey Contracting, for heavy equipment services, Timberline maintains greater control over scheduling, coordination, and quality throughout every stage of construction.
+              </p>
+              <p className="mt-6">
+                This integrated approach allows us to coordinate key aspects of each project, including:
               </p>
               <ul className="mt-4 space-y-2 list-disc pl-6 marker:text-[#c9a96e]">
-                <li>Excavation and Backfill</li>
+                <li>Demolition</li>
+                <li>Excavation and backfilling</li>
                 <li>Septic installation</li>
                 <li>Grading and site development</li>
-                <li>Framing and Finish Carpentry</li>
+                <li>Framing and finish carpentry</li>
+                <li>In-house timber and stain shop</li>
               </ul>
               <p className="mt-6">
                 Throughout construction, clients receive regular progress updates from our site project managers.
