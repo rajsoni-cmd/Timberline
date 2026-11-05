@@ -4,7 +4,6 @@ import HeroSlider from "../components/HeroSlider";
 import ServiceCards from "../components/ServiceCards";
 import ScrollingGallery from "../components/ScrollingGallery";
 import TestimonialCard from "../components/TestimonialCard";
-import { IMAGES } from "../lib/images";
 import { TESTIMONIALS } from "../lib/team";
 
 const Home = () => {
@@ -118,13 +117,13 @@ const Home = () => {
       {/* DESIGN BUILD CLOSING SECTION */}
       <section
         data-testid="design-build-closing"
-        className="relative py-24 md:py-32 bg-[#01261d] overflow-hidden"
+        className="relative py-24 md:py-40 bg-[#01261d] overflow-hidden"
       >
         <div
-          className="absolute inset-0 bg-cover bg-center ken-burns opacity-40"
-          style={{ backgroundImage: `url(${IMAGES.designBuildClosing})` }}
+          className="absolute inset-0 bg-cover opacity-60"
+          style={{ backgroundImage: "url(/images/design-build.jpg)", backgroundPosition: "center 75%" }}
         />
-        <div className="absolute inset-0 bg-[#01261d]/65" />
+        <div className="absolute inset-0 bg-[#01261d]/55" />
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
           <Reveal>
             <div className="flex justify-center"><GoldRule delay={150} wide /></div>
