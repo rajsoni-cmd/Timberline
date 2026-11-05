@@ -35,11 +35,11 @@ const NAV_ITEMS = [
 ];
 
 const Logo = () => (
-  <div className="flex items-center">
+  <div className="flex items-center min-w-0">
     <img
       src={LOGO_LIGHT}
       alt="Timberline Custom Homes — Since 1989"
-      className="w-auto object-contain h-16 md:h-20 lg:h-24"
+      className="object-contain object-left h-auto w-full max-h-16 sm:w-auto sm:h-16 md:h-20 lg:h-24 sm:max-h-none"
     />
   </div>
 );
@@ -293,8 +293,8 @@ export const Header = () => {
           scrolled ? "py-2 shadow-[0_2px_20px_rgba(0,0,0,0.25)]" : "py-3"
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 flex items-center justify-between gap-6">
-          <Link to="/" data-testid="site-logo" className="flex items-center shrink-0">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 flex items-center justify-between gap-3 sm:gap-6">
+          <Link to="/" data-testid="site-logo" className="flex items-center min-w-0 flex-1 sm:flex-none sm:shrink-0">
             <Logo />
           </Link>
 
@@ -307,7 +307,7 @@ export const Header = () => {
           <button
             data-testid="mobile-menu-toggle"
             onClick={() => setMenuOpen(true)}
-            className="lg:hidden p-2 min-h-[48px] min-w-[48px] flex items-center justify-center text-white"
+            className="lg:hidden shrink-0 -mr-2 p-2 min-h-[48px] min-w-[48px] flex items-center justify-center text-white"
             aria-label="Open menu"
           >
             <Menu size={24} strokeWidth={1.5} />
@@ -322,16 +322,16 @@ export const Header = () => {
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex items-center justify-between px-6 py-6">
+        <div className="flex items-center justify-between gap-3 px-4 sm:px-6 py-6">
           <img
             src={LOGO_LIGHT}
             alt="Timberline Custom Homes — Since 1989"
-            className="h-12 w-auto object-contain bg-white/95 px-2 py-1 rounded-sm"
+            className="h-auto max-h-12 w-auto min-w-0 max-w-[calc(100%-60px)] object-contain bg-white/95 px-2 py-1 rounded-sm"
           />
           <button
             data-testid="mobile-menu-close"
             onClick={() => setMenuOpen(false)}
-            className="text-white p-2 min-h-[48px] min-w-[48px] flex items-center justify-center"
+            className="shrink-0 text-white p-2 min-h-[48px] min-w-[48px] flex items-center justify-center"
             aria-label="Close menu"
           >
             <X size={26} strokeWidth={1.5} />
