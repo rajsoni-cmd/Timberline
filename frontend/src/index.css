@@ -201,6 +201,10 @@ body {
 .tl-field input:focus,
 .tl-field select:focus,
 .tl-field textarea:focus { border-bottom-color: var(--tl-gold); }
+/* Hint text (e.g. Project Location) only appears once the field is focused,
+   so it never overlaps the label */
+.tl-field input::placeholder { color: transparent; transition: color 0.3s ease; }
+.tl-field input:focus::placeholder { color: rgba(43, 38, 34, 0.4); }
 
 /* Nav hover underline */
 .nav-underline { position: relative; }
