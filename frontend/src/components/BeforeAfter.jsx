@@ -1,9 +1,24 @@
 import { useRef, useState, useCallback, useEffect } from "react";
 
 // Draggable BEFORE / AFTER comparison slider (mouse + touch).
-const BeforeAfter = ({ before, after, caption, label }) => {
+// Optional: `position` + `onPositionChange` make it controlled (used by the
+// full Before & After gallery), `aspect` overrides the frame shape and
+// `eager` loads the photos immediately.
+const BeforeAfter = ({ before, after, caption, label, position, onPositionChange, aspect, eager = false }) => {
   const containerRef = useRef(null);
-  const [pos, setPos] = useState(50); // percentage
+  const [innerPos, setInnerPos] = useState(50); // percentage
+  const controlled = typeof position === "number";
+  const pos = controlled ? position : innerPos;
+  const posRef = useRef(pos);
+  posRef.current = pos;
+  const setPos = useCallback(
+    (v) => {
+      const next = typeof v === "function" ? v(posRef.current) : v;
+      if (controlled && onPositionChange) onPositionChange(next);
+      else setInnerPos(next);
+    },
+    [controlled, onPositionChange]
+  );
   const dragging = useRef(false);
 
   const setFromClientX = useCallback((clientX) => {
@@ -12,7 +27,7 @@ const BeforeAfter = ({ before, after, caption, label }) => {
     const rect = el.getBoundingClientRect();
     const p = ((clientX - rect.left) / rect.width) * 100;
     setPos(Math.max(0, Math.min(100, p)));
-  }, []);
+  }, [setPos]);
 
   const onPointerDown = (e) => {
     dragging.current = true;
@@ -50,7 +65,7 @@ const BeforeAfter = ({ before, after, caption, label }) => {
     <figure data-testid="before-after" className="w-full">
       <div
         ref={containerRef}
-        className="relative w-full aspect-[16/10] overflow-hidden select-none bg-black"
+        className={`relative w-full ${aspect || "aspect-[16/10]"} overflow-hidden select-none bg-black`}
         onMouseDown={onPointerDown}
         onTouchStart={onPointerDown}
       >
@@ -59,7 +74,7 @@ const BeforeAfter = ({ before, after, caption, label }) => {
           src={after}
           alt={`After${label ? ` — ${label}` : ""}`}
           className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
+          loading={eager ? "eager" : "lazy"}
           draggable={false}
         />
 
@@ -73,8 +88,8 @@ const BeforeAfter = ({ before, after, caption, label }) => {
             src={before}
             alt=""
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ width: `${100 / (pos / 100)}%`, maxWidth: "none" }}
-            loading="lazy"
+            style={{ width: pos > 0 ? `${100 / (pos / 100)}%` : "100%", maxWidth: "none" }}
+            loading={eager ? "eager" : "lazy"}
             draggable={false}
           />
         </div>
