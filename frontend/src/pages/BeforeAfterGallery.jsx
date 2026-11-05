@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link, Navigate, useParams, useSearchParams } from "react-router-dom";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import Breadcrumb from "../components/Breadcrumb";
@@ -19,7 +19,8 @@ const BeforeAfterGallery = () => {
   const { project: projectSlug } = useParams();
   const [params, setParams] = useSearchParams();
   const result = getProject("renovations-additions", projectSlug);
-  const pairs = (result && result.project.pairs) || [];
+  const rawPairs = result ? result.project.pairs : null;
+  const pairs = useMemo(() => rawPairs || [], [rawPairs]);
   const total = pairs.length;
 
   const fromUrl = parseInt(params.get("view"), 10);
@@ -53,8 +54,12 @@ const BeforeAfterGallery = () => {
 
   // Keep the active thumbnail in view on small screens.
   useEffect(() => {
-    const el = thumbsRef.current?.querySelector(`[data-index="${index}"]`);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    const strip = thumbsRef.current;
+    const el = strip?.querySelector(`[data-index="${index}"]`);
+    if (strip && el) {
+      // Scroll only the strip sideways — never the page itself.
+      strip.scrollTo({ left: el.offsetLeft - (strip.clientWidth - el.clientWidth) / 2, behavior: "smooth" });
+    }
   }, [index]);
 
   // Preload the neighbouring comparisons so switching feels instant.
@@ -82,7 +87,7 @@ const BeforeAfterGallery = () => {
   return (
     <main data-testid={`before-after-gallery-${project.slug}`} className="bg-[#01261d]">
       {/* Title bar */}
-      <section className="bg-white pt-[136px] md:pt-[150px] pb-8 md:pb-10">
+      <section className="bg-white pt-[160px] md:pt-[176px] lg:pt-[196px] pb-8 md:pb-10">
         <div className="max-w-6xl mx-auto px-6 md:px-12">
           <Breadcrumb
             items={[
@@ -203,7 +208,7 @@ const BeforeAfterGallery = () => {
             <div
               ref={thumbsRef}
               data-testid="gallery-thumbs"
-              className="max-w-5xl mx-auto mt-7 md:mt-8 flex gap-3 overflow-x-auto pb-2 snap-x [scrollbar-width:thin]"
+              className="relative max-w-5xl mx-auto mt-7 md:mt-8 flex gap-3 overflow-x-auto pb-2 snap-x [scrollbar-width:thin]"
             >
               {pairs.map((p, i) => {
                 const active = i === index;
