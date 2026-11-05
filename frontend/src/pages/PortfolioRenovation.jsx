@@ -62,6 +62,17 @@ const PortfolioRenovation = () => {
                 <p className={`${project.description ? "mt-5 " : ""}text-[0.7rem] tracking-[0.28em] uppercase text-[#c9a96e] font-semibold`}>
                   Drag the slider to compare before &amp; after
                 </p>
+                {more.length > 0 && (
+                  <Link
+                    to={galleryUrl}
+                    data-testid="view-all-before-after-top"
+                    className="mt-6 inline-flex items-center gap-3 bg-[#01261d] text-white px-6 py-3.5 text-[0.7rem] tracking-[0.24em] uppercase font-semibold hover:bg-[#c9a96e] transition-colors"
+                  >
+                    <Images size={16} strokeWidth={1.8} />
+                    <span>View All {pairs.length} Before &amp; After</span>
+                    <ArrowRight size={14} strokeWidth={2} />
+                  </Link>
+                )}
               </div>
             </div>
           </Reveal>
