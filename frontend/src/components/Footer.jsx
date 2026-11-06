@@ -121,7 +121,17 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-[#f4eee4]/10 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-[0.72rem] text-[#f4eee4]/45 font-light">
-          <span>Designed by Miller Marketing</span>
+          <span>
+            Designed by{" "}
+            <a
+              href="https://millermarketing.ca/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline-offset-4 hover:underline hover:text-[#c9a96e] transition-colors"
+            >
+              Miller Marketing
+            </a>
+          </span>
           <span>© 2026 Timberline Custom Homes. All Rights Reserved.</span>
         </div>
       </div>
