@@ -89,6 +89,7 @@ const PortfolioRenovation = () => {
               <BeforeAfter
                 before={featured.before}
                 after={featured.after}
+                single={featured.single}
                 caption={featured.caption}
                 label={featured.caption}
               />

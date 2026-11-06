@@ -126,6 +126,7 @@ const BeforeAfterGallery = () => {
               key={index}
               before={pair.before}
               after={pair.after}
+              single={pair.single}
               label={pair.caption}
               position={pos}
               onPositionChange={setPos}

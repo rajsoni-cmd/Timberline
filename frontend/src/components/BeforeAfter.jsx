@@ -4,7 +4,7 @@ import { useRef, useState, useCallback, useEffect } from "react";
 // Optional: `position` + `onPositionChange` make it controlled (used by the
 // full Before & After gallery), `aspect` overrides the frame shape and
 // `eager` loads the photos immediately.
-const BeforeAfter = ({ before, after, caption, label, position, onPositionChange, aspect, eager = false }) => {
+const BeforeAfter = ({ before, after, caption, label, position, onPositionChange, aspect, eager = false, single }) => {
   const containerRef = useRef(null);
   const [innerPos, setInnerPos] = useState(50); // percentage
   const controlled = typeof position === "number";
@@ -74,7 +74,7 @@ const BeforeAfter = ({ before, after, caption, label, position, onPositionChange
             draggable={false}
           />
           <span className="absolute top-4 right-4 text-[0.65rem] md:text-[0.72rem] tracking-[0.3em] uppercase font-semibold text-white bg-black/55 px-3 py-1.5">
-            After
+            {single || "After"}
           </span>
         </div>
         {caption && (

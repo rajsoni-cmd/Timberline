@@ -83,7 +83,7 @@ export default defineType({
       name: 'pairs',
       title: 'Before & After photos',
       type: 'array',
-      description: 'Add one item per photo. Add a "before" photo too if you have one — it shows as a drag slider. Without a "before" photo, the "after" photo shows on its own.',
+      description: 'Add one item per photo. Both photos are optional: add both for a drag slider, or just one to show it on its own.',
       hidden: ({document}) => !isReno(document),
       of: [
         defineArrayMember({
@@ -92,10 +92,10 @@ export default defineType({
           title: 'Before / After',
           fields: [
             defineField({name: 'before', title: 'BEFORE photo (optional)', type: 'image', description: 'Leave empty if you only have an after photo.'}),
-            defineField({name: 'after', title: 'AFTER photo', type: 'image', validation: (r) => r.required()}),
+            defineField({name: 'after', title: 'AFTER photo (optional)', type: 'image', description: 'Leave empty if you only have a before photo.'}),
             defineField({name: 'caption', title: 'Caption', type: 'string', description: 'Example: Kitchen — new cabinetry and lake view'}),
           ],
-          preview: {select: {title: 'caption', media: 'after', before: 'before'}, prepare: ({title, media, before}) => ({title: title || (before ? 'Before / After' : 'After photo'), subtitle: before ? 'Before & After' : 'After only', media})},
+          preview: {select: {title: 'caption', after: 'after', before: 'before'}, prepare: ({title, after, before}) => ({title: title || (before && after ? 'Before / After' : after ? 'After photo' : before ? 'Before photo' : 'Empty — add a photo'), subtitle: before && after ? 'Before & After' : after ? 'After only' : before ? 'Before only' : '', media: after || before})},
         }),
       ],
     }),
