@@ -236,7 +236,7 @@ const Process = () => {
   return (
     <main data-testid="process-page">
       <PageHero
-        {...banner("process", { eyebrow: "How We Work", title: "Our Process", subtitle: "A comprehensive, one-stop building experience — from vision to move-in.", image: IMAGES.processHero, position: "center", full: true })}
+        {...banner("process", { eyebrow: "How We Work", title: "Our Process", subtitle: "A comprehensive, one-stop building experience — from vision to move-in.", image: IMAGES.processHero, position: "center 55%", full: true })}
         testId="process-hero"
       />
 
