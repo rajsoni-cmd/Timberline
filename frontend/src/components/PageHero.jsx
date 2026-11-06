@@ -28,13 +28,20 @@ const HeroText = ({ eyebrow, title, subtitle }) => (
 // `full`: show the whole photo uncropped (below the header) with a black overlay.
 export const PageHero = ({ eyebrow, title, subtitle, image, position = "center", full = false, testId = "page-hero" }) => {
   if (full) {
+    // Fixed-height banner; the whole photo fits inside (no cropping).
+    // A blurred copy of the same photo fills any space at the sides.
     return (
       <section data-testid={testId} className="relative w-full bg-black pt-[124px] md:pt-[140px] lg:pt-[156px]">
-        <div className="relative w-full overflow-hidden">
+        <div className="relative w-full h-[440px] sm:h-[480px] md:h-[56vh] md:min-h-[460px] md:max-h-[640px] overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center scale-110 blur-2xl opacity-70"
+            style={{ backgroundImage: `url(${image})` }}
+            aria-hidden="true"
+          />
           <img
             src={image}
             alt=""
-            className="block w-full h-[560px] object-cover md:h-auto md:min-h-[480px]"
+            className="relative block h-full w-full object-contain"
             style={{ objectPosition: position }}
           />
           <div className="absolute inset-0 bg-black/50" />
