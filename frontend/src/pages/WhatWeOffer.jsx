@@ -18,7 +18,7 @@ const OFFERINGS = [
     id: "custom-design",
     icon: Compass,
     name: "Custom Design",
-    image: IMAGES.greatRoomBar,
+    image: "/images/wwo-custom-design.jpg",
     body: [
       "Whether you\u2019re beginning with a collection of ideas or arriving with a fully developed architectural design, Timberline brings your vision to life through a highly personalized design experience. Our in-house design team works closely with you to refine your ideas, thoughtfully consider every detail, and transform your vision into an exceptional 3D rendering. From the first concept to the final design, every detail is thoughtfully considered, expertly designed and tailored to your vision.",
     ],
@@ -28,7 +28,7 @@ const OFFERINGS = [
     id: "planning-permitting",
     icon: ClipboardCheck,
     name: "Planning & Permitting",
-    image: IMAGES.processHero,
+    image: "/images/wwo-planning.jpg",
     body: [
       "The planning and permitting process can often feel overwhelming, but with Timberline, you don\u2019t have to navigate it alone. Our experienced in-house design team is well versed in the consultations, permits, approvals and requirements involved in bringing your project to life. We coordinate with the necessary professionals and authorities on your behalf, ensuring each stage is thoughtfully managed while keeping the process as seamless as possible \u2014 allowing you to focus on the excitement of watching your vision take shape.",
     ],
@@ -99,7 +99,7 @@ const WhatWeOffer = () => {
   return (
     <main data-testid="what-we-offer-page">
       <PageHero
-        {...banner("whatWeOffer", { eyebrow: "Complete Service", title: "What We Offer", subtitle: "From the first sketch to the last coat of stain — every discipline under one roof.", image: BANNER_INTERIOR })}
+        {...banner("whatWeOffer", { eyebrow: "Complete Service", title: "What We Offer", subtitle: "From the first sketch to the last coat of stain — every discipline under one roof.", image: BANNER_INTERIOR, position: "center 20%" })}
         testId="wwo-hero"
       />
 

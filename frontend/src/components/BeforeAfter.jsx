@@ -61,6 +61,31 @@ const BeforeAfter = ({ before, after, caption, label, position, onPositionChange
     if (e.key === "ArrowRight") setPos((p) => Math.min(100, p + 2));
   };
 
+  // "After" photo only (no before photo uploaded): show it on its own.
+  if (!before) {
+    return (
+      <figure data-testid="after-only" className="w-full">
+        <div className={`relative w-full ${aspect || "aspect-[16/10]"} overflow-hidden bg-black`}>
+          <img
+            src={after}
+            alt={`After${label ? ` — ${label}` : ""}`}
+            className="absolute inset-0 w-full h-full object-cover"
+            loading={eager ? "eager" : "lazy"}
+            draggable={false}
+          />
+          <span className="absolute top-4 right-4 text-[0.65rem] md:text-[0.72rem] tracking-[0.3em] uppercase font-semibold text-white bg-black/55 px-3 py-1.5">
+            After
+          </span>
+        </div>
+        {caption && (
+          <figcaption className="mt-4 text-center text-[#3a3531] text-sm md:text-base font-light italic">
+            {caption}
+          </figcaption>
+        )}
+      </figure>
+    );
+  }
+
   return (
     <figure data-testid="before-after" className="w-full">
       <div

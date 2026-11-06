@@ -67,7 +67,7 @@ const BeforeAfterGallery = () => {
     [index + 1, index - 1].forEach((i) => {
       const p = pairs[(i + total) % total];
       if (!p) return;
-      [p.before, p.after].forEach((src) => {
+      [p.before, p.after].filter(Boolean).forEach((src) => {
         const img = new Image();
         img.src = src;
       });
@@ -112,7 +112,7 @@ const BeforeAfterGallery = () => {
               </h1>
             </div>
             <div className="text-[0.72rem] tracking-[0.24em] uppercase font-semibold text-[#3a3531]/70">
-              {total} {total === 1 ? "View" : "Views"} · Drag the slider to compare
+              {total} {total === 1 ? "View" : "Views"}{pairs.some((p) => p.before) ? " · Drag the slider to compare" : ""}
             </div>
           </div>
         </div>
@@ -181,7 +181,8 @@ const BeforeAfterGallery = () => {
               )}
             </div>
 
-            {/* Before / Compare / After quick toggle */}
+            {/* Before / Compare / After quick toggle (only when a before photo exists) */}
+            {pair.before && (
             <div className="inline-flex self-start sm:self-auto border border-white/25" role="group" aria-label="View mode">
               {MODES.map((m) => {
                 const active = Math.round(pos) === m.value;
@@ -201,6 +202,7 @@ const BeforeAfterGallery = () => {
                 );
               })}
             </div>
+            )}
           </div>
 
           {/* Thumbnails */}

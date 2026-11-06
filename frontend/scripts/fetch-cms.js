@@ -38,7 +38,7 @@ const QUERY = `{
     "category": category->slug.current,
     "cover": cover.asset->url,
     "images": gallery[defined(asset)].asset->url,
-    "pairs": pairs[defined(before.asset) && defined(after.asset)]{
+    "pairs": pairs[defined(after.asset)]{
       "before": before.asset->url, "after": after.asset->url, caption
     }
   },
@@ -64,7 +64,7 @@ function optimise(d) {
   (d.projects || []).forEach((p) => {
     p.cover = sized(p.cover, 2400);
     p.images = (p.images || []).map((u) => sized(u, 2000));
-    p.pairs = (p.pairs || []).map((x) => ({ ...x, before: sized(x.before, 2000), after: sized(x.after, 2000) }));
+    p.pairs = (p.pairs || []).map((x) => ({ ...x, before: x.before ? sized(x.before, 2000) : null, after: sized(x.after, 2000) }));
   });
   (d.testimonials || []).forEach((t) => (t.image = sized(t.image, 1200)));
   (d.team || []).forEach((m) => (m.photo = m.photo ? `${m.photo}?auto=format&fit=max&w=500&q=80` : undefined));

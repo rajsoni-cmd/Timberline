@@ -1,14 +1,14 @@
 import Reveal, { GoldRule } from "./Reveal";
 
-export const PageHero = ({ eyebrow, title, subtitle, image, testId = "page-hero" }) => {
+export const PageHero = ({ eyebrow, title, subtitle, image, position = "center", testId = "page-hero" }) => {
   return (
     <section
       data-testid={testId}
       className="relative h-[78vh] min-h-[560px] w-full flex items-center justify-center overflow-hidden"
     >
       <div
-        className="absolute inset-0 bg-cover bg-center ken-burns"
-        style={{ backgroundImage: `url(${image})` }}
+        className="absolute inset-0 bg-cover ken-burns"
+        style={{ backgroundImage: `url(${image})`, backgroundPosition: position }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#01261d]/40 via-transparent to-[#01261d]/75" />
       <div className="relative z-10 text-center px-6 max-w-4xl pt-28 md:pt-32">

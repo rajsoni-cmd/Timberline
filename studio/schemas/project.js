@@ -83,7 +83,7 @@ export default defineType({
       name: 'pairs',
       title: 'Before & After photos',
       type: 'array',
-      description: 'Add one item per comparison (a "before" photo and an "after" photo of the same spot).',
+      description: 'Add one item per photo. Add a "before" photo too if you have one — it shows as a drag slider. Without a "before" photo, the "after" photo shows on its own.',
       hidden: ({document}) => !isReno(document),
       of: [
         defineArrayMember({
@@ -91,11 +91,11 @@ export default defineType({
           name: 'beforeAfter',
           title: 'Before / After',
           fields: [
-            defineField({name: 'before', title: 'BEFORE photo', type: 'image', validation: (r) => r.required()}),
+            defineField({name: 'before', title: 'BEFORE photo (optional)', type: 'image', description: 'Leave empty if you only have an after photo.'}),
             defineField({name: 'after', title: 'AFTER photo', type: 'image', validation: (r) => r.required()}),
             defineField({name: 'caption', title: 'Caption', type: 'string', description: 'Example: Kitchen — new cabinetry and lake view'}),
           ],
-          preview: {select: {title: 'caption', media: 'after'}, prepare: ({title, media}) => ({title: title || 'Before / After', media})},
+          preview: {select: {title: 'caption', media: 'after', before: 'before'}, prepare: ({title, media, before}) => ({title: title || (before ? 'Before / After' : 'After photo'), subtitle: before ? 'Before & After' : 'After only', media})},
         }),
       ],
     }),

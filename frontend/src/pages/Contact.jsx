@@ -112,7 +112,7 @@ const Contact = () => {
                   <div>
                     <div className="text-[0.65rem] tracking-[0.28em] uppercase text-[#3a3531]/55">Office</div>
                     <div className="text-[#01261d] text-base md:text-lg mt-1 font-light leading-relaxed">
-                      {SITE.addressLine1 || "5584 ON HWY 28 Unit 5"},<br />{SITE.addressLine2 || "Woodview, ON K0L 3E0"}
+                      {SITE.addressLine1 || "5584 HWY 28 Unit 5"},<br />{SITE.addressLine2 || "Woodview, ON K0L 3E0"}
                     </div>
                   </div>
                 </div>

@@ -147,6 +147,10 @@ body {
 .slide { opacity: 0; transition: opacity 1.6s ease-in-out; }
 .slide.active { opacity: 1; }
 
+/* Hide scrollbar (Selected Work strip) */
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
 /* Horizontal marquee */
 .marquee { animation: marquee 60s linear infinite; }
 @keyframes marquee {

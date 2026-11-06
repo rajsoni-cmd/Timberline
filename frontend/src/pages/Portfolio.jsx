@@ -43,7 +43,7 @@ const Portfolio = () => {
   return (
     <main data-testid="portfolio-page">
       <PageHero
-        {...banner("portfolio", { eyebrow: "Our Work", title: "Portfolio", subtitle: "Three decades of Kawartha craftsmanship — organized by discipline.", image: IMAGES.customBuildsRender })}
+        {...banner("portfolio", { eyebrow: "Our Work", title: "Portfolio", subtitle: "Three decades of Kawartha craftsmanship — organized by discipline.", image: IMAGES.customBuildsRender, position: "center 70%" })}
         testId="portfolio-hero"
       />
 

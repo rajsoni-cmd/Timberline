@@ -59,9 +59,11 @@ const PortfolioRenovation = () => {
               </div>
               <div className="md:col-span-7">
                 <ProjectDescription text={project.description} />
-                <p className={`${project.description ? "mt-5 " : ""}text-[0.7rem] tracking-[0.28em] uppercase text-[#c9a96e] font-semibold`}>
-                  Drag the slider to compare before &amp; after
-                </p>
+                {featured && featured.before && (
+                  <p className={`${project.description ? "mt-5 " : ""}text-[0.7rem] tracking-[0.28em] uppercase text-[#c9a96e] font-semibold`}>
+                    Drag the slider to compare before &amp; after
+                  </p>
+                )}
                 {more.length > 0 && (
                   <Link
                     to={galleryUrl}
