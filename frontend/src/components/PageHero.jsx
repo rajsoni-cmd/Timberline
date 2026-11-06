@@ -32,7 +32,7 @@ export const PageHero = ({ eyebrow, title, subtitle, image, position = "center",
     // A blurred copy of the same photo fills any space at the sides.
     return (
       <section data-testid={testId} className="relative w-full bg-black pt-[124px] md:pt-[140px] lg:pt-[156px]">
-        <div className="relative w-full h-[440px] sm:h-[480px] md:h-[56vh] md:min-h-[460px] md:max-h-[640px] overflow-hidden">
+        <div className="relative w-full h-[420px] sm:h-[440px] md:h-[46vh] md:min-h-[380px] md:max-h-[520px] overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center scale-110 blur-2xl opacity-70"
             style={{ backgroundImage: `url(${image})` }}
