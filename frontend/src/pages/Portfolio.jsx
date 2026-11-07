@@ -57,7 +57,7 @@ const Portfolio = () => {
                 className="mt-6 font-display text-[#01261d] leading-tight tracking-tight uppercase font-bold"
                 style={{ fontSize: "clamp(2rem, 4.2vw, 3.4rem)" }}
               >
-                Choose Your Adventure
+                Find Your Inspiration
               </h2>
               <div className="flex justify-center mt-8"><GoldRule delay={300} /></div>
             </div>
