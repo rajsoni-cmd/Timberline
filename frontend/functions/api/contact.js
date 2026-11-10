@@ -85,6 +85,17 @@ export async function onRequestPost({ request, env }) {
     return json({ detail: "Invalid request." }, 400);
   }
 
+  // Only accept submissions from this website.
+  const origin = request.headers.get("Origin") || "";
+  const allowed = [new URL(request.url).origin, "https://timberlinecustomhomes.ca", "https://www.timberlinecustomhomes.ca"];
+  if (origin && !allowed.includes(origin) && !origin.endsWith(".pages.dev")) {
+    return json({ detail: "Not allowed." }, 403);
+  }
+  // Spam trap: real visitors never fill in the hidden "website" field.
+  if (body && typeof body.website === "string" && body.website.trim()) {
+    return json({ status: "success", message: "Inquiry sent" });
+  }
+
   const fields = [
     "first_name", "last_name", "email", "phone", "budget", "contractors_contacted",
     "hear_about", "hear_about_other", "project_location", "project_type",

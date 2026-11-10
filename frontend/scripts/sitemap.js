@@ -58,5 +58,11 @@ const xml =
   "\n</urlset>\n";
 
 fs.writeFileSync(path.join(PUBLIC, "sitemap.xml"), xml);
-fs.writeFileSync(path.join(PUBLIC, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
+const AI_BOTS = ["Googlebot", "Bingbot", "GPTBot", "OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "ClaudeBot", "Claude-SearchBot", "Google-Extended", "Applebot", "Applebot-Extended", "DuckDuckBot"];
+fs.writeFileSync(
+  path.join(PUBLIC, "robots.txt"),
+  "# Search engines and AI assistants are welcome.\n" +
+    AI_BOTS.map((b) => `User-agent: ${b}\nAllow: /\n`).join("\n") +
+    `\nUser-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${SITE}/sitemap.xml\n# AI summary: ${SITE}/llms.txt\n`
+);
 console.log(`[sitemap] ${urls.length} pages written to sitemap.xml`);

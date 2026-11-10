@@ -1,5 +1,8 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { CMS } from "./lib/cms";
+import { pageMeta } from "./lib/seo";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FAQ from "./components/FAQ";
@@ -15,10 +18,24 @@ import BeforeAfterGallery from "./pages/BeforeAfterGallery";
 import Contact from "./pages/Contact";
 import Testimonials from "./pages/Testimonials";
 
+// Keeps the browser tab title and description in step while navigating.
+function PageTitle() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const m = pageMeta(pathname, CMS);
+    if (m.notFound) return;
+    document.title = m.title;
+    const d = document.querySelector('meta[name="description"]');
+    if (d) d.setAttribute("content", m.description);
+  }, [pathname]);
+  return null;
+}
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <PageTitle />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

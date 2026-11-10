@@ -20,7 +20,7 @@ const PROJECT_TYPES = [
 const initial = {
   first_name: "", last_name: "", email: "", phone: "",
   budget: "", contractors_contacted: "", hear_about: "", hear_about_other: "",
-  project_location: "", project_type: "", project_type_other: "", notes: "",
+  project_location: "", project_type: "", project_type_other: "", notes: "", website: "",
 };
 
 const TextField = ({ id, label, type = "text", required = false, value, onChange, testId, inputMode, placeholder }) => (
@@ -156,6 +156,11 @@ const Contact = () => {
               </div>
             ) : (
               <form onSubmit={onSubmit} data-testid="contact-form" className="space-y-2">
+                {/* Spam trap: hidden from people, bots fill it in */}
+                <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}>
+                  <label htmlFor="website">Website</label>
+                  <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" value={form.website} onChange={(e) => setForm((f) => ({ ...f, website: e.target.value }))} />
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
                   <TextField id="first_name" label="First Name" required value={form.first_name} onChange={update("first_name")} testId="input-first-name" />
                   <TextField id="last_name" label="Last Name" required value={form.last_name} onChange={update("last_name")} testId="input-last-name" />
